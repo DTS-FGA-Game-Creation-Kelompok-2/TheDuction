@@ -78,7 +78,7 @@ namespace TheDuction.Dialogue.Choices{
             if(_dialogueManager.CurrentDialogueTypingState == DialogueTypingState.FinishTyping)
             {
                 _choiceMode = false;
-                _dialogueLogManager.AddDialogueLog("Yuri", 
+                _dialogueLogManager.AddDialogueLog("Saya", 
                     _dialogueManager.CurrentStory.currentChoices[index].text);
                 _dialogueManager.CurrentStory.ChooseChoiceIndex(index);
                 _dialogueManager.ContinueStory();
