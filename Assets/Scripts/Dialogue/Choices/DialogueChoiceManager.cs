@@ -9,17 +9,17 @@ namespace TheDuction.Dialogue.Choices{
         SingletonBaseClass<DialogueChoiceManager>, IDialoguePropertiesManager
     {
         [SerializeField] private Transform choicesParent;
-        [SerializeField] private DialogueChoice choicePrefab;
+        [SerializeField] private DialogueChoicePrefab choicePrefab;
         [SerializeField] private bool choiceMode;
 
-        private List<DialogueChoice> choicePool;
+        private List<DialogueChoicePrefab> choicePool;
         private DialogueLogManager dialogueLogManager;
         private DialogueManager dialogueManager;
 
         public bool ChoiceMode => choiceMode;
 
         private void Awake() {
-            choicePool = new List<DialogueChoice>();
+            choicePool = new List<DialogueChoicePrefab>();
             dialogueLogManager = DialogueLogManager.Instance;
             dialogueManager = DialogueManager.Instance;
         }
@@ -34,7 +34,7 @@ namespace TheDuction.Dialogue.Choices{
             dialogueManager.PushDialogueMode(DialogueMode.Pause);
             foreach (Choice choice in currentChoices)
             {
-                DialogueChoice choiceObject = GetOrCreateChoiceObject();
+                DialogueChoicePrefab choiceObject = GetOrCreateChoiceObject();
                 choiceObject.gameObject.SetActive(true);
                 // Set choice text
                 choiceObject.SetChoiceText(choice.text);
@@ -44,7 +44,7 @@ namespace TheDuction.Dialogue.Choices{
 
         public void Hide()
         {
-            foreach (DialogueChoice choiceManager in choicePool)
+            foreach (DialogueChoicePrefab choiceManager in choicePool)
             {
                 choiceManager.gameObject.SetActive(false);
             }
@@ -54,13 +54,13 @@ namespace TheDuction.Dialogue.Choices{
         /// Choice object pooling
         /// </summary>
         /// <returns>Return existing choice object in hierarchy or create a new one</returns>
-        private DialogueChoice GetOrCreateChoiceObject()
+        private DialogueChoicePrefab GetOrCreateChoiceObject()
         {
-            DialogueChoice choiceObject = choicePool.Find(choice => !choice.gameObject.activeInHierarchy);
+            DialogueChoicePrefab choiceObject = choicePool.Find(choice => !choice.gameObject.activeInHierarchy);
 
             if (choiceObject == null)
             {
-                choiceObject = Instantiate(choicePrefab, choicesParent).GetComponent<DialogueChoice>();
+                choiceObject = Instantiate(choicePrefab, choicesParent).GetComponent<DialogueChoicePrefab>();
                 // Add new choice manager to pool 
                 choicePool.Add(choiceObject);
             }

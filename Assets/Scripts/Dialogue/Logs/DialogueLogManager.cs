@@ -6,7 +6,7 @@ namespace TheDuction.Dialogue.Logs{
     public class DialogueLogManager : 
         SingletonBaseClass<DialogueLogManager>, IDialoguePropertiesManager {
         [SerializeField] private CanvasGroup dialogueLogCanvasGroup;
-        [SerializeField] private DialogueLog dialogueLogPrefab;
+        [SerializeField] private DialogueLogPrefab dialogueLogPrefab;
         [SerializeField] private Transform dialogueLogParent;
 
         private DialogueManager dialogueManager;
@@ -19,7 +19,7 @@ namespace TheDuction.Dialogue.Logs{
         /// Add dialogue log
         /// </summary>
         public void AddDialogueLog(string speakerNameValue, string dialogueTextValue){
-            DialogueLog dialogueLogObject = Instantiate(dialogueLogPrefab, dialogueLogParent);
+            DialogueLogPrefab dialogueLogObject = Instantiate(dialogueLogPrefab, dialogueLogParent);
             dialogueLogObject.SetupLog(speakerNameValue, dialogueTextValue);
             dialogueLogObject.PrefabSetup();
         }
