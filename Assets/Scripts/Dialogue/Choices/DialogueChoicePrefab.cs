@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 namespace TheDuction.Dialogue.Choices{
-    public class DialogueChoice : MonoBehaviour, IDialoguePropertiesPrefab
+    public class DialogueChoicePrefab : MonoBehaviour, IDialoguePropertiesPrefab
     {
         public int choiceIndex;
         [SerializeField] private Button choiceButton;

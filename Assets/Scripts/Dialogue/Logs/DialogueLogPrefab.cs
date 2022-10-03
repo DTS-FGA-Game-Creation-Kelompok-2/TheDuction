@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 namespace TheDuction.Dialogue.Logs
 {
-    public class DialogueLog : MonoBehaviour, IDialoguePropertiesPrefab
+    public class DialogueLogPrefab : MonoBehaviour, IDialoguePropertiesPrefab
     {
         [SerializeField] private Text speakerNameText;
         [SerializeField] private Text dialogueLineText;
