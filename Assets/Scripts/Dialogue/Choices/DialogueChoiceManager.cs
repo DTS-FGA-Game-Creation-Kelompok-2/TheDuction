@@ -8,30 +8,30 @@ namespace TheDuction.Dialogue.Choices{
     public class DialogueChoiceManager :
         SingletonBaseClass<DialogueChoiceManager>, IDialoguePropertiesManager
     {
-        [SerializeField] private Transform choicesParent;
-        [SerializeField] private DialogueChoicePrefab choicePrefab;
-        [SerializeField] private bool choiceMode;
+        [SerializeField] private Transform _choicesParent;
+        [SerializeField] private DialogueChoicePrefab _choicePrefab;
+        [SerializeField] private bool _choiceMode;
 
-        private List<DialogueChoicePrefab> choicePool;
-        private DialogueLogManager dialogueLogManager;
-        private DialogueManager dialogueManager;
+        private List<DialogueChoicePrefab> _choicePool;
+        private DialogueLogManager _dialogueLogManager;
+        private DialogueManager _dialogueManager;
 
-        public bool ChoiceMode => choiceMode;
+        public bool ChoiceMode => _choiceMode;
 
         private void Awake() {
-            choicePool = new List<DialogueChoicePrefab>();
-            dialogueLogManager = DialogueLogManager.Instance;
-            dialogueManager = DialogueManager.Instance;
+            _choicePool = new List<DialogueChoicePrefab>();
+            _dialogueLogManager = DialogueLogManager.Instance;
+            _dialogueManager = DialogueManager.Instance;
         }
         
         public void Display()
         {
-            List<Choice> currentChoices = dialogueManager.CurrentStory.currentChoices;
+            List<Choice> currentChoices = _dialogueManager.CurrentStory.currentChoices;
 
             if (currentChoices.Count == 0) return;
 
-            choiceMode = true;
-            dialogueManager.PushDialogueMode(DialogueMode.Pause);
+            _choiceMode = true;
+            _dialogueManager.PushDialogueMode(DialogueMode.Pause);
             foreach (Choice choice in currentChoices)
             {
                 DialogueChoicePrefab choiceObject = GetOrCreateChoiceObject();
@@ -44,7 +44,7 @@ namespace TheDuction.Dialogue.Choices{
 
         public void Hide()
         {
-            foreach (DialogueChoicePrefab choiceManager in choicePool)
+            foreach (DialogueChoicePrefab choiceManager in _choicePool)
             {
                 choiceManager.gameObject.SetActive(false);
             }
@@ -56,13 +56,13 @@ namespace TheDuction.Dialogue.Choices{
         /// <returns>Return existing choice object in hierarchy or create a new one</returns>
         private DialogueChoicePrefab GetOrCreateChoiceObject()
         {
-            DialogueChoicePrefab choiceObject = choicePool.Find(choice => !choice.gameObject.activeInHierarchy);
+            DialogueChoicePrefab choiceObject = _choicePool.Find(choice => !choice.gameObject.activeInHierarchy);
 
             if (choiceObject == null)
             {
-                choiceObject = Instantiate(choicePrefab, choicesParent).GetComponent<DialogueChoicePrefab>();
+                choiceObject = Instantiate(_choicePrefab, _choicesParent).GetComponent<DialogueChoicePrefab>();
                 // Add new choice manager to pool 
-                choicePool.Add(choiceObject);
+                _choicePool.Add(choiceObject);
             }
             
             choiceObject.gameObject.SetActive(false);
@@ -75,14 +75,14 @@ namespace TheDuction.Dialogue.Choices{
         /// </summary>
         /// <param name="index">Choice's index</param>
         public void Decide(int index){
-            if(dialogueManager.CurrentDialogueTypingState == DialogueTypingState.FinishTyping)
+            if(_dialogueManager.CurrentDialogueTypingState == DialogueTypingState.FinishTyping)
             {
-                choiceMode = false;
-                dialogueLogManager.AddDialogueLog("Yuri", 
-                    dialogueManager.CurrentStory.currentChoices[index].text);
-                dialogueManager.CurrentStory.ChooseChoiceIndex(index);
-                dialogueManager.ContinueStory();
-                dialogueManager.PopDialogueMode(DialogueMode.Pause);
+                _choiceMode = false;
+                _dialogueLogManager.AddDialogueLog("Yuri", 
+                    _dialogueManager.CurrentStory.currentChoices[index].text);
+                _dialogueManager.CurrentStory.ChooseChoiceIndex(index);
+                _dialogueManager.ContinueStory();
+                _dialogueManager.PopDialogueMode(DialogueMode.Pause);
             }
         }
     }

@@ -5,10 +5,10 @@ namespace TheDuction.Dialogue.Logs
 {
     public class DialogueLogPrefab : MonoBehaviour, IDialoguePropertiesPrefab
     {
-        [SerializeField] private Text speakerNameText;
-        [SerializeField] private Text dialogueLineText;
+        [SerializeField] private Text _speakerNameText;
+        [SerializeField] private Text _dialogueLineText;
 
-        private string speakerName, dialogueLine;
+        private string _speakerName, _dialogueLine;
 
         /// <summary>
         /// Setup speaker name and dialogue line
@@ -16,8 +16,8 @@ namespace TheDuction.Dialogue.Logs
         /// <param name="speakerName">Speaker name</param>
         /// <param name="dialogueLine">Dialogue line</param>
         public void SetupLog(string speakerName, string dialogueLine){
-            this.speakerName = speakerName;
-            this.dialogueLine = dialogueLine;
+            _speakerName = speakerName;
+            _dialogueLine = dialogueLine;
         }
 
         /// <summary>
@@ -25,12 +25,12 @@ namespace TheDuction.Dialogue.Logs
         /// </summary>
         public void PrefabSetup(){
             // Deactivate speaker name if none is talking
-            if(string.IsNullOrWhiteSpace(speakerName)){
-                speakerNameText.gameObject.SetActive(false);
+            if(string.IsNullOrWhiteSpace(_speakerName)){
+                _speakerNameText.gameObject.SetActive(false);
             } else {
-                speakerNameText.text = speakerName;
+                _speakerNameText.text = _speakerName;
             }
-            dialogueLineText.text = $"\"{dialogueLine.Trim()}\"";
+            _dialogueLineText.text = $"\"{_dialogueLine.Trim()}\"";
         }
     }
 }
