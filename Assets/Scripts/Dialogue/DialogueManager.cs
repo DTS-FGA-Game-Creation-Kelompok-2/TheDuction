@@ -49,6 +49,7 @@ namespace TheDuction.Dialogue{
         // Properties
         public bool CanAutoModeContinue { get; set; }
         public bool DialogueIsPlaying { get; private set; }
+        public TextAsset CurrentDialogueAsset => _currentDialogueAsset;
         public Story CurrentStory => _currentStory;
         public DialogueState CurrentDialogueState => _currentDialogueState;
         public DialogueMode CurrentDialogueMode => _currentDialogueMode;
