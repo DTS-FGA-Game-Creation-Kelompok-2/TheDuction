@@ -57,11 +57,6 @@ namespace TheDuction.Player
                 interactable.Interact();
             }
         }
-
-        private void OnCollisionEnter(Collision other)
-        {
-            
-        }
     }
 }
 
