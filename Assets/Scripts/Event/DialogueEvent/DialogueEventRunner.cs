@@ -2,6 +2,7 @@ using TheDuction.Dialogue;
 using TheDuction.Event.BranchEvent;
 using TheDuction.Event.FinishConditionScripts;
 using TheDuction.Items;
+using TheDuction.Quest;
 using UnityEngine;
 
 namespace TheDuction.Event.DialogueEvent{
@@ -79,7 +80,7 @@ namespace TheDuction.Event.DialogueEvent{
                     }
                 }
             }
-            
+
             // Start the event
             // Set event state
             eventData.eventState = EventState.Start;
@@ -88,6 +89,7 @@ namespace TheDuction.Event.DialogueEvent{
         public void OnEventActive()
         {
             // Set event state
+            eventData.RelatedQuest.UpdateQuestState(QuestState.Active);
             eventData.eventState = EventState.Active;
             eventData.canBeInteracted = true;
             eventData.ItemData.itemMode = ItemData.ItemMode.DialogueMode;
@@ -113,6 +115,7 @@ namespace TheDuction.Event.DialogueEvent{
             }
             
             // Set event state
+            eventData.RelatedQuest.UpdateQuestState(QuestState.Finish);
             eventData.eventState = EventState.Finish;
             // Set branch state
             if(eventData.UseBranchEvent){
