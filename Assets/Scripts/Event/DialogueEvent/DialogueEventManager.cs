@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using TheDuction.Dialogue;
+using TheDuction.Global;
 using UnityEngine;
 
 namespace TheDuction.Event.DialogueEvent{
-    public class DialogueEventManager : MonoBehaviour, IEventManager{
+    public class DialogueEventManager : 
+        SingletonBaseClass<DialogueEventManager>, IEventManager{
         [SerializeField] private DialogueEventRunner eventRunnerPrefab;
 
         private List<DialogueEventRunner> eventRunnerPool;

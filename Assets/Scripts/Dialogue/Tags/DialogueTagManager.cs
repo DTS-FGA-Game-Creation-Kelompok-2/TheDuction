@@ -1,8 +1,12 @@
 using System.Collections.Generic;
+using System.Linq;
 using TheDuction.Dialogue.Illustrations;
 using TheDuction.Dialogue.Portraits;
+using TheDuction.Event;
+using TheDuction.Event.DialogueEvent;
 using TheDuction.Global;
 using TheDuction.Global.Effects;
+using TheDuction.Quest;
 using TheDuction.SceneLoading;
 using UnityEngine;
 using UnityEngine.UI;
@@ -65,6 +69,10 @@ namespace TheDuction.Dialogue.Tags{
                         _dialoguePortraitManager.Display();
                         break;
 
+                    case DialogueTags.QUEST_TAG:
+                        QuestManager.Instance.HandleQuestTag(tagValue);
+                        break;
+
                     case DialogueTags.SFX_TAG:
                         // SoundEffectManager.Instance.Play(tagValue);
                         break;
@@ -80,6 +88,10 @@ namespace TheDuction.Dialogue.Tags{
             }
         }
 
+        /// <summary>
+        /// Handle ending tag
+        /// </summary>
+        /// <param name="tagValue"></param>
         private void HandleEndingTag(string tagValue){
             // Handle ending tag
             SceneList.SceneNames().ForEach(sceneName =>
@@ -100,8 +112,41 @@ namespace TheDuction.Dialogue.Tags{
             ));
         }
 
+        /// <summary>
+        /// Find event data in list
+        /// </summary>
+        /// <param name="eventDataName">Event data name</param>
         private void SetEventData(string tagValue){
+            List<EventData> eventDatas = EventContainer.Instance.EventDatas;
+            if(eventDatas.Count == 0) return;
 
+            string[] eventIds = tagValue.Split(',');
+            
+            foreach(string eventId in eventIds){
+                // Find event data in list
+                foreach (EventData eventData in eventDatas.Where(
+                    eventData => eventData.EventId == eventId))
+                {
+                    // Set event data
+                    switch(eventData){
+                        case DialogueEventData _:
+                            Debug.Log("Set dialogue event");
+                            DialogueEventManager.Instance.SetEventData(eventData);
+                            break;
+                        // case CameraEventData _:
+                        //     Debug.Log("Set camera event");
+                        //     dialogueManager.PauseStoryForEvent();
+                        //     CameraEventManager.Instance.SetEventData(eventData);
+                        //     break;
+                        default:
+                            Debug.LogError($"Event: {tagValue} can't be set. Check the event data class");
+                            break;
+                    }
+                    
+                    eventData.gameObject.SetActive(true);
+                    break;
+                }
+            }
         }
     }
 }
