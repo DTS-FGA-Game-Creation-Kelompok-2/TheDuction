@@ -3,6 +3,7 @@ using System.Linq;
 using TheDuction.Dialogue.Illustrations;
 using TheDuction.Dialogue.Portraits;
 using TheDuction.Event;
+using TheDuction.Event.CameraEvent;
 using TheDuction.Event.DialogueEvent;
 using TheDuction.Global;
 using TheDuction.Global.Effects;
@@ -133,11 +134,11 @@ namespace TheDuction.Dialogue.Tags{
                             Debug.Log("Set dialogue event");
                             DialogueEventManager.Instance.SetEventData(eventData);
                             break;
-                        // case CameraEventData _:
-                        //     Debug.Log("Set camera event");
-                        //     dialogueManager.PauseStoryForEvent();
-                        //     CameraEventManager.Instance.SetEventData(eventData);
-                        //     break;
+                        case CameraEventData _:
+                            Debug.Log("Set camera event");
+                            DialogueManager.Instance.PauseStoryForEvent();
+                            CameraEventManager.Instance.SetEventData(eventData);
+                            break;
                         default:
                             Debug.LogError($"Event: {tagValue} can't be set. Check the event data class");
                             break;
