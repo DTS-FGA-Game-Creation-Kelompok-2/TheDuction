@@ -5,13 +5,13 @@ using UnityEngine;
 
 namespace TheDuction.Event.CameraEvent{
     public class CameraFinishedCondition: FinishConditionManager{
-        // private CameraMovement cameraMovement;
-        private CameraEventData cameraEventData;
+        // private CameraMovement _cameraMovement;
+        private CameraEventData _cameraEventData;
 
         private void Awake() {
-            // cameraMovement = CameraMovement.Instance;
+            // _cameraMovement = CameraMovement.Instance;
             eventData = GetComponent<CameraEventData>();
-            cameraEventData = eventData as CameraEventData;
+            _cameraEventData = eventData as CameraEventData;
         }
 
         public override void SetEndingCondition()
@@ -30,23 +30,23 @@ namespace TheDuction.Event.CameraEvent{
 
             // Run the camera
             // Move the camera to target object
-            // cameraMovement.SetVirtualCameraPriority(cameraEventData.TargetVirtualCamera,
-            //     cameraMovement.CAMERA_HIGHER_PRIORITY);
-            cameraEventData.CutsceneTimeline.Play();
+            // _cameraMovement.SetVirtualCameraPriority(cameraEventData.TargetVirtualCamera,
+            //     _cameraMovement.CAMERA_HIGHER_PRIORITY);
+            _cameraEventData.CutsceneTimeline.Play();
 
             // Move the character
-            if(cameraEventData.UseTarget){
+            if(_cameraEventData.UseTarget){
                 // cameraEventData.TargetCharacter.Move(cameraEventData.TargetPosition.position);
             }
 
             // Wait for camera duration
-            yield return new WaitForSeconds((float) cameraEventData.CutsceneTimeline.duration + 2f);
+            yield return new WaitForSeconds((float) _cameraEventData.CutsceneTimeline.duration + 2f);
 
             // Camera finish
             Debug.Log("Camera finished");
             // cameraEventData.TargetCharacter.transform.LookAt(cameraEventData.LookAtTarget);
-            // cameraMovement.SetVirtualCameraPriority(cameraEventData.TargetVirtualCamera,
-            //     cameraMovement.LOWER_PRIORITY);
+            // _cameraMovement.SetVirtualCameraPriority(cameraEventData.TargetVirtualCamera,
+            //     _cameraMovement.LOWER_PRIORITY);
             DialogueManager.Instance.ResumeStoryForEvent();
             OnEndingCondition();
         }
