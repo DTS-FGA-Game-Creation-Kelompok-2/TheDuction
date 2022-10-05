@@ -8,15 +8,8 @@ public class DummyItem : MonoBehaviour, IInteractable
     public delegate void ItemAction(string itemName);
     public static event ItemAction OnItemAction;
 
-    // private void OnMouseDown()
-    // {
-    //     OnItemAction?.Invoke(_itemName);
-    //     gameObject.SetActive(false);
-    // }
-
     public void Interact()
     {
-        Debug.Log(_itemName + " was interacted");
         OnItemAction?.Invoke(_itemName);
         gameObject.SetActive(false);
     }

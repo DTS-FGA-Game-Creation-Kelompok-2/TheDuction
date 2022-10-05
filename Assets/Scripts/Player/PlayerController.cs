@@ -10,6 +10,7 @@ namespace TheDuction.Player
     public class PlayerController : MonoBehaviour
     {
         [SerializeField] private float _moveSpeed;
+        [SerializeField] private Transform _raycastOrigin;
         private Vector3 _horizontal;
         private Vector3 _vertical;
         
@@ -45,10 +46,11 @@ namespace TheDuction.Player
 
         private void Interact()
         {
-            Ray ray = new Ray(transform.position, transform.forward);
+            Ray ray = new Ray(_raycastOrigin.position, transform.forward);
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, 10f))
             {
+                Debug.DrawLine(transform.position, hit.point, Color.red, 1f);
                 IInteractable interactable = hit.collider.GetComponent<IInteractable>();
                 if (interactable == null)
                 {
