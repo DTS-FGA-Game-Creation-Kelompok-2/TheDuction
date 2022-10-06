@@ -1,5 +1,6 @@
 using System.Collections;
 using TheDuction.Event.DialogueEvent;
+using TheDuction.Interaction;
 using UnityEngine;
 
 namespace TheDuction.Event.BranchEvent{
@@ -23,8 +24,8 @@ namespace TheDuction.Event.BranchEvent{
 
                     _branchEventData.BranchParts[i].EventDatas.ForEach(eventData =>
                     {
-                        if(eventData.ItemData)
-                            eventData.ItemData.itemMode = Items.ItemData.ItemMode.NormalMode;
+                        if(eventData.InteractableObject)
+                            eventData.InteractableObject.Mode = InteractableMode.NormalMode;
                     });
                 }
 
@@ -77,7 +78,7 @@ namespace TheDuction.Event.BranchEvent{
             yield return new WaitUntil(() => _activeBranchPart.EventToFinish.isFinished);
 
             _activeBranchPart.EventDatas.ForEach(eventData =>{
-                eventData.ItemData.itemMode = Items.ItemData.ItemMode.NormalMode;
+                eventData.InteractableObject.Mode = InteractableMode.NormalMode;
                 eventData.canBeInteracted = false;
             });
 

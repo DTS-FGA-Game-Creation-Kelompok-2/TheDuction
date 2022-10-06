@@ -1,0 +1,2 @@
+Makasih
+Bye

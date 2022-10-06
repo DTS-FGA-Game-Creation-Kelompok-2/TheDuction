@@ -39,6 +39,7 @@ namespace TheDuction.Dialogue.Choices{
                 // Set choice text
                 choiceObject.SetChoiceText(choice.text);
                 choiceObject.choiceIndex = choice.index;
+                choiceObject.PrefabSetup();
             }
         }
 

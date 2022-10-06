@@ -10,7 +10,8 @@ namespace TheDuction.Interaction{
         {
             base.Interact();
             OnItemAction?.Invoke(_clueData);
-            gameObject.SetActive(false);
+            // TODO: Set active false after dialogue
+            // gameObject.SetActive(false);
         }
     }
 }

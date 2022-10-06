@@ -15,6 +15,7 @@ namespace TheDuction.Dialogue.Logs{
             _dialogueManager = DialogueManager.Instance;
         }
 
+        // TODO: Buat dialogue log
         /// <summary>
         /// Add dialogue log
         /// </summary>
