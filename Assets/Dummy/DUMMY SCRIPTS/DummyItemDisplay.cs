@@ -1,7 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using TheDuction;
+using TheDuction.Interaction;
 using TheDuction.Inventory;
 using TMPro;
 using UnityEngine;

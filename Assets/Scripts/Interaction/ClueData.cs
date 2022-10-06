@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-namespace TheDuction
+namespace TheDuction.Interaction
 {
     [CreateAssetMenu(fileName = "New Item", menuName = "Inventory/Item")]
     public class ClueData : ScriptableObject
