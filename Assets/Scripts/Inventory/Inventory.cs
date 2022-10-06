@@ -9,25 +9,26 @@ namespace TheDuction.Inventory
     public class Inventory : MonoBehaviour
     {
         [SerializeField] private List<string> _items = new List<string>();
-        [SerializeField] private GameObject _itemsPrefab;
+        [SerializeField] private InventoryData _itemsPrefab;
         [SerializeField] private Transform _itemsParent;
+        [SerializeField] private GameObject _itemDescPanel;
 
         private void OnEnable()
         {
-            DummyItem.OnItemAction += AddItem;
+            DummyItemObject.OnItemAction += AddItem;
         }
 
         private void OnDisable()
         {
-            DummyItem.OnItemAction -= AddItem;
+            DummyItemObject.OnItemAction -= AddItem;
         }
 
         public void AddItem(string item)
         {
             _items.Add(item);
-            GameObject itemObject = Instantiate(_itemsPrefab, _itemsParent);
+            InventoryData itemObject = Instantiate(_itemsPrefab, _itemsParent);
             ClueData clueData = Resources.Load<ClueData>("Items Data/" + item);
-            itemObject.GetComponent<Image>().sprite = clueData.ClueImage;
+            itemObject.SetItemDetails(item, clueData.ClueImage, _itemDescPanel);
         }
     }
 }

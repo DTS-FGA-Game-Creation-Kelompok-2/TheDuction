@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1335cf01915470c4e8f4b224c037807b, type: 3}
   m_Name: testF
   m_EditorClassIdentifier: 
-  ClueName: item a
-  ClueDescription: ini item a
+  ClueName: item f
+  ClueDescription: ini item f
   ClueImage: {fileID: 6696335727113552053, guid: f8579b10a8b9a714e8e1abb6e3c165be, type: 3}

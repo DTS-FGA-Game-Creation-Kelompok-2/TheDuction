@@ -1,7 +1,7 @@
 using TheDuction.Interaction;
 using UnityEngine;
 
-public class DummyItem : MonoBehaviour, IInteractable
+public class DummyItemObject : MonoBehaviour, IInteractable
 {
     [SerializeField] private string _itemName;
     
