@@ -50,7 +50,6 @@ namespace TheDuction.Player
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, 10f))
             {
-                Debug.DrawLine(transform.position, hit.point, Color.red, 1f);
                 IInteractable interactable = hit.collider.GetComponent<IInteractable>();
                 if (interactable == null)
                 {
