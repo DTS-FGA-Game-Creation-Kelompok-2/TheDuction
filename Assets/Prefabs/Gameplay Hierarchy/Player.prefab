@@ -1152,6 +1152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveSpeed: 20
+  _raycastOrigin: {fileID: 4995675675400011548}
 --- !u!136 &3734101701786503641
 CapsuleCollider:
   m_ObjectHideFlags: 0
