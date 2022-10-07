@@ -17,13 +17,11 @@ namespace TheDuction.Player
         private void OnEnable()
         {
             InputConfig.OnInput += Move;
-            InputConfig.OnInteract += Interact;
         }
 
         private void OnDisable()
         {
             InputConfig.OnInput -= Move;
-            InputConfig.OnInteract -= Interact;
         }
 
         private void Start()

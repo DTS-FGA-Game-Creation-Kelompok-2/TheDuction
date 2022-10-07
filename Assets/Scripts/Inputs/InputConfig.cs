@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TheDuction.Interaction;
 using UnityEngine;
 
 namespace TheDuction.Inputs
@@ -10,9 +11,7 @@ namespace TheDuction.Inputs
         [SerializeField] private InputManager _inputManager;
         
         public delegate void OnInputEvent(Vector3 input);
-        public delegate void OnInteractEvent();
         public static event OnInputEvent OnInput;
-        public static event OnInteractEvent OnInteract;
 
         private void Update()
         {
@@ -32,9 +31,14 @@ namespace TheDuction.Inputs
             {
                 OnInput?.Invoke(Vector3.right);
             }
-            if(Input.GetKey(_inputManager.InteractKey))
+        }
+
+        private void OnTriggerStay(Collider other)
+        {
+            IInteractable interactable = other.GetComponent<IInteractable>();
+            if (interactable != null && Input.GetKey(_inputManager.InteractKey))
             {
-                OnInteract?.Invoke();
+                interactable.Interact();
             }
         }
     }
