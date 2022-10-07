@@ -1,9 +1,6 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using TheDuction.Interaction;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace TheDuction.Inventory
 {
@@ -16,19 +13,19 @@ namespace TheDuction.Inventory
 
         private void OnEnable()
         {
-            ClueInteractable.OnItemAction += AddItem;
+            ClueInteractable.OnItemInteracted += AddItem;
         }
 
         private void OnDisable()
         {
-            ClueInteractable.OnItemAction -= AddItem;
+            ClueInteractable.OnItemInteracted -= AddItem;
         }
 
         public void AddItem(ClueData item)
         {
             _items.Add(item);
             InventoryData itemObject = Instantiate(_itemsPrefab, _itemsParent);
-            itemObject.SetItemDetails(item.ClueName, item.ClueImage, _itemDescPanel);
+            itemObject.SetItemDetails(item, _itemDescPanel);
         }
     }
 }
