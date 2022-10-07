@@ -1,9 +1,14 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace TheDuction.Quest{
     public class QuestController : MonoBehaviour {
         [SerializeField] private QuestModel _questModel;
+        [SerializeField] private QuestState _questState = QuestState.NotStarted;
+        
+        public delegate void OnQuestStateChange();
+        public event OnQuestStateChange OnStateChange;
+
+        public QuestState State => _questState;
 
         public QuestModel QuestObject{
             set{
@@ -14,7 +19,8 @@ namespace TheDuction.Quest{
         }
 
         public void UpdateQuestState(QuestState newState){
-            _questModel.questState = newState;
+            _questState = newState;
+            OnStateChange?.Invoke();
         }
     }
 }

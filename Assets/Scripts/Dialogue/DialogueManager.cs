@@ -11,6 +11,7 @@ using TheDuction.Dialogue.Logs;
 using TheDuction.Dialogue.Portraits;
 using TheDuction.Dialogue.Illustrations;
 using TheDuction.Dialogue.Tags;
+using TheDuction.Quest;
 
 namespace TheDuction.Dialogue{
     public class DialogueManager: SingletonBaseClass<DialogueManager>{
@@ -274,6 +275,9 @@ namespace TheDuction.Dialogue{
                     _dialogueChoiceManager.Hide();
                     _dialogueIllustrationManager.Hide();
                     _dialoguePortraitManager.Hide();
+
+                    // Activate quest
+                    QuestManager.Instance.ActivateAllQuestViews();
                 })
             );
         }
