@@ -62,7 +62,7 @@ namespace TheDuction.Dialogue.Illustrations{
         /// <summary>
         /// Illustration object pooling
         /// </summary>
-        /// <returns>Return existing illustration manager in hierarchy or create a new one</returns>
+        /// <returns>Return existing illustration in hierarchy or create a new one</returns>
         private DialogueIllustrationPrefab GetOrCreateDialogueIllustrationObject()
         {
             DialogueIllustrationPrefab dialogueIllustration = _illustrationPool.Find(illustrtation => 
@@ -71,7 +71,7 @@ namespace TheDuction.Dialogue.Illustrations{
             if (dialogueIllustration == null)
             {
                 dialogueIllustration = Instantiate(_illustrationPrefab, _illustrationParent).GetComponent<DialogueIllustrationPrefab>();
-                // Add new choice manager to pool 
+                // Add new choice object to pool 
                 _illustrationPool.Add(dialogueIllustration);
             }
             

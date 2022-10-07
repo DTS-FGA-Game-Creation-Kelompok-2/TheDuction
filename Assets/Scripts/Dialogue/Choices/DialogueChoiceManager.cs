@@ -38,7 +38,7 @@ namespace TheDuction.Dialogue.Choices{
                 choiceObject.gameObject.SetActive(true);
                 // Set choice text
                 choiceObject.SetChoiceText(choice.text);
-                choiceObject.choiceIndex = choice.index;
+                choiceObject.ChoiceIndex = choice.index;
                 choiceObject.PrefabSetup();
             }
         }

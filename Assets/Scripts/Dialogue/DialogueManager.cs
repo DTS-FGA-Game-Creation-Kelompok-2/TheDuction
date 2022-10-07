@@ -266,6 +266,7 @@ namespace TheDuction.Dialogue{
                     //     UnityEngine.AI.ObstacleAvoidanceType.LowQualityObstacleAvoidance);
 
                     // Dialogue UI
+                    _dialogueLogManager.ResetDialogueLog();
                     _dialogueTextBox.SetActive(true);
                     DialogueIsPlaying = false;
                     _dialogueText.text = "";
