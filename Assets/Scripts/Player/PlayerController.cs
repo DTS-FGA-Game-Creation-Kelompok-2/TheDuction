@@ -1,8 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using TheDuction.Inputs;
-using TheDuction.Interaction;
 using UnityEngine;
 
 namespace TheDuction.Player
