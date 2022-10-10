@@ -29,7 +29,11 @@ namespace TheDuction.Player
 
         private void Move(Vector3 dir)
         {
-            _rb.velocity = dir * _moveSpeed;
+            Vector3 movement = new Vector3(dir.x, 0, dir.z).normalized;
+            Quaternion rotation = Quaternion.LookRotation(movement);
+
+            _rb.velocity = movement * _moveSpeed;
+            _rb.MoveRotation(rotation);
         }
     }
 }
