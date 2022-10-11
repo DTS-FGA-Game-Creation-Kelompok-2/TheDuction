@@ -1,1 +1,1 @@
-﻿{"inkVersion":20,"root":[["^Tampaknya, semuanya sudah selesai","\n",{"#":"event:chapter:0-1-2-3"},{"#":"quest:quest-2-2"},"^Aku harus segera ke B","\n",["done",{"#f":5,"#n":"g-0"}],null],"done",{"#f":1}],"listDefs":{}}
+﻿{"inkVersion":20,"root":[[{"#":"speaker:Saya"},"^Tampaknya, semuanya sudah selesai","\n",{"#":"event:chapter-0-1-2-4"},{"#":"quest:quest-2-2"},"^Aku harus segera ke B","\n",["done",{"#f":5,"#n":"g-0"}],null],"done",{"#f":1}],"listDefs":{}}
