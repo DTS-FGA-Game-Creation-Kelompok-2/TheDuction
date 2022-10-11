@@ -116,8 +116,10 @@ namespace TheDuction.Event.DialogueEvent{
             }
             
             // Set event state
-            if(eventData.RelatedQuest)
-                eventData.RelatedQuest.UpdateQuestState(QuestState.Finish);
+            if(eventData.RelatedQuest){
+                eventData.RelatedQuest.UpdateDefinitionOfDone();
+                QuestManager.Instance.UpdateQuestNameText(eventData.RelatedQuest);
+            }
             eventData.eventState = EventState.Finish;
             // Set branch state
             if(eventData.UseBranchEvent){

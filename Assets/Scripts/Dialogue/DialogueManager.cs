@@ -275,9 +275,6 @@ namespace TheDuction.Dialogue{
                     _dialogueChoiceManager.Hide();
                     _dialogueIllustrationManager.Hide();
                     _dialoguePortraitManager.Hide();
-
-                    // Activate quest
-                    QuestManager.Instance.ActivateAllQuestViews();
                 })
             );
         }

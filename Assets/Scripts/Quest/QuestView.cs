@@ -1,13 +1,12 @@
+using TheDuction.Global.Effects;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace TheDuction.Quest{
     public class QuestView : MonoBehaviour {
         [SerializeField] private QuestController _questController;
-        [SerializeField] private Image _questImage;
-        [SerializeField] private Text _questStatusText;
+        [SerializeField] private CanvasGroup _questCanvasGroup;
         [SerializeField] private Text _questNameText;
-        [SerializeField] private Text _questDescription;
 
         public QuestController QuestController{
             set{
@@ -24,20 +23,27 @@ namespace TheDuction.Quest{
         public void SetupQuest(){
             _questController.OnStateChange += OnStateChange;
             _questController.UpdateQuestState(QuestState.NotStarted);
-            _questNameText.text = _questController.QuestObject.QuestName;
-            _questDescription.text = _questController.QuestObject.QuestDescription;
+            string questName = $"{_questController.QuestObject.QuestName} ({_questController.CurrentDefinitionOfDone}/{_questController.QuestObject.DefinitionOfDone})";
+            UpdateQuestNameText(questName);
+        }
+
+        public void UpdateQuestNameText(string text){
+            _questNameText.text = text;
         }
 
         private void OnStateChange(){
             switch(_questController.State){
                 case QuestState.NotStarted:
+                    break;
                 case QuestState.Active:
-                    _questStatusText.gameObject.SetActive(false);
+                    gameObject.SetActive(true);
+                    StartCoroutine(AlphaFadingEffect.FadeIn(_questCanvasGroup));
                     break;
                 case QuestState.Finish:
-                    _questStatusText.gameObject.SetActive(true);
-                    _questStatusText.text = "Selesai";
-                    _questImage.color = new Color(0, 0, 0, 0.5f);
+                    StartCoroutine(AlphaFadingEffect.FadeOut(_questCanvasGroup, afterEffect: () =>
+                    {
+                        gameObject.SetActive(false);
+                    }));
                     break;
             }
         }

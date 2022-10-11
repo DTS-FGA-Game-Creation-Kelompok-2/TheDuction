@@ -8,10 +8,10 @@ namespace TheDuction.Quest{
         [SerializeField] private QuestView _questPrefab;
         [SerializeField] private Transform _questParent;
 
-        private List<QuestView> _questViewsToBeActivated;
+        private List<QuestView> _questViewPool;
 
         private void Awake() {
-            _questViewsToBeActivated = new List<QuestView>();
+            _questViewPool = new List<QuestView>();
         }
 
         /// <summary>
@@ -31,37 +31,59 @@ namespace TheDuction.Quest{
             return null;
         }
 
+        private QuestView GetQuestView(QuestController questController){
+            foreach(QuestView questView in _questViewPool){
+                if(!questView.gameObject.activeInHierarchy) continue;
+
+                if(questView.QuestController == questController){
+                    return questView;
+                }
+            }
+
+            Debug.LogError($"Quest view with quest ID: {questController.QuestObject.QuestId} not found");
+            return null;
+        }
+
         /// <summary>
         /// Handle quest tag
         /// </summary>
-        /// <param name="tagValue">Quest ID</param>
-        public void HandleQuestTag(string tagValue){
-            string[] questIds = tagValue.Split(',');
+        /// <param name="questId">Quest ID</param>
+        public void HandleQuestTag(string questId){
+            QuestController questController = GetQuestController(questId);
+            if(questController == null) return;
 
-            if(questIds.Length <= 0) return;
+            QuestView questView = GetOrCreateQuestViewObject();
 
-            foreach(string questId in questIds){
-                QuestController questController = GetQuestController(questId);
-
-                if(questController == null) return;
-
-                QuestView quest = Instantiate(_questPrefab, _questParent).GetComponent<QuestView>();
-                quest.QuestController = questController;
-                quest.gameObject.SetActive(false);
-                quest.SetupQuest();
-                _questViewsToBeActivated.Add(quest);
-            }
+            questView.QuestController = questController;
+            questView.gameObject.SetActive(false);
+            questView.SetupQuest();
         }
 
-        public void ActivateAllQuestViews(){
-            if(_questViewsToBeActivated.Count == 0) return;
+        public void UpdateQuestNameText(QuestController questController){
+            string questName = $"{questController.QuestObject.QuestName} ({questController.CurrentDefinitionOfDone}/{questController.QuestObject.DefinitionOfDone})";
 
-            foreach(QuestView questView in _questViewsToBeActivated){
-                questView.gameObject.SetActive(true);
+            QuestView questView = GetQuestView(questController);
+            if(questView == null) return;
+
+            questView.UpdateQuestNameText(questName);
+        }
+
+        /// <summary>
+        /// Quest view object pooling
+        /// </summary>
+        /// <returns></returns>
+        private QuestView GetOrCreateQuestViewObject()
+        {
+            QuestView questView = _questViewPool.Find(questView => !questView.gameObject.activeInHierarchy);
+
+            if (questView == null)
+            {
+                questView = Instantiate(_questPrefab, _questParent).GetComponent<QuestView>();
+                // Add new choice manager to pool 
+                _questViewPool.Add(questView);
             }
 
-            // Remove from list after activating it
-            _questViewsToBeActivated.RemoveAll(questView => questView.gameObject.activeInHierarchy);
+            return questView;
         }
     }
 }

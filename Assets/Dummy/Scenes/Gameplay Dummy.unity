@@ -173,7 +173,7 @@ MonoBehaviour:
   - {fileID: 835235835}
   - {fileID: 1488407716}
   - {fileID: 1791611641}
-  _questPrefab: {fileID: 5608743273680523767, guid: c442ef3b24e66064d8d7a013d0be3751, type: 3}
+  _questPrefab: {fileID: 445241881019204958, guid: c442ef3b24e66064d8d7a013d0be3751, type: 3}
   _questParent: {fileID: 2141197102}
 --- !u!1 &26820871
 GameObject:
@@ -2895,6 +2895,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _questModel: {fileID: 11400000, guid: 21d1f05944a75dd4b90b678c94b418e7, type: 2}
+  _currentDefinitionOfDone: 0
   _questState: 0
 --- !u!1 &848608239
 GameObject:
@@ -3236,6 +3237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _questModel: {fileID: 11400000, guid: adbf6ef394a420046938d38ad3fb3158, type: 2}
+  _currentDefinitionOfDone: 0
   _questState: 0
 --- !u!1 &1060576086
 GameObject:
@@ -3887,6 +3889,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _questModel: {fileID: 11400000, guid: 9d77072e064708a438d829c850313e99, type: 2}
+  _currentDefinitionOfDone: 0
   _questState: 0
 --- !u!1 &1341806941
 GameObject:
@@ -4234,7 +4237,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 182100540}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -4433,6 +4436,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _questModel: {fileID: 11400000, guid: e4c076f6ef9923b4a8dcc3237d9db4f6, type: 2}
+  _currentDefinitionOfDone: 0
   _questState: 0
 --- !u!1 &1508225586
 GameObject:
@@ -5005,6 +5009,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _questModel: {fileID: 11400000, guid: 456e363af769ae24ca53183d7b8387fa, type: 2}
+  _currentDefinitionOfDone: 0
   _questState: 0
 --- !u!1 &1799995147
 GameObject:
@@ -5642,6 +5647,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _questModel: {fileID: 11400000, guid: 8c9abe341e54a214f846e2c5cea65f73, type: 2}
+  _currentDefinitionOfDone: 0
   _questState: 0
 --- !u!1 &1983735352
 GameObject:
@@ -6607,7 +6613,7 @@ MonoBehaviour:
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 1
-  m_ChildControlHeight: 1
+  m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 1
