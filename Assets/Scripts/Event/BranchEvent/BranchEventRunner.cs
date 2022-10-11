@@ -1,4 +1,5 @@
 using System.Collections;
+using TheDuction.Dialogue;
 using TheDuction.Event.DialogueEvent;
 using TheDuction.Interaction;
 using UnityEngine;
@@ -75,12 +76,20 @@ namespace TheDuction.Event.BranchEvent{
         /// <returns></returns>
         private IEnumerator ObserveFinish(){
             yield return new WaitUntil(() => _activeBranchPart != null);
-            yield return new WaitUntil(() => _activeBranchPart.EventToFinish.isFinished);
+            yield return new WaitUntil(() => {
+                foreach(DialogueEventData eventToFinish in _activeBranchPart.EventsToFinish){
+                    if(!eventToFinish.isFinished) return false;
+                }
+
+                return true;
+            });
 
             _activeBranchPart.EventDatas.ForEach(eventData =>{
                 eventData.InteractableObject.Mode = InteractableMode.NormalMode;
                 eventData.canBeInteracted = false;
             });
+
+            DialogueManager.Instance.SetDialogue(_activeBranchPart.FinishedEventDialogue);
 
             Destroy(gameObject);
         }

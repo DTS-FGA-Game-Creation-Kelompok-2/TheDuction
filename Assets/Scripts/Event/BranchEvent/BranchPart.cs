@@ -8,10 +8,12 @@ namespace TheDuction.Event.BranchEvent{
     public class BranchPart{
         [SerializeField] private string _name;
         public BranchState branchPartState = BranchState.NotStarted;
-        [SerializeField] private DialogueEventData _eventToFinish;
+        [SerializeField] private List<DialogueEventData> _eventsToFinish;
         [SerializeField] private List<DialogueEventData> _eventDatas;
+        [SerializeField] private TextAsset _finishedEventDialogue;
 
         public List<DialogueEventData> EventDatas => _eventDatas;
-        public DialogueEventData EventToFinish => _eventToFinish;
+        public List<DialogueEventData> EventsToFinish => _eventsToFinish;
+        public TextAsset FinishedEventDialogue => _finishedEventDialogue;
     }
 }

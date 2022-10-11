@@ -1,1 +1,1 @@
-﻿{"inkVersion":20,"root":[[{"#":"speaker:NPC b"},"^Hai","\n","^Pergilah","\n",["done",{"#f":5,"#n":"g-0"}],null],"done",{"#f":1}],"listDefs":{}}
+﻿{"inkVersion":20,"root":[[{"#":"speaker:NPC b"},"^Hai","\n","^Bantulah aku dan pergilah cepat","\n","ev","str","^Baik","/str","/ev",{"*":"0.c-0","flg":20},{"c-0":["\n",{"#":"event:chapter-0-1-2-1,chapter-0-1-2-2"},{"#":"quest:quest-2-1"},"^Pergilah","\n",{"->":"0.g-0"},{"#f":5}],"g-0":["done",{"#f":5}]}],"done",{"#f":1}],"listDefs":{}}
