@@ -35,6 +35,11 @@ namespace TheDuction.Event.BranchEvent{
             }
         }
 
+        /// <summary>
+        /// Update branch event's state
+        /// </summary>
+        /// <param name="dialogueEventData">Event data</param>
+        /// <param name="newState">New state</param>
         public void UpdateBranchEventState(DialogueEventData dialogueEventData, BranchState newState){
             foreach (BranchPart branchPart in _branchEventData.BranchParts)
             {
@@ -51,6 +56,11 @@ namespace TheDuction.Event.BranchEvent{
             }
         }
 
+        /// <summary>
+        /// Update branch part's event state
+        /// </summary>
+        /// <param name="branchPart">Branch Part</param>
+        /// <param name="newState">New state</param>
         private void UpdateBranchPartState(BranchPart branchPart, BranchState newState){
             switch(newState){
                 case BranchState.NotStarted:
@@ -68,38 +78,6 @@ namespace TheDuction.Event.BranchEvent{
                     break;
             }
         }
-
-        /// <summary>
-        /// Update branch event state
-        /// If finish update all item in event data to normal mode, 
-        /// so it doesn't trigger the dialogue
-        /// </summary>
-        /// <param name="newState"></param>
-        // public void UpdateBranchPartState(DialogueEventData dialogueEventData, BranchState newState){
-        //     foreach (BranchPart branchPart in _branchEventData.BranchParts)
-        //     {
-        //         foreach (DialogueEventData eventData in branchPart.EventDatas){
-        //             // Check which dialogue event data
-        //             if(eventData == dialogueEventData){
-        //                 branchPart.BranchPartState = newState;
-
-        //                 // Look at new state
-        //                 switch(newState){
-        //                     case BranchState.NotStarted:
-        //                         break;
-        //                     case BranchState.Active:
-        //                         _activeBranchPart = branchPart;
-        //                         _canObserveActive = true;
-        //                         break;
-        //                     case BranchState.Finish:
-        //                         break;
-        //                 }
-
-        //                 break;
-        //             }
-        //         }
-        //     }
-        // }
 
         /// <summary>
         /// Observe active branch after there is active branch part and 0.5s
