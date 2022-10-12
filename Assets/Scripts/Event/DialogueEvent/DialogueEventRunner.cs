@@ -97,7 +97,7 @@ namespace TheDuction.Event.DialogueEvent{
             
             // Set branch state
             if(eventData.UseBranchEvent){
-                eventData.BranchRunner.UpdateBranchPartState(eventData, BranchState.Active);
+                eventData.BranchRunner.UpdateBranchEventState(eventData, BranchState.Active);
             }
         }
 
@@ -123,7 +123,7 @@ namespace TheDuction.Event.DialogueEvent{
             eventData.eventState = EventState.Finish;
             // Set branch state
             if(eventData.UseBranchEvent){
-                eventData.BranchRunner.UpdateBranchPartState(eventData, BranchState.Finish);
+                eventData.BranchRunner.UpdateBranchEventState(eventData, BranchState.Finish);
             }
             // Deactivate event data renderer
             eventData.OnEventFinish();

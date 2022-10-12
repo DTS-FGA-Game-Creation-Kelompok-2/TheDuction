@@ -2500,13 +2500,14 @@ MonoBehaviour:
     _name: branch1 chapter-0-1-2
     _branchParts:
     - _name: mencari barang
-      branchPartState: 0
-      _eventsToFinish:
-      - {fileID: 313561955}
-      - {fileID: 1242664296}
-      _eventDatas:
-      - {fileID: 313561955}
-      - {fileID: 1242664296}
+      _branchPartState: 0
+      _branchEvents:
+      - _branchEventState: 0
+        _eventData: {fileID: 313561955}
+        _requiredToFinish: 1
+      - _branchEventState: 0
+        _eventData: {fileID: 1242664296}
+        _requiredToFinish: 1
       _finishedEventDialogue: {fileID: 4900000, guid: 422e57df194ed12499ad5ca0a766019b, type: 3}
 --- !u!1 &642628969
 GameObject:
@@ -4237,7 +4238,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 182100540}
   m_Direction: 2
   m_Value: 0
-  m_Size: 1
+  m_Size: 0
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _questId: quest-2-2
   _questName: Temui NPC B
+  _definitionOfDone: 2
   _questDescription: Memberi barang NPC B

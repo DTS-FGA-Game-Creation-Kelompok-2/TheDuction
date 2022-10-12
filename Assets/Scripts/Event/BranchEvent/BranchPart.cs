@@ -4,16 +4,33 @@ using TheDuction.Event.DialogueEvent;
 using UnityEngine;
 
 namespace TheDuction.Event.BranchEvent{
+    [Serializable] 
+    public class BranchEvent {
+        [SerializeField] private BranchState _branchEventState = BranchState.NotStarted;
+        [SerializeField] private DialogueEventData _eventData;
+        [SerializeField] private bool _requiredToFinish;
+
+        public BranchState BranchEventState{
+            set { _branchEventState = value; }
+            get { return _branchEventState; }
+        }
+
+        public DialogueEventData EventData => _eventData;
+        public bool RequiredToFinish => _requiredToFinish;
+    }
+
     [Serializable]
     public class BranchPart{
         [SerializeField] private string _name;
-        public BranchState branchPartState = BranchState.NotStarted;
-        [SerializeField] private List<DialogueEventData> _eventsToFinish;
-        [SerializeField] private List<DialogueEventData> _eventDatas;
+        [SerializeField] private BranchState _branchPartState = BranchState.NotStarted;
+        [SerializeField] private List<BranchEvent> _branchEvents;
         [SerializeField] private TextAsset _finishedEventDialogue;
 
-        public List<DialogueEventData> EventDatas => _eventDatas;
-        public List<DialogueEventData> EventsToFinish => _eventsToFinish;
+        public BranchState BranchPartState{
+            set { _branchPartState = value; }
+            get { return _branchPartState; }
+        }
+        public List<BranchEvent> BranchEvents => _branchEvents;
         public TextAsset FinishedEventDialogue => _finishedEventDialogue;
     }
 }

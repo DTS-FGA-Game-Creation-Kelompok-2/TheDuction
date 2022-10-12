@@ -3,6 +3,7 @@ using TheDuction.Dialogue;
 using TheDuction.Event.DialogueEvent;
 using TheDuction.Interaction;
 using UnityEngine;
+using System.Linq;
 
 namespace TheDuction.Event.BranchEvent{
     public class BranchEventRunner : MonoBehaviour {
@@ -21,16 +22,50 @@ namespace TheDuction.Event.BranchEvent{
         private void Update() {
             if(_observeInUpdate){
                 for (int i = 0; i < _branchEventData.BranchParts.Count; i++){
-                    if(_branchEventData.BranchParts[i].branchPartState == BranchState.Active) continue;
+                    if(_branchEventData.BranchParts[i].BranchPartState == BranchState.Active) continue;
 
-                    _branchEventData.BranchParts[i].EventDatas.ForEach(eventData =>
+                    _branchEventData.BranchParts[i].BranchEvents.ForEach(branchEvent =>
                     {
-                        if(eventData.InteractableObject)
-                            eventData.InteractableObject.Mode = InteractableMode.NormalMode;
+                        if(branchEvent.EventData.InteractableObject)
+                            branchEvent.EventData.InteractableObject.Mode = InteractableMode.NormalMode;
                     });
                 }
 
                 _observeInUpdate = false;
+            }
+        }
+
+        public void UpdateBranchEventState(DialogueEventData dialogueEventData, BranchState newState){
+            foreach (BranchPart branchPart in _branchEventData.BranchParts)
+            {
+                foreach (BranchEvent branchEvent in branchPart.BranchEvents)
+                {
+                    if (branchEvent.EventData == dialogueEventData)
+                    {
+                        branchEvent.BranchEventState = newState;
+                        UpdateBranchPartState(branchPart, newState);
+
+                        return;
+                    }
+                }
+            }
+        }
+
+        private void UpdateBranchPartState(BranchPart branchPart, BranchState newState){
+            switch(newState){
+                case BranchState.NotStarted:
+                    break;
+                case BranchState.Active:
+                    branchPart.BranchPartState = newState;
+                    _activeBranchPart = branchPart;
+                    _canObserveActive = true;
+                    break;
+                case BranchState.Finish:
+                    foreach(BranchEvent branchEvent in branchPart.BranchEvents.Where(branchEvent => branchEvent.RequiredToFinish)){
+                        if(branchEvent.BranchEventState != newState) return;
+                    }
+                    branchPart.BranchPartState = newState;
+                    break;
             }
         }
 
@@ -40,25 +75,31 @@ namespace TheDuction.Event.BranchEvent{
         /// so it doesn't trigger the dialogue
         /// </summary>
         /// <param name="newState"></param>
-        public void UpdateBranchPartState(DialogueEventData dialogueEventData, BranchState newState){
-            foreach (BranchPart branchPart in _branchEventData.BranchParts)
-            {
-                foreach (DialogueEventData eventData in branchPart.EventDatas){
-                    // Check which dialogue event data
-                    if(eventData == dialogueEventData){
-                        branchPart.branchPartState = newState;
+        // public void UpdateBranchPartState(DialogueEventData dialogueEventData, BranchState newState){
+        //     foreach (BranchPart branchPart in _branchEventData.BranchParts)
+        //     {
+        //         foreach (DialogueEventData eventData in branchPart.EventDatas){
+        //             // Check which dialogue event data
+        //             if(eventData == dialogueEventData){
+        //                 branchPart.BranchPartState = newState;
 
-                        // Look at new state
-                        if(newState == BranchState.Active){
-                            _activeBranchPart = branchPart;
-                            _canObserveActive = true;
-                        }
+        //                 // Look at new state
+        //                 switch(newState){
+        //                     case BranchState.NotStarted:
+        //                         break;
+        //                     case BranchState.Active:
+        //                         _activeBranchPart = branchPart;
+        //                         _canObserveActive = true;
+        //                         break;
+        //                     case BranchState.Finish:
+        //                         break;
+        //                 }
 
-                        break;
-                    }
-                }
-            }
-        }
+        //                 break;
+        //             }
+        //         }
+        //     }
+        // }
 
         /// <summary>
         /// Observe active branch after there is active branch part and 0.5s
@@ -77,16 +118,17 @@ namespace TheDuction.Event.BranchEvent{
         private IEnumerator ObserveFinish(){
             yield return new WaitUntil(() => _activeBranchPart != null);
             yield return new WaitUntil(() => {
-                foreach(DialogueEventData eventToFinish in _activeBranchPart.EventsToFinish){
-                    if(!eventToFinish.isFinished) return false;
+                // Check branch event that is required to finish only
+                foreach(BranchEvent branchEvent in _activeBranchPart.BranchEvents.Where(branchEvent => branchEvent.RequiredToFinish)){
+                    if(!branchEvent.EventData.isFinished) return false;
                 }
 
                 return true;
             });
 
-            _activeBranchPart.EventDatas.ForEach(eventData =>{
-                eventData.InteractableObject.Mode = InteractableMode.NormalMode;
-                eventData.canBeInteracted = false;
+            _activeBranchPart.BranchEvents.ForEach(branchEvent =>{
+                branchEvent.EventData.InteractableObject.Mode = InteractableMode.NormalMode;
+                branchEvent.EventData.canBeInteracted = false;
             });
 
             DialogueManager.Instance.SetDialogue(_activeBranchPart.FinishedEventDialogue);

@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _questId: quest-2-1
   _questName: Mencari barang NPC B
-  _definitionOfDone: 2
+  _definitionOfDone: 1
   _questDescription: Mencari barang NPC B (0/2)
