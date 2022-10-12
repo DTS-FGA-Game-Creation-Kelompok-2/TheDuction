@@ -2497,18 +2497,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _branchEventData:
-    _name: branch1 chapter-0-1-2
-    _branchParts:
-    - _name: mencari barang
-      _branchPartState: 0
-      _branchEvents:
-      - _branchEventState: 0
-        _eventData: {fileID: 313561955}
-        _requiredToFinish: 1
-      - _branchEventState: 0
-        _eventData: {fileID: 1242664296}
-        _requiredToFinish: 1
-      _finishedEventDialogue: {fileID: 4900000, guid: 422e57df194ed12499ad5ca0a766019b, type: 3}
+    _name: 
+    _branchParts: []
 --- !u!1 &642628969
 GameObject:
   m_ObjectHideFlags: 0
@@ -2718,7 +2708,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &776990823
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4360,6 +4350,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1403513481}
   m_CullTransparentMesh: 1
+--- !u!1001 &1406860504
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3734101701786503647, guid: 0296e517af5950f4e96a461a19e1347a, type: 3}
+      propertyPath: m_Name
+      value: Player (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3734101701786503647, guid: 0296e517af5950f4e96a461a19e1347a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4078538440027329381, guid: 0296e517af5950f4e96a461a19e1347a, type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4078538440027329381, guid: 0296e517af5950f4e96a461a19e1347a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4078538440027329381, guid: 0296e517af5950f4e96a461a19e1347a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4078538440027329381, guid: 0296e517af5950f4e96a461a19e1347a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4078538440027329381, guid: 0296e517af5950f4e96a461a19e1347a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4078538440027329381, guid: 0296e517af5950f4e96a461a19e1347a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4078538440027329381, guid: 0296e517af5950f4e96a461a19e1347a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4078538440027329381, guid: 0296e517af5950f4e96a461a19e1347a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4078538440027329381, guid: 0296e517af5950f4e96a461a19e1347a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4078538440027329381, guid: 0296e517af5950f4e96a461a19e1347a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4078538440027329381, guid: 0296e517af5950f4e96a461a19e1347a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0296e517af5950f4e96a461a19e1347a, type: 3}
 --- !u!1 &1439343402
 GameObject:
   m_ObjectHideFlags: 0
@@ -5161,7 +5212,7 @@ MonoBehaviour:
   _keepObjectAfterFinish: 0
   _dialogueAffectedItems:
   - name: chapter-0-1-1-2
-    _affectedInteractable: {fileID: 2098907804}
+    _affectedInteractable: {fileID: 142641510}
     _dialogueAsset:
       _waitDialogueAsset: {fileID: 4900000, guid: a283345f58a838c42b403ae0e868e3f3, type: 3}
       _finishDialogueAsset: {fileID: 4900000, guid: ec0ac2dc8afb35c4591e8748e5ac3373, type: 3}
