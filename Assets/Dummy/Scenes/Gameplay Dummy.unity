@@ -2164,7 +2164,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &776990823
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3562,7 +3562,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3734101701786503647, guid: 0296e517af5950f4e96a461a19e1347a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4078538440027329381, guid: 0296e517af5950f4e96a461a19e1347a, type: 3}
       propertyPath: m_RootOrder
@@ -5771,6 +5771,26 @@ PrefabInstance:
     m_TransformParent: {fileID: 344283991}
     m_Modifications:
     - target: {fileID: 496316800377926100, guid: 0d77e97f2fb4b074fbb4e09df82c8702, type: 3}
+      propertyPath: _branchEventData._name
+      value: branch1 chapter-0-1-2
+      objectReference: {fileID: 0}
+    - target: {fileID: 496316800377926100, guid: 0d77e97f2fb4b074fbb4e09df82c8702, type: 3}
+      propertyPath: _branchEventData._branchParts.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 496316800377926100, guid: 0d77e97f2fb4b074fbb4e09df82c8702, type: 3}
+      propertyPath: _branchEventData._branchParts.Array.data[0]._name
+      value: chapter-0-1-2
+      objectReference: {fileID: 0}
+    - target: {fileID: 496316800377926100, guid: 0d77e97f2fb4b074fbb4e09df82c8702, type: 3}
+      propertyPath: _branchEventData._branchParts.Array.data[0]._finishedEventDialogue
+      value: 
+      objectReference: {fileID: 4900000, guid: 422e57df194ed12499ad5ca0a766019b, type: 3}
+    - target: {fileID: 496316800377926100, guid: 0d77e97f2fb4b074fbb4e09df82c8702, type: 3}
+      propertyPath: _branchEventData._branchParts.Array.data[0]._branchEvents.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 496316800377926100, guid: 0d77e97f2fb4b074fbb4e09df82c8702, type: 3}
       propertyPath: _branchEventData._branchParts.Array.data[0]._branchEvents.Array.data[0]._eventData
       value: 
       objectReference: {fileID: 313561955}
@@ -5778,6 +5798,14 @@ PrefabInstance:
       propertyPath: _branchEventData._branchParts.Array.data[0]._branchEvents.Array.data[1]._eventData
       value: 
       objectReference: {fileID: 1242664296}
+    - target: {fileID: 496316800377926100, guid: 0d77e97f2fb4b074fbb4e09df82c8702, type: 3}
+      propertyPath: _branchEventData._branchParts.Array.data[0]._branchEvents.Array.data[0]._requiredToFinish
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 496316800377926100, guid: 0d77e97f2fb4b074fbb4e09df82c8702, type: 3}
+      propertyPath: _branchEventData._branchParts.Array.data[0]._branchEvents.Array.data[1]._requiredToFinish
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 496316800377926122, guid: 0d77e97f2fb4b074fbb4e09df82c8702, type: 3}
       propertyPath: m_Name
       value: branch1 chapter-0-1-2
@@ -6938,6 +6966,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: quest-1
       objectReference: {fileID: 0}
+    - target: {fileID: 3039335524507967646, guid: ab63ea2a8b1312341a9db34b9def7263, type: 3}
+      propertyPath: _questModel
+      value: 
+      objectReference: {fileID: 11400000, guid: 9d77072e064708a438d829c850313e99, type: 2}
     - target: {fileID: 3039335524507967647, guid: ab63ea2a8b1312341a9db34b9def7263, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -7386,6 +7418,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 52874576}
     m_Modifications:
+    - target: {fileID: 4014740714628282764, guid: 153a89869547f474c886db2827f58f0e, type: 3}
+      propertyPath: initialTextAsset
+      value: 
+      objectReference: {fileID: 4900000, guid: 3e2d10f32c8a1bd4b9a74a9cfc2f8f85, type: 3}
     - target: {fileID: 4014740714628282765, guid: 153a89869547f474c886db2827f58f0e, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -8174,6 +8210,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6207581206410829628, guid: 2e436e45d2c60944e8311cbe8dfd99dd, type: 3}
+      propertyPath: _eventId
+      value: chapter-0-1-2-2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6207581206410829628, guid: 2e436e45d2c60944e8311cbe8dfd99dd, type: 3}
       propertyPath: _branchRunner
       value: 
       objectReference: {fileID: 600888096}
@@ -8182,9 +8222,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1488407716}
     - target: {fileID: 6207581206410829628, guid: 2e436e45d2c60944e8311cbe8dfd99dd, type: 3}
+      propertyPath: _dialogueAffectedItems.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6207581206410829628, guid: 2e436e45d2c60944e8311cbe8dfd99dd, type: 3}
+      propertyPath: _dialogueAffectedItems.Array.data[0].name
+      value: chapter-0-1-2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6207581206410829628, guid: 2e436e45d2c60944e8311cbe8dfd99dd, type: 3}
       propertyPath: _dialogueAffectedItems.Array.data[0]._affectedInteractable
       value: 
       objectReference: {fileID: 142641510}
+    - target: {fileID: 6207581206410829628, guid: 2e436e45d2c60944e8311cbe8dfd99dd, type: 3}
+      propertyPath: _dialogueAffectedItems.Array.data[0]._dialogueAsset._waitDialogueAsset
+      value: 
+      objectReference: {fileID: 4900000, guid: f29cb064ed0bbf24c80286f29df55572, type: 3}
+    - target: {fileID: 6207581206410829629, guid: 2e436e45d2c60944e8311cbe8dfd99dd, type: 3}
+      propertyPath: _itemName
+      value: NPC B-1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e436e45d2c60944e8311cbe8dfd99dd, type: 3}
 --- !u!1 &6239786677073605111
@@ -8285,6 +8341,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2098907803}
     m_Modifications:
+    - target: {fileID: 6520487272044410126, guid: b9c6720769559974192d9f4b16a48050, type: 3}
+      propertyPath: _eventId
+      value: chapter-0-1-1-2
+      objectReference: {fileID: 0}
     - target: {fileID: 6520487272044410126, guid: b9c6720769559974192d9f4b16a48050, type: 3}
       propertyPath: _relatedQuest
       value: 
@@ -8392,6 +8452,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1060576087}
     m_Modifications:
+    - target: {fileID: 6851615625573846464, guid: e7bf7c20395cef844946c7ec559587b0, type: 3}
+      propertyPath: _clueData
+      value: 
+      objectReference: {fileID: 11400000, guid: f4c8b87c1c54223469e168f7f2849c25, type: 2}
+    - target: {fileID: 6851615625573846464, guid: e7bf7c20395cef844946c7ec559587b0, type: 3}
+      propertyPath: _itemName
+      value: item-2
+      objectReference: {fileID: 0}
     - target: {fileID: 6851615625573846468, guid: e7bf7c20395cef844946c7ec559587b0, type: 3}
       propertyPath: m_Name
       value: item-2
@@ -8441,6 +8509,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6851615625573846471, guid: e7bf7c20395cef844946c7ec559587b0, type: 3}
+      propertyPath: _eventId
+      value: chapter-0-1-2-1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6851615625573846471, guid: e7bf7c20395cef844946c7ec559587b0, type: 3}
       propertyPath: _branchRunner
       value: 
       objectReference: {fileID: 600888096}
@@ -8449,9 +8521,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1488407716}
     - target: {fileID: 6851615625573846471, guid: e7bf7c20395cef844946c7ec559587b0, type: 3}
+      propertyPath: _dialogueAffectedItems.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6851615625573846471, guid: e7bf7c20395cef844946c7ec559587b0, type: 3}
+      propertyPath: _dialogueAffectedItems.Array.data[0].name
+      value: chapter-0-1-2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6851615625573846471, guid: e7bf7c20395cef844946c7ec559587b0, type: 3}
       propertyPath: _dialogueAffectedItems.Array.data[0]._affectedInteractable
       value: 
       objectReference: {fileID: 142641510}
+    - target: {fileID: 6851615625573846471, guid: e7bf7c20395cef844946c7ec559587b0, type: 3}
+      propertyPath: _dialogueAffectedItems.Array.data[0]._dialogueAsset._waitDialogueAsset
+      value: 
+      objectReference: {fileID: 4900000, guid: f29cb064ed0bbf24c80286f29df55572, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7bf7c20395cef844946c7ec559587b0, type: 3}
 --- !u!4 &6967253102024821113
@@ -9732,6 +9816,10 @@ PrefabInstance:
       propertyPath: _questParent
       value: 
       objectReference: {fileID: 2141197102}
+    - target: {fileID: 9066015312606349439, guid: 5ca8cede7b021bf419af266e29ef6050, type: 3}
+      propertyPath: _questControllerContainer.Array.size
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 9066015312606349439, guid: 5ca8cede7b021bf419af266e29ef6050, type: 3}
       propertyPath: _questControllerContainer.Array.data[0]
       value: 

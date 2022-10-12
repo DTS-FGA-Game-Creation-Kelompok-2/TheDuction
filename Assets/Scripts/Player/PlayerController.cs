@@ -29,13 +29,14 @@ namespace TheDuction.Player
         }
 
         private void Update(){
-            Debug.Log(_rb.velocity);
-            Debug.Log("X = " + Mathf.Approximately(_rb.velocity.x, 0.0f));
-            Debug.Log("Z = " + (_rb.velocity.z == 0.0f));
+            // Debug.Log(_rb.velocity);
+            // Debug.Log("X = " + Mathf.Approximately(_rb.velocity.x, 0.0f));
+            // Debug.Log("Z = " + (_rb.velocity.z == 0.0f));
             if(_rb.velocity.x == 0.0f && _rb.velocity.z == 0.0f){
                 _isWalking = false;
             }
-            _animator.SetBool(IS_WALKING_PARAMETER, _isWalking);
+            if(_animator)
+                _animator.SetBool(IS_WALKING_PARAMETER, _isWalking);
         }
 
         private void Move(Vector3 dir)
