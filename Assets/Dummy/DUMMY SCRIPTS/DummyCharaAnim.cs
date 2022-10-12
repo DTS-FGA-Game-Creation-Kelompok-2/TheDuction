@@ -5,20 +5,23 @@ using UnityEngine;
 
 public class DummyCharaAnim : MonoBehaviour
 {
-    [SerializeField] private Animator _animator;
+    [SerializeField] private Animator[] _animator;
     
     private void Update()
     {
-        _animator.SetBool("isMoving", false);
+        _animator[0].SetBool("isMoving", false);
         
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
         {
-            _animator.SetBool("isMoving", true);
+            _animator[0].SetBool("isMoving", true);
         }
 
         if (Input.GetKeyDown(KeyCode.F))
         {
-            _animator.SetTrigger("Talk");
+            for (int i = 0; i < _animator.Length; i++)
+            {
+                _animator[i].SetTrigger("Talk");
+            }
         }
     }
 }
