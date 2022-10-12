@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1335cf01915470c4e8f4b224c037807b, type: 3}
+  m_Script: {fileID: 11500000, guid: 0d2f2fbc4b1444b4e94fd97e4500fd47, type: 3}
   m_Name: testA
   m_EditorClassIdentifier: 
-  ClueName: item a
-  ClueDescription: ini item a
-  ClueImage: {fileID: -5321949957799140045, guid: f8579b10a8b9a714e8e1abb6e3c165be, type: 3}
+  ClueName: 
+  ClueDescription: 
+  ClueImage: {fileID: 0}

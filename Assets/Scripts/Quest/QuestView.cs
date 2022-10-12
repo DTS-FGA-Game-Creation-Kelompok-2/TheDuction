@@ -1,11 +1,12 @@
+using TheDuction.Global.Effects;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace TheDuction.Quest{
     public class QuestView : MonoBehaviour {
         [SerializeField] private QuestController _questController;
+        [SerializeField] private CanvasGroup _questCanvasGroup;
         [SerializeField] private Text _questNameText;
-        [SerializeField] private Text _questDescription;
 
         public QuestController QuestController{
             set{
@@ -15,13 +16,36 @@ namespace TheDuction.Quest{
             get{ return _questController; }
         }
 
-        private void OnEnable() {
-            SetupQuest();
+        private void OnDisable() {
+            _questController.OnStateChange -= OnStateChange;
         }
 
-        private void SetupQuest(){
-            _questNameText.text = _questController.QuestObject.QuestName;
-            _questDescription.text = _questController.QuestObject.QuestDescription;
+        public void SetupQuest(){
+            _questController.OnStateChange += OnStateChange;
+            _questController.UpdateQuestState(QuestState.NotStarted);
+            string questName = $"{_questController.QuestObject.QuestName} ({_questController.CurrentDefinitionOfDone}/{_questController.QuestObject.DefinitionOfDone})";
+            UpdateQuestNameText(questName);
+        }
+
+        public void UpdateQuestNameText(string text){
+            _questNameText.text = text;
+        }
+
+        private void OnStateChange(){
+            switch(_questController.State){
+                case QuestState.NotStarted:
+                    break;
+                case QuestState.Active:
+                    gameObject.SetActive(true);
+                    StartCoroutine(AlphaFadingEffect.FadeIn(_questCanvasGroup));
+                    break;
+                case QuestState.Finish:
+                    StartCoroutine(AlphaFadingEffect.FadeOut(_questCanvasGroup, afterEffect: () =>
+                    {
+                        gameObject.SetActive(false);
+                    }));
+                    break;
+            }
         }
     }
 }
