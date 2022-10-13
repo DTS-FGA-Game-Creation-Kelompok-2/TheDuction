@@ -1,9 +1,24 @@
 fileFormatVersion: 2
-guid: 5ad41b881f3dd414f9988e451bd69ea0
+guid: 4a42adf41cb4ccf499a31e74fd3d735b
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Color Pallete
+    second: {fileID: 2100000, guid: 2d1be23dec0e0064395a6979f57cb5ac, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: shde
+    second: {fileID: 2100000, guid: f628077e28a28c24ea492fa3dc935a0f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: texture palette
+    second: {fileID: 2100000, guid: 4b8a685bbaac2f24a90d7b4c332dd6f6, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -63,7 +78,7 @@ ModelImporter:
     secondaryUVMinLightmapResolution: 40
     secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
-    useFileScale: 0
+    useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0

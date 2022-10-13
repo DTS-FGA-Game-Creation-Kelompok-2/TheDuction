@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 289268aef0deeef40a99882b0bf890ee
+guid: 7660109d44426ac4f93eadb8636fa6bf
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
@@ -9,12 +9,17 @@ ModelImporter:
   - first:
       74: -123400888147246483
     second: Armature|Talk
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: texture palette
+    second: {fileID: 2100000, guid: 4b8a685bbaac2f24a90d7b4c332dd6f6, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
