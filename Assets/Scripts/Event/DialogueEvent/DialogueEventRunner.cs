@@ -10,11 +10,19 @@ namespace TheDuction.Event.DialogueEvent{
         public DialogueEventData eventData;
         public bool canStartEvent;
         private DialogueManager _dialogueManager;
+        private QuestManager _questManager;
+        private QuestController _questController;
         private bool _hasSetFinishCondition, _canSetNextEvent;
 
         private void Awake()
         {
             _dialogueManager = DialogueManager.Instance;
+            _questManager = QuestManager.Instance;
+        }
+
+        private void Start() {
+            if(eventData.RelatedQuest)
+                _questController = _questManager.GetQuestController(eventData.RelatedQuest);
         }
 
         private void OnEnable() {
@@ -89,8 +97,9 @@ namespace TheDuction.Event.DialogueEvent{
         public void OnEventActive()
         {
             // Set event state
-            if(eventData.RelatedQuest)
-                eventData.RelatedQuest.UpdateQuestState(QuestState.Active);
+            if(_questController){
+                _questController.UpdateQuestState(QuestState.Active);
+            }
             eventData.eventState = EventState.Active;
             eventData.canBeInteracted = true;
             eventData.InteractableObject.Mode = InteractableMode.DialogueMode;
@@ -116,9 +125,9 @@ namespace TheDuction.Event.DialogueEvent{
             }
             
             // Set event state
-            if(eventData.RelatedQuest){
-                eventData.RelatedQuest.UpdateDefinitionOfDone();
-                QuestManager.Instance.UpdateQuestNameText(eventData.RelatedQuest);
+            if(_questController){
+                _questController.UpdateDefinitionOfDone();
+                QuestManager.Instance.UpdateQuestNameText(_questController);
             }
             eventData.eventState = EventState.Finish;
             // Set branch state

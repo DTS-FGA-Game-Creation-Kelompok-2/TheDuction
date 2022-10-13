@@ -12,7 +12,7 @@ namespace TheDuction.Event{
         public EventState eventState = EventState.NotStarted;
 
         [Header("Quest")]
-        [SerializeField] private QuestController _relatedQuest;
+        [SerializeField] private QuestModel _relatedQuest;
 
         [Header("Finish Condition")]
         public FinishCondition finishCondition;
@@ -23,7 +23,7 @@ namespace TheDuction.Event{
         // Properties
         public string EventId => _eventId;
         public bool KeepObjectAfterFinish => _keepObjectAfterFinish;
-        public QuestController RelatedQuest{
+        public QuestModel RelatedQuest{
             set{
                 _relatedQuest = value;
             }

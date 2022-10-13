@@ -902,7 +902,7 @@ MonoBehaviour:
   _eventDescription: 
   isFinished: 0
   eventState: 0
-  _relatedQuest: {fileID: 835235835}
+  _relatedQuest: {fileID: 11400000, guid: 21d1f05944a75dd4b90b678c94b418e7, type: 2}
   finishCondition: 0
   _triggerObject: {fileID: 142641514}
   canBeInteracted: 0
@@ -1152,7 +1152,7 @@ MonoBehaviour:
   _eventDescription: 
   isFinished: 0
   eventState: 0
-  _relatedQuest: {fileID: 1791611641}
+  _relatedQuest: {fileID: 11400000, guid: 456e363af769ae24ca53183d7b8387fa, type: 2}
   finishCondition: 0
   _triggerObject: {fileID: 244343522}
   canBeInteracted: 0
@@ -1199,42 +1199,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22d7d413223c8744697186d535b5af0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &323856218
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 323856219}
-  m_Layer: 0
-  m_Name: Quest Container
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &323856219
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 323856218}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1333737522}
-  - {fileID: 1052849975}
-  - {fileID: 1880930106}
-  - {fileID: 835235834}
-  - {fileID: 1488407715}
-  - {fileID: 1791611640}
-  m_Father: {fileID: 1211650369}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &337344119
 GameObject:
   m_ObjectHideFlags: 0
@@ -2144,52 +2108,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &835235833
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 835235834}
-  - component: {fileID: 835235835}
-  m_Layer: 0
-  m_Name: quest-2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &835235834
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 835235833}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 323856219}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &835235835
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 835235833}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7c956f6e168583408f508ac0b2f4893, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _questModel: {fileID: 11400000, guid: 21d1f05944a75dd4b90b678c94b418e7, type: 2}
-  _currentDefinitionOfDone: 0
-  _questState: 0
 --- !u!1 &848608239
 GameObject:
   m_ObjectHideFlags: 0
@@ -2431,52 +2349,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1052849974
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1052849975}
-  - component: {fileID: 1052849976}
-  m_Layer: 0
-  m_Name: quest-1-1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1052849975
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1052849974}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 323856219}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1052849976
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1052849974}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7c956f6e168583408f508ac0b2f4893, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _questModel: {fileID: 11400000, guid: adbf6ef394a420046938d38ad3fb3158, type: 2}
-  _currentDefinitionOfDone: 0
-  _questState: 0
 --- !u!1 &1060576086
 GameObject:
   m_ObjectHideFlags: 0
@@ -2641,7 +2513,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 15119065}
-  - {fileID: 323856219}
   m_Father: {fileID: 52874576}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2954,22 +2825,6 @@ RectTransform:
   m_AnchoredPosition: {x: -490, y: 0}
   m_SizeDelta: {x: 980, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!4 &1333737522 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3039335524507967647, guid: ab63ea2a8b1312341a9db34b9def7263, type: 3}
-  m_PrefabInstance: {fileID: 3039335523592886445}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1333737523 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3039335524507967646, guid: ab63ea2a8b1312341a9db34b9def7263, type: 3}
-  m_PrefabInstance: {fileID: 3039335523592886445}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7c956f6e168583408f508ac0b2f4893, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1341806941
 GameObject:
   m_ObjectHideFlags: 0
@@ -3443,52 +3298,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5296172670966785502, guid: 721530dacabf9db41aaa1cec7459eb08, type: 3}
   m_PrefabInstance: {fileID: 5296172670257317621}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1488407714
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1488407715}
-  - component: {fileID: 1488407716}
-  m_Layer: 0
-  m_Name: quest-2-1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1488407715
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1488407714}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 323856219}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1488407716
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1488407714}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7c956f6e168583408f508ac0b2f4893, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _questModel: {fileID: 11400000, guid: e4c076f6ef9923b4a8dcc3237d9db4f6, type: 2}
-  _currentDefinitionOfDone: 0
-  _questState: 0
 --- !u!1 &1508225586
 GameObject:
   m_ObjectHideFlags: 0
@@ -3928,52 +3737,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1764152903}
   m_CullTransparentMesh: 1
---- !u!1 &1791611639
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1791611640}
-  - component: {fileID: 1791611641}
-  m_Layer: 0
-  m_Name: quest-2-2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1791611640
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1791611639}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 323856219}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1791611641
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1791611639}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7c956f6e168583408f508ac0b2f4893, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _questModel: {fileID: 11400000, guid: 456e363af769ae24ca53183d7b8387fa, type: 2}
-  _currentDefinitionOfDone: 0
-  _questState: 0
 --- !u!1 &1799995147
 GameObject:
   m_ObjectHideFlags: 0
@@ -4116,7 +3879,7 @@ MonoBehaviour:
   _eventDescription: 
   isFinished: 0
   eventState: 0
-  _relatedQuest: {fileID: 1052849976}
+  _relatedQuest: {fileID: 11400000, guid: adbf6ef394a420046938d38ad3fb3158, type: 2}
   finishCondition: 0
   _triggerObject: {fileID: 1799995153}
   canBeInteracted: 0
@@ -4566,52 +4329,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1874183185}
   m_CullTransparentMesh: 1
---- !u!1 &1880930105
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1880930106}
-  - component: {fileID: 1880930107}
-  m_Layer: 0
-  m_Name: quest-1-2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1880930106
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1880930105}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 323856219}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1880930107
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1880930105}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7c956f6e168583408f508ac0b2f4893, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _questModel: {fileID: 11400000, guid: 8c9abe341e54a214f846e2c5cea65f73, type: 2}
-  _currentDefinitionOfDone: 0
-  _questState: 0
 --- !u!1 &1983735352
 GameObject:
   m_ObjectHideFlags: 0
@@ -5295,7 +5012,7 @@ MonoBehaviour:
   _eventDescription: 
   isFinished: 0
   eventState: 0
-  _relatedQuest: {fileID: 1333737523}
+  _relatedQuest: {fileID: 11400000, guid: 9d77072e064708a438d829c850313e99, type: 2}
   finishCondition: 0
   _triggerObject: {fileID: 2098907808}
   canBeInteracted: 0
@@ -5812,67 +5529,6 @@ PrefabInstance:
       objectReference: {fileID: 1816170420}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 713f2b6a5b28f224cbed7f966bbc4ed9, type: 3}
---- !u!1001 &3039335523592886445
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 323856219}
-    m_Modifications:
-    - target: {fileID: 3039335524507967644, guid: ab63ea2a8b1312341a9db34b9def7263, type: 3}
-      propertyPath: m_Name
-      value: quest-1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3039335524507967646, guid: ab63ea2a8b1312341a9db34b9def7263, type: 3}
-      propertyPath: _questModel
-      value: 
-      objectReference: {fileID: 11400000, guid: 9d77072e064708a438d829c850313e99, type: 2}
-    - target: {fileID: 3039335524507967647, guid: ab63ea2a8b1312341a9db34b9def7263, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3039335524507967647, guid: ab63ea2a8b1312341a9db34b9def7263, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3039335524507967647, guid: ab63ea2a8b1312341a9db34b9def7263, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3039335524507967647, guid: ab63ea2a8b1312341a9db34b9def7263, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3039335524507967647, guid: ab63ea2a8b1312341a9db34b9def7263, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3039335524507967647, guid: ab63ea2a8b1312341a9db34b9def7263, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3039335524507967647, guid: ab63ea2a8b1312341a9db34b9def7263, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3039335524507967647, guid: ab63ea2a8b1312341a9db34b9def7263, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3039335524507967647, guid: ab63ea2a8b1312341a9db34b9def7263, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3039335524507967647, guid: ab63ea2a8b1312341a9db34b9def7263, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3039335524507967647, guid: ab63ea2a8b1312341a9db34b9def7263, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ab63ea2a8b1312341a9db34b9def7263, type: 3}
 --- !u!33 &3469287837616390585
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -6093,7 +5749,7 @@ PrefabInstance:
     - target: {fileID: 6207581206410829628, guid: 2e436e45d2c60944e8311cbe8dfd99dd, type: 3}
       propertyPath: _relatedQuest
       value: 
-      objectReference: {fileID: 1488407716}
+      objectReference: {fileID: 11400000, guid: e4c076f6ef9923b4a8dcc3237d9db4f6, type: 2}
     - target: {fileID: 6207581206410829628, guid: 2e436e45d2c60944e8311cbe8dfd99dd, type: 3}
       propertyPath: _dialogueAffectedItems.Array.size
       value: 1
@@ -6130,7 +5786,7 @@ PrefabInstance:
     - target: {fileID: 6520487272044410126, guid: b9c6720769559974192d9f4b16a48050, type: 3}
       propertyPath: _relatedQuest
       value: 
-      objectReference: {fileID: 1880930107}
+      objectReference: {fileID: 11400000, guid: 8c9abe341e54a214f846e2c5cea65f73, type: 2}
     - target: {fileID: 6520487272044410128, guid: b9c6720769559974192d9f4b16a48050, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -6312,7 +5968,7 @@ PrefabInstance:
     - target: {fileID: 6851615625573846471, guid: e7bf7c20395cef844946c7ec559587b0, type: 3}
       propertyPath: _relatedQuest
       value: 
-      objectReference: {fileID: 1488407716}
+      objectReference: {fileID: 11400000, guid: e4c076f6ef9923b4a8dcc3237d9db4f6, type: 2}
     - target: {fileID: 6851615625573846471, guid: e7bf7c20395cef844946c7ec559587b0, type: 3}
       propertyPath: _dialogueAffectedItems.Array.size
       value: 1
@@ -6808,32 +6464,64 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2141197102}
     - target: {fileID: 9066015312606349439, guid: 5ca8cede7b021bf419af266e29ef6050, type: 3}
+      propertyPath: _questViewParent
+      value: 
+      objectReference: {fileID: 2141197102}
+    - target: {fileID: 9066015312606349439, guid: 5ca8cede7b021bf419af266e29ef6050, type: 3}
+      propertyPath: _questsContainer.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9066015312606349439, guid: 5ca8cede7b021bf419af266e29ef6050, type: 3}
+      propertyPath: _questsContainer.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 9d77072e064708a438d829c850313e99, type: 2}
+    - target: {fileID: 9066015312606349439, guid: 5ca8cede7b021bf419af266e29ef6050, type: 3}
+      propertyPath: _questsContainer.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: adbf6ef394a420046938d38ad3fb3158, type: 2}
+    - target: {fileID: 9066015312606349439, guid: 5ca8cede7b021bf419af266e29ef6050, type: 3}
+      propertyPath: _questsContainer.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8c9abe341e54a214f846e2c5cea65f73, type: 2}
+    - target: {fileID: 9066015312606349439, guid: 5ca8cede7b021bf419af266e29ef6050, type: 3}
+      propertyPath: _questsContainer.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 21d1f05944a75dd4b90b678c94b418e7, type: 2}
+    - target: {fileID: 9066015312606349439, guid: 5ca8cede7b021bf419af266e29ef6050, type: 3}
+      propertyPath: _questsContainer.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: e4c076f6ef9923b4a8dcc3237d9db4f6, type: 2}
+    - target: {fileID: 9066015312606349439, guid: 5ca8cede7b021bf419af266e29ef6050, type: 3}
+      propertyPath: _questsContainer.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: 456e363af769ae24ca53183d7b8387fa, type: 2}
+    - target: {fileID: 9066015312606349439, guid: 5ca8cede7b021bf419af266e29ef6050, type: 3}
       propertyPath: _questControllerContainer.Array.size
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 9066015312606349439, guid: 5ca8cede7b021bf419af266e29ef6050, type: 3}
       propertyPath: _questControllerContainer.Array.data[0]
       value: 
-      objectReference: {fileID: 1333737523}
+      objectReference: {fileID: 0}
     - target: {fileID: 9066015312606349439, guid: 5ca8cede7b021bf419af266e29ef6050, type: 3}
       propertyPath: _questControllerContainer.Array.data[1]
       value: 
-      objectReference: {fileID: 1052849976}
+      objectReference: {fileID: 0}
     - target: {fileID: 9066015312606349439, guid: 5ca8cede7b021bf419af266e29ef6050, type: 3}
       propertyPath: _questControllerContainer.Array.data[2]
       value: 
-      objectReference: {fileID: 1880930107}
+      objectReference: {fileID: 0}
     - target: {fileID: 9066015312606349439, guid: 5ca8cede7b021bf419af266e29ef6050, type: 3}
       propertyPath: _questControllerContainer.Array.data[3]
       value: 
-      objectReference: {fileID: 835235835}
+      objectReference: {fileID: 0}
     - target: {fileID: 9066015312606349439, guid: 5ca8cede7b021bf419af266e29ef6050, type: 3}
       propertyPath: _questControllerContainer.Array.data[4]
       value: 
-      objectReference: {fileID: 1488407716}
+      objectReference: {fileID: 0}
     - target: {fileID: 9066015312606349439, guid: 5ca8cede7b021bf419af266e29ef6050, type: 3}
       propertyPath: _questControllerContainer.Array.data[5]
       value: 
-      objectReference: {fileID: 1791611641}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ca8cede7b021bf419af266e29ef6050, type: 3}

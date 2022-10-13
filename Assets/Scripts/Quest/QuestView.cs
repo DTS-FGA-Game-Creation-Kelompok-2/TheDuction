@@ -43,6 +43,7 @@ namespace TheDuction.Quest{
                     StartCoroutine(AlphaFadingEffect.FadeOut(_questCanvasGroup, afterEffect: () =>
                     {
                         gameObject.SetActive(false);
+                        _questController.gameObject.SetActive(false);
                     }));
                     break;
             }
