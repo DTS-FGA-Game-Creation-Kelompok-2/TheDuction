@@ -28,7 +28,7 @@ namespace TheDuction.Event.DialogueEvent{
             eventController.EventData = eventData as DialogueEventData;
 
             DialogueEventRunner eventRunner = GetOrCreateEventRunner();
-            eventRunner.eventController = eventController;
+            eventRunner.EventController = eventController;
             StartCoroutine(StartEvent(eventRunner));
         }
         
@@ -41,7 +41,7 @@ namespace TheDuction.Event.DialogueEvent{
         {
             yield return new WaitUntil(() => !DialogueManager.Instance.DialogueIsPlaying);
             yield return new WaitForSeconds(1f);
-            eventRunner.canStartEvent = true;
+            eventRunner.CanStartEvent = true;
         }
         
         /// <summary>
@@ -51,7 +51,7 @@ namespace TheDuction.Event.DialogueEvent{
         private DialogueEventRunner GetOrCreateEventRunner()
         {
             DialogueEventRunner eventRunner = _eventRunnerPool.Find(runner =>
-                runner.eventController.EventState == EventState.Finish &&
+                runner.EventController.EventState == EventState.Finish &&
                 !runner.gameObject.activeInHierarchy);
 
             if (eventRunner == null)

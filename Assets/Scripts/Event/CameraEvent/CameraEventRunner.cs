@@ -5,7 +5,12 @@ namespace TheDuction.Event.CameraEvent{
     public class CameraEventRunner : MonoBehaviour, IEventRunner {
         [SerializeField] private CameraEventController _eventController;
         private bool _hasSetFinishCondition;
-        public bool canStartEvent;
+        [SerializeField] private bool _canStartEvent;
+
+        public bool CanStartEvent{
+            set { _canStartEvent = value; }
+            get { return _canStartEvent; }
+        }
 
         public CameraEventController EventController{
             set { _eventController = value; }
@@ -13,14 +18,14 @@ namespace TheDuction.Event.CameraEvent{
         }
 
         private void OnEnable() {
-            canStartEvent = false;
+            _canStartEvent = false;
             _hasSetFinishCondition = false;
         }
 
         private void Update() {
             switch(_eventController.EventState){
                 case EventState.NotStarted:
-                    if(canStartEvent)
+                    if(_canStartEvent)
                         OnEventStart();
                     break;
 
@@ -70,7 +75,7 @@ namespace TheDuction.Event.CameraEvent{
 
         public void SetNextEvent()
         {
-            // eventData.gameObject.SetActive(eventData.KeepObjectAfterFinish);
+            _eventController.gameObject.SetActive(_eventController.EventData.KeepObjectAfterFinish);
             gameObject.SetActive(false);
         }
     }

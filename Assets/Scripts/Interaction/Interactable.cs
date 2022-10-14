@@ -6,9 +6,11 @@ namespace TheDuction.Interaction{
 
     public class Interactable : MonoBehaviour, IInteractable
     {
-        [SerializeField] protected string _itemName;
+        [SerializeField] private InteractableData _data;
         [SerializeField] private InteractableMode _mode = InteractableMode.NormalMode;
         [SerializeField] private TextAsset _currentDialogue;
+
+        public InteractableData Data => _data;
 
         public InteractableMode Mode{
             set{ _mode = value; }

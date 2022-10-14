@@ -40,7 +40,7 @@ namespace TheDuction.Event.CameraEvent{
         {
             yield return new WaitUntil(() => !DialogueManager.Instance.DialogueIsPlaying);
             yield return new WaitForSeconds(1f);
-            eventRunner.canStartEvent = true;
+            eventRunner.CanStartEvent = true;
         }
         
         /// <summary>

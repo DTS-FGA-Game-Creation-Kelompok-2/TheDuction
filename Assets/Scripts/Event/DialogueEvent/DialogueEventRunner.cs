@@ -7,9 +7,22 @@ using UnityEngine;
 
 namespace TheDuction.Event.DialogueEvent{
     public class DialogueEventRunner : MonoBehaviour, IEventRunner {
-        public DialogueEventController eventController;
-        public bool canStartEvent;
+        [SerializeField] private DialogueEventController _eventController;
+        [SerializeField] private bool _canStartEvent;
+
+        public DialogueEventController EventController {
+            set { _eventController = value; }
+            get { return _eventController; }
+        }
+
+        public bool CanStartEvent{
+            set { _canStartEvent = value; }
+            get { return _canStartEvent; }
+        }
+
+        private DialogueEventData _dialogueEventData;
         private DialogueManager _dialogueManager;
+        private InteractableManager _interactableManager;
         private QuestManager _questManager;
         private QuestController _questController;
         private bool _hasSetFinishCondition, _canSetNextEvent;
@@ -17,26 +30,29 @@ namespace TheDuction.Event.DialogueEvent{
         private void Awake()
         {
             _dialogueManager = DialogueManager.Instance;
+            _interactableManager = InteractableManager.Instance;
             _questManager = QuestManager.Instance;
+
+            _dialogueEventData = _eventController.EventData as DialogueEventData;
         }
 
         private void Start() {
-            if(eventController.EventData.RelatedQuest)
-                _questController = _questManager.GetQuestController(eventController.EventData.RelatedQuest);
+            if(_eventController.EventData.RelatedQuest)
+                _questController = _questManager.GetQuestController(_eventController.EventData.RelatedQuest);
         }
 
-        private void OnEnable() {
+        private void OnDisable() {
             _canSetNextEvent = false;
-            canStartEvent = false;
+            _canStartEvent = false;
             _hasSetFinishCondition = false;
         }
 
         private void Update()
         {
-            switch (eventController.EventState)
+            switch (_eventController.EventState)
             {
                 case EventState.NotStarted:
-                    if(canStartEvent)
+                    if(_canStartEvent)
                         OnEventStart();
                     break;
                 
@@ -49,10 +65,10 @@ namespace TheDuction.Event.DialogueEvent{
                     // Call on event finish when ending condition is met
                     if(!_hasSetFinishCondition)
                     {
-                        switch (eventController.EventData.FinishCondition)
+                        switch (_eventController.EventData.FinishCondition)
                         {
                             case FinishCondition.DialogueFinished:
-                                eventController.TriggerObject.SetEndingCondition();
+                                _eventController.TriggerObject.SetEndingCondition();
                                 _hasSetFinishCondition = true;
                                 _canSetNextEvent = true;
                                 break;
@@ -62,7 +78,7 @@ namespace TheDuction.Event.DialogueEvent{
                         }
                     }
                     
-                    if (eventController.IsFinished)
+                    if (_eventController.IsFinished)
                     {
                         OnEventFinish();
                     }
@@ -76,22 +92,24 @@ namespace TheDuction.Event.DialogueEvent{
 
         public void OnEventStart()
         {
-            if(eventController.DialogueAffectedItems.Count > 0){
-                foreach(DialogueAffectedItem dialogueAffectedItem in eventController.DialogueAffectedItems){
+            if(_dialogueEventData.DialogueAffectedItems.Count > 0){
+                foreach(DialogueAffectedItem dialogueAffectedItem in _dialogueEventData.DialogueAffectedItems){
                     TextAsset waitDialogueAsset = dialogueAffectedItem.DialogueAsset.WaitDialogueAsset;
 
                     if(waitDialogueAsset){
                         // Set actor's dialogue to dialogue manager
                         // Wait dialogue
-                        dialogueAffectedItem.AffectedInteractable.Mode = InteractableMode.DialogueMode;
-                        dialogueAffectedItem.AffectedInteractable.CurrentDialogue = waitDialogueAsset;
+                        Interactable interactable = _interactableManager.GetInteractable(dialogueAffectedItem.AffectedInteractable);
+
+                        interactable.Mode = InteractableMode.DialogueMode;
+                        interactable.CurrentDialogue = waitDialogueAsset;
                     }
                 }
             }
 
             // Start the event
             // Set event state
-            eventController.EventState = EventState.Start;
+            _eventController.EventState = EventState.Start;
         }
 
         public void OnEventActive()
@@ -100,26 +118,28 @@ namespace TheDuction.Event.DialogueEvent{
             if(_questController){
                 _questController.UpdateQuestState(QuestState.Active);
             }
-            eventController.EventState = EventState.Active;
-            eventController.CanBeInteracted = true;
-            eventController.InteractableObject.Mode = InteractableMode.DialogueMode;
+            _eventController.EventState = EventState.Active;
+            _eventController.CanBeInteracted = true;
+            _eventController.InteractableObject.Mode = InteractableMode.DialogueMode;
             
             // Set branch state
-            if(eventController.UseBranchEvent){
-                eventController.BranchRunner.UpdateBranchEventState(eventController, BranchState.Active);
+            if(_eventController.UseBranchEvent){
+                _eventController.BranchRunner.UpdateBranchEventState(_eventController, BranchState.Active);
             }
         }
 
         public void OnEventFinish()
         {
-            if(eventController.DialogueAffectedItems.Count > 0){
-                foreach(DialogueAffectedItem dialogueAffectedItem in eventController.DialogueAffectedItems){
+            if(_dialogueEventData.DialogueAffectedItems.Count > 0){
+                foreach(DialogueAffectedItem dialogueAffectedItem in _dialogueEventData.DialogueAffectedItems){
                     TextAsset finishDialogueAsset = dialogueAffectedItem.DialogueAsset.FinishDialogueAsset;
 
                     if(finishDialogueAsset){
                         // Set actor's dialogue to dialogue manager
                         // Finish dialogue
-                        dialogueAffectedItem.AffectedInteractable.CurrentDialogue = finishDialogueAsset;
+                        Interactable interactable = _interactableManager.GetInteractable(dialogueAffectedItem.AffectedInteractable);
+
+                        interactable.CurrentDialogue = finishDialogueAsset;
                     }
                 }
             }
@@ -129,25 +149,27 @@ namespace TheDuction.Event.DialogueEvent{
                 _questController.UpdateDefinitionOfDone();
                 QuestManager.Instance.UpdateQuestNameText(_questController);
             }
-            eventController.EventState = EventState.Finish;
+            _eventController.EventState = EventState.Finish;
             // Set branch state
-            if(eventController.UseBranchEvent){
-                eventController.BranchRunner.UpdateBranchEventState(eventController, BranchState.Finish);
+            if(_eventController.UseBranchEvent){
+                _eventController.BranchRunner.UpdateBranchEventState(_eventController, BranchState.Finish);
             }
             // Deactivate event data renderer
-            eventController.OnEventFinish();
+            _eventController.OnEventFinish();
         }
 
         public void SetNextEvent()
         {
-            if(eventController.DialogueAffectedItems.Count > 0){
-                foreach(DialogueAffectedItem dialogueAffectedItem in eventController.DialogueAffectedItems){
+            if(_dialogueEventData.DialogueAffectedItems.Count > 0){
+                foreach(DialogueAffectedItem dialogueAffectedItem in _dialogueEventData.DialogueAffectedItems){
                     DialogueAsset dialogueAsset = dialogueAffectedItem.DialogueAsset;
                     
                     if (dialogueAsset.NextEventDialogueAsset ||
                         dialogueAsset.DefaultDialogueAsset){
                         // Set next dialogue to affected actor
-                        dialogueAffectedItem.AffectedInteractable.CurrentDialogue = dialogueAsset.NextEventDialogueAsset != null 
+                        Interactable interactable = _interactableManager.GetInteractable(dialogueAffectedItem.AffectedInteractable);
+
+                        interactable.CurrentDialogue = dialogueAsset.NextEventDialogueAsset != null 
                             ? dialogueAsset.NextEventDialogueAsset
                             : dialogueAsset.DefaultDialogueAsset;
                     }
@@ -155,7 +177,7 @@ namespace TheDuction.Event.DialogueEvent{
             }
             
             // Deactivate game object
-            // eventData.gameObject.SetActive(eventData.KeepObjectAfterFinish);
+            _eventController.gameObject.SetActive(_eventController.EventData.KeepObjectAfterFinish);
             gameObject.SetActive(false);
         }
     }

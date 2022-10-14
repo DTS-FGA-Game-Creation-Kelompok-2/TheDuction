@@ -7,9 +7,6 @@ using UnityEngine;
 
 namespace TheDuction.Event.DialogueEvent{
     public class DialogueEventController : EventController {
-        [Header("Dialogue Asset")]
-        [SerializeField] private List<DialogueAffectedItem> _dialogueAffectedItems;
-
         [Header("Branching")]
         [SerializeField] private bool _useBranchEvent;
         [DrawIf("_useBranchEvent", true)]
@@ -18,7 +15,6 @@ namespace TheDuction.Event.DialogueEvent{
         // Properties
         public bool UseBranchEvent => _useBranchEvent;
         public BranchEventRunner BranchRunner => _branchRunner;
-        public List<DialogueAffectedItem> DialogueAffectedItems => _dialogueAffectedItems;
         public Interactable InteractableObject { get; private set; }
         
         private void Awake()
