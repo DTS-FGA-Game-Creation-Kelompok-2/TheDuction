@@ -7,8 +7,13 @@ using UnityEngine;
 namespace TheDuction.Event.DialogueEvent{
     public class DialogueEventManager : 
         SingletonBaseClass<DialogueEventManager>, IEventManager{
+        [Header("Event Controller")]
         [SerializeField] private DialogueEventController _eventControllerPrefab;
+        [SerializeField] private Transform _eventControllerParent;
+
+        [Header("Event Runner")]
         [SerializeField] private DialogueEventRunner _eventRunnerPrefab;
+        [SerializeField] private Transform _eventRunnerParent;
 
         private List<DialogueEventController> _eventControllerPool;
         private List<DialogueEventRunner> _eventRunnerPool;
@@ -29,6 +34,9 @@ namespace TheDuction.Event.DialogueEvent{
 
             DialogueEventRunner eventRunner = GetOrCreateEventRunner();
             eventRunner.EventController = eventController;
+
+            eventController.gameObject.SetActive(true);
+            eventRunner.gameObject.SetActive(true);
             StartCoroutine(StartEvent(eventRunner));
         }
         
@@ -50,18 +58,15 @@ namespace TheDuction.Event.DialogueEvent{
         /// <returns>Return inactive or new event runner</returns>
         private DialogueEventRunner GetOrCreateEventRunner()
         {
-            DialogueEventRunner eventRunner = _eventRunnerPool.Find(runner =>
-                runner.EventController.EventState == EventState.Finish &&
-                !runner.gameObject.activeInHierarchy);
+            DialogueEventRunner eventRunner = _eventRunnerPool.Find(runner => !runner.gameObject.activeInHierarchy);
 
             if (eventRunner == null)
             {
-                eventRunner = Instantiate(_eventRunnerPrefab, transform).GetComponent<DialogueEventRunner>();
+                eventRunner = Instantiate(_eventRunnerPrefab, _eventRunnerParent).GetComponent<DialogueEventRunner>();
                 
                 _eventRunnerPool.Add(eventRunner);
             }
-            
-            eventRunner.gameObject.SetActive(true);
+
             return eventRunner;
         }
 
@@ -71,19 +76,29 @@ namespace TheDuction.Event.DialogueEvent{
         /// <returns>Return inactive or new event controller</returns>
         private DialogueEventController GetOrCreateEventController()
         {
-            DialogueEventController eventController = _eventControllerPool.Find(controller =>
-                controller.EventState == EventState.Finish &&
-                !controller.gameObject.activeInHierarchy);
+            DialogueEventController eventController = _eventControllerPool.Find(controller => !controller.gameObject.activeInHierarchy);
 
             if (eventController == null)
             {
-                eventController = Instantiate(_eventControllerPrefab, transform).GetComponent<DialogueEventController>();
+                eventController = Instantiate(_eventControllerPrefab, _eventControllerParent).GetComponent<DialogueEventController>();
                 
                 _eventControllerPool.Add(eventController);
             }
             
-            eventController.gameObject.SetActive(true);
             return eventController;
+        }
+
+        public DialogueEventController GetDialogueEventController(DialogueEventData eventData){
+            foreach(DialogueEventController eventController in _eventControllerPool){
+                if(!eventController.gameObject.activeInHierarchy) continue;
+
+                if(eventController.EventData == eventData){
+                    return eventController;
+                }
+            }
+
+            Debug.LogError($"Event controller with ID: {eventData.EventId} not found");
+            return null;
         }
     }
 }

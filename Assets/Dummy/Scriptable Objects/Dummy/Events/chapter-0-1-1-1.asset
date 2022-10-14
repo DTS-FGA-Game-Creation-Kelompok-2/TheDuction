@@ -10,21 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 894e1157df8179c49ad52ac2f72b823e, type: 3}
-  m_Name: chapter-0-1-1
+  m_Name: chapter-0-1-1-1
   m_EditorClassIdentifier: 
-  _eventId: chapter-0-1-1
+  _eventId: chapter-0-1-1-1
   _eventDescription: 
-  _relatedQuest: {fileID: 11400000, guid: 9d77072e064708a438d829c850313e99, type: 2}
+  _relatedQuest: {fileID: 11400000, guid: adbf6ef394a420046938d38ad3fb3158, type: 2}
   _finishCondition: 0
   _keepObjectAfterFinish: 0
   _dialogueAffectedItems:
-  - name: chapter-0-1-1-1
-    _affectedInteractable: {fileID: 11400000, guid: 9722116ee3c70694e892260325c1a78e, type: 2}
+  - name: chapter-0-1-1-2
+    _affectedInteractable: {fileID: 11400000, guid: aefc2bc5201b1c549a8909211f2703a4, type: 2}
     _dialogueAsset:
-      _waitDialogueAsset: {fileID: 0}
-      _finishDialogueAsset: {fileID: 4900000, guid: 805cbfffbeb9afa469dda1eaa70378de, type: 3}
+      _waitDialogueAsset: {fileID: 4900000, guid: a283345f58a838c42b403ae0e868e3f3, type: 3}
+      _finishDialogueAsset: {fileID: 4900000, guid: ec0ac2dc8afb35c4591e8748e5ac3373, type: 3}
       _nextEventDialogueAsset: {fileID: 0}
       _defaultDialogueAsset: {fileID: 0}
-  _interactable: {fileID: 11400000, guid: aefc2bc5201b1c549a8909211f2703a4, type: 2}
+  _interactable: {fileID: 11400000, guid: 9722116ee3c70694e892260325c1a78e, type: 2}
   _useBranchEvent: 0
   _branchID: 

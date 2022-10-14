@@ -24,5 +24,9 @@ namespace TheDuction.Event.CameraEvent{
         public Transform TargetPosition => _targetPosition;
         public Transform LookAtTarget => _lookAtTarget;
         public bool UseTarget => _useTarget;
+
+        private void Start() {
+            SetFinishCondition();
+        }
     }
 }

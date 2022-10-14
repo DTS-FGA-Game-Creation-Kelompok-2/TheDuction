@@ -9,8 +9,7 @@ namespace TheDuction.Event{
         [SerializeField] private bool _isFinished;
         [SerializeField] private EventState _eventState = EventState.NotStarted;
         [SerializeField] private bool _canBeInteracted;
-
-        private FinishConditionManager _triggerObject;
+        [SerializeField] private FinishConditionManager _triggerObject;
 
         public bool IsFinished{
             set { _isFinished = value; }
@@ -34,13 +33,17 @@ namespace TheDuction.Event{
         
         public FinishConditionManager TriggerObject => _triggerObject;
 
+        public virtual void OnEventFinish(){}
+
         private void OnEnable() {
             SetFinishCondition();
         }
 
-        public virtual void OnEventFinish(){}
+        private void OnDisable() {
+            OnReset();
+        }
         
-        public virtual void Reset(){
+        public virtual void OnReset(){
             _eventData = null;
             _isFinished = false;
             _canBeInteracted = false;
@@ -50,13 +53,15 @@ namespace TheDuction.Event{
             Destroy(GetComponent<FinishConditionManager>());
         }
 
-        private void SetFinishCondition(){
+        protected virtual void SetFinishCondition(){
+            if(!_eventData) return;
+            
             switch(_eventData.FinishCondition){
                 case FinishCondition.DialogueFinished:
-                    gameObject.AddComponent<DialogueFinishedCondition>();
+                    gameObject.AddComponent(typeof(DialogueFinishedCondition));
                     break;
                 case FinishCondition.CameraDurationFinished:
-                    gameObject.AddComponent<CameraFinishedCondition>();
+                    gameObject.AddComponent(typeof(CameraFinishedCondition));
                     break;
             }
 

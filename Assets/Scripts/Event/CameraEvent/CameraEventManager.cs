@@ -6,8 +6,13 @@ using UnityEngine;
 
 namespace TheDuction.Event.CameraEvent{
     public class CameraEventManager: SingletonBaseClass<CameraEventManager>, IEventManager{
+        [Header("Event Controller")]
         [SerializeField] private CameraEventController _eventControllerPrefab;
+        [SerializeField] private Transform _eventControllerParent;
+
+        [Header("Event Runner")]
         [SerializeField] private CameraEventRunner _eventRunnerPrefab;
+        [SerializeField] private Transform _eventRunnerParent;
 
         private List<CameraEventController> _eventControllerPool;
         private List<CameraEventRunner> _eventRunnerPool;
@@ -55,7 +60,7 @@ namespace TheDuction.Event.CameraEvent{
 
             if (eventRunner == null)
             {
-                eventRunner = Instantiate(_eventRunnerPrefab, transform).GetComponent<CameraEventRunner>();
+                eventRunner = Instantiate(_eventRunnerPrefab, _eventRunnerParent).GetComponent<CameraEventRunner>();
                 
                 _eventRunnerPool.Add(eventRunner);
             }
@@ -76,7 +81,7 @@ namespace TheDuction.Event.CameraEvent{
 
             if (eventController == null)
             {
-                eventController = Instantiate(_eventControllerPrefab, transform).GetComponent<CameraEventController>();
+                eventController = Instantiate(_eventControllerPrefab, _eventControllerParent).GetComponent<CameraEventController>();
                 
                 _eventControllerPool.Add(eventController);
             }

@@ -7,7 +7,7 @@ namespace TheDuction.Event.BranchEvent{
     [Serializable] 
     public class BranchEvent {
         [SerializeField] private BranchState _branchEventState = BranchState.NotStarted;
-        [SerializeField] private DialogueEventController _dialogueEventController;
+        [SerializeField] private DialogueEventData _dialogueEventData;
         [SerializeField] private bool _requiredToFinish;
 
         public BranchState BranchEventState{
@@ -15,9 +15,9 @@ namespace TheDuction.Event.BranchEvent{
             get { return _branchEventState; }
         }
 
-        public DialogueEventController DialogueEventController {
-            set { _dialogueEventController = value; }
-            get { return _dialogueEventController; }
+        public DialogueEventData DialogueEventData {
+            set { _dialogueEventData = value; }
+            get { return _dialogueEventData; }
         }
         public bool RequiredToFinish => _requiredToFinish;
     }

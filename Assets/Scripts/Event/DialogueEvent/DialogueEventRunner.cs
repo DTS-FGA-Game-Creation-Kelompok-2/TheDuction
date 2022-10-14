@@ -32,13 +32,13 @@ namespace TheDuction.Event.DialogueEvent{
             _dialogueManager = DialogueManager.Instance;
             _interactableManager = InteractableManager.Instance;
             _questManager = QuestManager.Instance;
-
-            _dialogueEventData = _eventController.EventData as DialogueEventData;
         }
 
         private void Start() {
             if(_eventController.EventData.RelatedQuest)
                 _questController = _questManager.GetQuestController(_eventController.EventData.RelatedQuest);
+
+            _dialogueEventData = _eventController.EventData as DialogueEventData;
         }
 
         private void OnDisable() {
@@ -101,6 +101,8 @@ namespace TheDuction.Event.DialogueEvent{
                         // Wait dialogue
                         Interactable interactable = _interactableManager.GetInteractable(dialogueAffectedItem.AffectedInteractable);
 
+                        Debug.Log($"{interactable.Data.InteractableName} wait {waitDialogueAsset.name}");
+
                         interactable.Mode = InteractableMode.DialogueMode;
                         interactable.CurrentDialogue = waitDialogueAsset;
                     }
@@ -123,8 +125,8 @@ namespace TheDuction.Event.DialogueEvent{
             _eventController.InteractableObject.Mode = InteractableMode.DialogueMode;
             
             // Set branch state
-            if(_eventController.UseBranchEvent){
-                _eventController.BranchRunner.UpdateBranchEventState(_eventController, BranchState.Active);
+            if(_dialogueEventData.UseBranchEvent){
+                _eventController.BranchRunner.UpdateBranchEventState(_dialogueEventData, BranchState.Active);
             }
         }
 
@@ -151,8 +153,8 @@ namespace TheDuction.Event.DialogueEvent{
             }
             _eventController.EventState = EventState.Finish;
             // Set branch state
-            if(_eventController.UseBranchEvent){
-                _eventController.BranchRunner.UpdateBranchEventState(_eventController, BranchState.Finish);
+            if(_dialogueEventData.UseBranchEvent){
+                _eventController.BranchRunner.UpdateBranchEventState(_dialogueEventData, BranchState.Finish);
             }
             // Deactivate event data renderer
             _eventController.OnEventFinish();
