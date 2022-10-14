@@ -61,12 +61,12 @@ namespace TheDuction.Dialogue.Tags{
 
                     case DialogueTags.ILLUST_TAG:
                         _dialogueManager.ShowOrHideDialogueBox(DialogueTags.BLANK_VALUE);
-                        _dialogueIllustrationManager.FileNames = tagValue;
+                        _dialogueIllustrationManager.FileName = tagValue;
                         _dialogueIllustrationManager.Display();
                         break;
 
                     case DialogueTags.PORTRAIT_TAG:
-                        _dialoguePortraitManager.FileNames = tagValue;
+                        _dialoguePortraitManager.FileName = tagValue;
                         _dialoguePortraitManager.Display();
                         break;
 

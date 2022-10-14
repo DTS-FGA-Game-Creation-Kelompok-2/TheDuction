@@ -11,15 +11,16 @@ using TheDuction.Dialogue.Logs;
 using TheDuction.Dialogue.Portraits;
 using TheDuction.Dialogue.Illustrations;
 using TheDuction.Dialogue.Tags;
+using TheDuction.Quest;
 
 namespace TheDuction.Dialogue{
     public class DialogueManager: SingletonBaseClass<DialogueManager>{
         [Header("Dialogue States")]
         // Dialogue states
-        [SerializeField] private DialogueState _currentDialogueState;
-        [SerializeField] private DialogueMode _currentDialogueMode;
+        [SerializeField] private DialogueState _currentDialogueState = DialogueState.Stop;
+        [SerializeField] private DialogueMode _currentDialogueMode = DialogueMode.Normal;
         [SerializeField] private List<DialogueMode> _dialogueModeStackList;
-        [SerializeField] private DialogueTypingState _currentDialogueTypingState;
+        [SerializeField] private DialogueTypingState _currentDialogueTypingState = DialogueTypingState.FinishTyping;
 
         [Header("Dialogue Parameters")]
         // Dialogue details
@@ -266,6 +267,7 @@ namespace TheDuction.Dialogue{
                     //     UnityEngine.AI.ObstacleAvoidanceType.LowQualityObstacleAvoidance);
 
                     // Dialogue UI
+                    _dialogueLogManager.ResetDialogueLog();
                     _dialogueTextBox.SetActive(true);
                     DialogueIsPlaying = false;
                     _dialogueText.text = "";
