@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using TheDuction.Event.BranchEvent;
 using TheDuction.Event.FinishConditionScripts;
 using TheDuction.Global.Attributes;
-using TheDuction.Items;
+using TheDuction.Interaction;
 using UnityEngine;
 
 namespace TheDuction.Event.DialogueEvent{
@@ -12,20 +12,20 @@ namespace TheDuction.Event.DialogueEvent{
 
         [Header("Branching")]
         [SerializeField] private bool _useBranchEvent;
-        [DrawIf("useBranchEvent", true)]
+        [DrawIf("_useBranchEvent", true)]
         [SerializeField] private BranchEventRunner _branchRunner;
 
         // Properties
         public bool UseBranchEvent => _useBranchEvent;
         public BranchEventRunner BranchRunner => _branchRunner;
-        public ItemData ItemData { get; private set; }
+        public Interactable InteractableObject { get; private set; }
         public List<DialogueAffectedItem> DialogueAffectedItems => _dialogueAffectedItems;
 
         private void Awake()
         {
-            ItemData = GetComponent<ItemData>();
-            if(!ItemData){
-                ItemData = GetComponentInParent<ItemData>();
+            InteractableObject = GetComponent<Interactable>();
+            if(!InteractableObject){
+                InteractableObject = GetComponentInParent<Interactable>();
             }
         }
 
@@ -41,7 +41,7 @@ namespace TheDuction.Event.DialogueEvent{
                     break;
                 case FinishCondition.DialogueFinished:
                     canBeInteracted = false;
-                    ItemData.itemMode = ItemData.ItemMode.NormalMode;
+                    InteractableObject.Mode = InteractableMode.NormalMode;
                     break;
                 default:
                     Debug.Log($"Finish condition: {finishCondition} is not set in switch case");

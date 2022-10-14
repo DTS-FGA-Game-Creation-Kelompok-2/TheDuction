@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using TheDuction.Dialogue.Tags;
 using TheDuction.Global;
 using UnityEngine;
@@ -8,72 +7,36 @@ namespace TheDuction.Dialogue.Portraits{
         SingletonBaseClass<DialoguePortraitManager>, IDialoguePropertiesManager
     {
         [Header("Dialogue Portrait")]
-        [SerializeField] private Transform _portraitsParent;
-        [SerializeField] private DialoguePortraitPrefab _portraitPrefab;
+        [SerializeField] private DialoguePortraitPrefab _portraitObject;
 
-        private string _fileNames;
-        private List<DialoguePortraitPrefab> _portraitPool;
+        private string _fileName;
 
-        public string FileNames{
+        public string FileName{
             set{
-                _fileNames = value;
+                _fileName = value;
             }
-        }
-        
-        private void Awake() {
-            _portraitPool = new List<DialoguePortraitPrefab>();
         }
 
         public void Display()
         {
-            string[] files = _fileNames.Split(',');
-            
-            // If there are no portraits or none, hide portrait and return right away
-            if (files.Length <= 0 || _fileNames == DialogueTags.BLANK_VALUE)
+            // If file name is none, hide portrait and return right away
+            if (_fileName == DialogueTags.BLANK_VALUE)
             {
                 Hide();
                 return;
             }
             
             Hide(); // Hide previous portrait
+            Sprite portrait = Resources.Load<Sprite>($"Portraits/{_fileName}");
 
-            foreach (string filename in files)
-            {
-                Sprite portrait = Resources.Load<Sprite>($"Portraits/{filename}");
-                DialoguePortraitPrefab portraitObject = GetOrCreatePortraitObject();
-
-                portraitObject.gameObject.SetActive(true);
-                portraitObject.PortraitSprite = portrait;
-                portraitObject.PrefabSetup();
-            }
+            _portraitObject.gameObject.SetActive(true);
+            _portraitObject.PortraitSprite = portrait;
+            _portraitObject.PrefabSetup();
         }
 
         public void Hide()
         {
-            foreach (DialoguePortraitPrefab portrait in _portraitPool)
-            {
-                portrait.gameObject.SetActive(false);
-            }
-        }
-
-        /// <summary>
-        /// Portrait manager object pooling
-        /// </summary>
-        /// <returns>Return existing portrait manager in hierarchy or create a new one</returns>
-        private DialoguePortraitPrefab GetOrCreatePortraitObject()
-        {
-            DialoguePortraitPrefab portraitManager = _portraitPool.Find(portrait => !portrait.gameObject.activeInHierarchy);
-
-            if (portraitManager == null)
-            {
-                portraitManager = Instantiate(_portraitPrefab, _portraitsParent).GetComponent<DialoguePortraitPrefab>();
-                // Add new choice manager to pool 
-                _portraitPool.Add(portraitManager);
-            }
-            
-            portraitManager.gameObject.SetActive(false);
-
-            return portraitManager;
+            _portraitObject.gameObject.SetActive(false);
         }
     }
 }
