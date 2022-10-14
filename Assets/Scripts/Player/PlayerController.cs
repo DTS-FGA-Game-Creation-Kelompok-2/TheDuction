@@ -28,21 +28,27 @@ namespace TheDuction.Player
             _rb = GetComponent<Rigidbody>();
         }
 
-        private void Update(){
+        private void Update()
+        {
             // Debug.Log(_rb.velocity);
             // Debug.Log("X = " + Mathf.Approximately(_rb.velocity.x, 0.0f));
             // Debug.Log("Z = " + (_rb.velocity.z == 0.0f));
-            if(_rb.velocity.x == 0.0f && _rb.velocity.z == 0.0f){
-                _isWalking = false;
-            }
             if(_animator)
                 _animator.SetBool(IS_WALKING_PARAMETER, _isWalking);
         }
 
         private void Move(Vector3 dir)
         {
+            if(dir == Vector3.zero)
+            {
+                _isWalking = false;
+                return;
+            }
+            
             Vector3 movement = new Vector3(dir.x, 0, dir.z).normalized;
             Quaternion rotation = Quaternion.LookRotation(movement);
+            
+            rotation = Quaternion.RotateTowards(transform.rotation, rotation, 360 * Time.deltaTime);
 
             _rb.velocity = movement * _moveSpeed;
             _rb.MoveRotation(rotation);

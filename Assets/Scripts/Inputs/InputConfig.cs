@@ -12,22 +12,29 @@ namespace TheDuction.Inputs
 
         private void Update()
         {
+            OnInput?.Invoke(Direction());
+        }
+
+        private Vector3 Direction()
+        {
             if (Input.GetKey(_inputManager.UpKey))
             {
-                OnInput?.Invoke(Vector3.forward);
+                return Vector3.forward;
             }
             if (Input.GetKey(_inputManager.DownKey))
             {
-                OnInput?.Invoke(Vector3.back);
+                return Vector3.back;
             }
             if (Input.GetKey(_inputManager.LeftKey))
             {
-                OnInput?.Invoke(Vector3.left);
+                return Vector3.left;
             }
             if (Input.GetKey(_inputManager.RightKey))
             {
-                OnInput?.Invoke(Vector3.right);
+                return Vector3.right;
             }
+
+            return Vector3.zero;
         }
 
         private void OnTriggerStay(Collider other)
