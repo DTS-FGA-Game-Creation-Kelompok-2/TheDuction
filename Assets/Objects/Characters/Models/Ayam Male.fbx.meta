@@ -1,17 +1,20 @@
 fileFormatVersion: 2
-guid: a33557b025762f943943f15a2c48f858
+guid: 28c9897faee46f546b4bb8766edbce8e
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
   - first:
-      74: -623603649343465320
-    second: Scene
+      74: -8945691123924629249
+    second: Armature|Idle
+  - first:
+      74: 8280401409614268576
+    second: Armature|Talk.001
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: texture palette
-    second: {fileID: 2100000, guid: 6cbc0d1be343eff43a3d425510863c5e, type: 2}
+      name: Material
+    second: {fileID: 2100000, guid: 2d1be23dec0e0064395a6979f57cb5ac, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -42,15 +45,15 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.3
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 0
-    importLights: 0
+    importCameras: 1
+    importLights: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
     generateSecondaryUV: 0
@@ -71,7 +74,7 @@ ModelImporter:
     secondaryUVMinLightmapResolution: 40
     secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
-    useFileScale: 0
+    useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -93,7 +96,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.3
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
