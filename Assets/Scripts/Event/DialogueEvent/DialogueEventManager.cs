@@ -35,6 +35,9 @@ namespace TheDuction.Event.DialogueEvent{
             DialogueEventRunner eventRunner = GetOrCreateEventRunner();
             eventRunner.EventController = eventController;
 
+            eventController.gameObject.name = eventController.EventData.EventId;
+            eventRunner.gameObject.name = eventRunner.EventController.EventData.EventId;
+            
             eventController.gameObject.SetActive(true);
             eventRunner.gameObject.SetActive(true);
             StartCoroutine(StartEvent(eventRunner));

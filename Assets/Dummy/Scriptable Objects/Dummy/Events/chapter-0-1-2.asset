@@ -16,15 +16,16 @@ MonoBehaviour:
   _eventDescription: 
   _relatedQuest: {fileID: 11400000, guid: 21d1f05944a75dd4b90b678c94b418e7, type: 2}
   _finishCondition: 0
+  _keepObjectAfterFinish: 0
   _dialogueAffectedItems:
-  - name: chapter-0-1-2-1
+  - _name: chapter-0-1-2-1
     _affectedInteractable: {fileID: 11400000, guid: 1c1fd643abd5f594183ead4e44b60b47, type: 2}
     _dialogueAsset:
       _waitDialogueAsset: {fileID: 0}
       _finishDialogueAsset: {fileID: 4900000, guid: 90e523fc183c74441a8e2943564660ed, type: 3}
       _nextEventDialogueAsset: {fileID: 0}
       _defaultDialogueAsset: {fileID: 0}
-  - name: chapter-0-1-2-2
+  - _name: chapter-0-1-2-2
     _affectedInteractable: {fileID: 11400000, guid: f4c8b87c1c54223469e168f7f2849c25, type: 2}
     _dialogueAsset:
       _waitDialogueAsset: {fileID: 0}

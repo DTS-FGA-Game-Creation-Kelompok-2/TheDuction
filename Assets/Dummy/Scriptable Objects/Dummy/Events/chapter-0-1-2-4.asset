@@ -18,7 +18,7 @@ MonoBehaviour:
   _finishCondition: 0
   _keepObjectAfterFinish: 0
   _dialogueAffectedItems:
-  - name: chapter-0-1-2-4
+  - _name: chapter-0-1-2-4
     _affectedInteractable: {fileID: 11400000, guid: 18fcc2c6a0aae2b41b350aacb995232b, type: 2}
     _dialogueAsset:
       _waitDialogueAsset: {fileID: 4900000, guid: 5c29188a45460ee4ead5873f3d9c236a, type: 3}

@@ -37,8 +37,6 @@ namespace TheDuction.Event.DialogueEvent{
         private void Start() {
             if(_eventController.EventData.RelatedQuest)
                 _questController = _questManager.GetQuestController(_eventController.EventData.RelatedQuest);
-
-            _dialogueEventData = _eventController.EventData as DialogueEventData;
         }
 
         private void OnDisable() {
@@ -92,6 +90,8 @@ namespace TheDuction.Event.DialogueEvent{
 
         public void OnEventStart()
         {
+            _dialogueEventData = _eventController.EventData as DialogueEventData;
+            
             if(_dialogueEventData.DialogueAffectedItems.Count > 0){
                 foreach(DialogueAffectedItem dialogueAffectedItem in _dialogueEventData.DialogueAffectedItems){
                     TextAsset waitDialogueAsset = dialogueAffectedItem.DialogueAsset.WaitDialogueAsset;
@@ -100,8 +100,6 @@ namespace TheDuction.Event.DialogueEvent{
                         // Set actor's dialogue to dialogue manager
                         // Wait dialogue
                         Interactable interactable = _interactableManager.GetInteractable(dialogueAffectedItem.AffectedInteractable);
-
-                        Debug.Log($"{interactable.Data.InteractableName} wait {waitDialogueAsset.name}");
 
                         interactable.Mode = InteractableMode.DialogueMode;
                         interactable.CurrentDialogue = waitDialogueAsset;
