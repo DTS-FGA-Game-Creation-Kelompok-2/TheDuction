@@ -26,8 +26,8 @@ namespace TheDuction.Event.BranchEvent{
 
                     _branchEventData.BranchParts[i].BranchEvents.ForEach(branchEvent =>
                     {
-                        if(branchEvent.EventData.InteractableObject)
-                            branchEvent.EventData.InteractableObject.Mode = InteractableMode.NormalMode;
+                        if(branchEvent.DialogueEventController.InteractableObject)
+                            branchEvent.DialogueEventController.InteractableObject.Mode = InteractableMode.NormalMode;
                     });
                 }
 
@@ -38,14 +38,14 @@ namespace TheDuction.Event.BranchEvent{
         /// <summary>
         /// Update branch event's state
         /// </summary>
-        /// <param name="dialogueEventData">Event data</param>
+        /// <param name="dialogueEventController">Event data</param>
         /// <param name="newState">New state</param>
-        public void UpdateBranchEventState(DialogueEventData dialogueEventData, BranchState newState){
+        public void UpdateBranchEventState(DialogueEventController dialogueEventController, BranchState newState){
             foreach (BranchPart branchPart in _branchEventData.BranchParts)
             {
                 foreach (BranchEvent branchEvent in branchPart.BranchEvents)
                 {
-                    if (branchEvent.EventData == dialogueEventData)
+                    if (branchEvent.DialogueEventController == dialogueEventController)
                     {
                         branchEvent.BranchEventState = newState;
                         UpdateBranchPartState(branchPart, newState);
@@ -98,15 +98,15 @@ namespace TheDuction.Event.BranchEvent{
             yield return new WaitUntil(() => {
                 // Check branch event that is required to finish only
                 foreach(BranchEvent branchEvent in _activeBranchPart.BranchEvents.Where(branchEvent => branchEvent.RequiredToFinish)){
-                    if(!branchEvent.EventData.isFinished) return false;
+                    if(!branchEvent.DialogueEventController.IsFinished) return false;
                 }
 
                 return true;
             });
 
             _activeBranchPart.BranchEvents.ForEach(branchEvent =>{
-                branchEvent.EventData.InteractableObject.Mode = InteractableMode.NormalMode;
-                branchEvent.EventData.canBeInteracted = false;
+                branchEvent.DialogueEventController.InteractableObject.Mode = InteractableMode.NormalMode;
+                branchEvent.DialogueEventController.CanBeInteracted = false;
             });
 
             DialogueManager.Instance.SetDialogue(_activeBranchPart.FinishedEventDialogue);

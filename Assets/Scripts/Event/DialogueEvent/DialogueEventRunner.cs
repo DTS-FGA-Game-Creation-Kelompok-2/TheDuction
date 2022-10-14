@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace TheDuction.Event.DialogueEvent{
     public class DialogueEventRunner : MonoBehaviour, IEventRunner {
-        public DialogueEventData eventData;
+        public DialogueEventController eventController;
         public bool canStartEvent;
         private DialogueManager _dialogueManager;
         private QuestManager _questManager;
@@ -21,8 +21,8 @@ namespace TheDuction.Event.DialogueEvent{
         }
 
         private void Start() {
-            if(eventData.RelatedQuest)
-                _questController = _questManager.GetQuestController(eventData.RelatedQuest);
+            if(eventController.EventData.RelatedQuest)
+                _questController = _questManager.GetQuestController(eventController.EventData.RelatedQuest);
         }
 
         private void OnEnable() {
@@ -33,7 +33,7 @@ namespace TheDuction.Event.DialogueEvent{
 
         private void Update()
         {
-            switch (eventData.eventState)
+            switch (eventController.EventState)
             {
                 case EventState.NotStarted:
                     if(canStartEvent)
@@ -49,10 +49,10 @@ namespace TheDuction.Event.DialogueEvent{
                     // Call on event finish when ending condition is met
                     if(!_hasSetFinishCondition)
                     {
-                        switch (eventData.finishCondition)
+                        switch (eventController.EventData.FinishCondition)
                         {
                             case FinishCondition.DialogueFinished:
-                                eventData.TriggerObject.SetEndingCondition();
+                                eventController.TriggerObject.SetEndingCondition();
                                 _hasSetFinishCondition = true;
                                 _canSetNextEvent = true;
                                 break;
@@ -62,7 +62,7 @@ namespace TheDuction.Event.DialogueEvent{
                         }
                     }
                     
-                    if (eventData.isFinished)
+                    if (eventController.IsFinished)
                     {
                         OnEventFinish();
                     }
@@ -76,8 +76,8 @@ namespace TheDuction.Event.DialogueEvent{
 
         public void OnEventStart()
         {
-            if(eventData.DialogueAffectedItems.Count > 0){
-                foreach(DialogueAffectedItem dialogueAffectedItem in eventData.DialogueAffectedItems){
+            if(eventController.DialogueAffectedItems.Count > 0){
+                foreach(DialogueAffectedItem dialogueAffectedItem in eventController.DialogueAffectedItems){
                     TextAsset waitDialogueAsset = dialogueAffectedItem.DialogueAsset.WaitDialogueAsset;
 
                     if(waitDialogueAsset){
@@ -91,7 +91,7 @@ namespace TheDuction.Event.DialogueEvent{
 
             // Start the event
             // Set event state
-            eventData.eventState = EventState.Start;
+            eventController.EventState = EventState.Start;
         }
 
         public void OnEventActive()
@@ -100,20 +100,20 @@ namespace TheDuction.Event.DialogueEvent{
             if(_questController){
                 _questController.UpdateQuestState(QuestState.Active);
             }
-            eventData.eventState = EventState.Active;
-            eventData.canBeInteracted = true;
-            eventData.InteractableObject.Mode = InteractableMode.DialogueMode;
+            eventController.EventState = EventState.Active;
+            eventController.CanBeInteracted = true;
+            eventController.InteractableObject.Mode = InteractableMode.DialogueMode;
             
             // Set branch state
-            if(eventData.UseBranchEvent){
-                eventData.BranchRunner.UpdateBranchEventState(eventData, BranchState.Active);
+            if(eventController.UseBranchEvent){
+                eventController.BranchRunner.UpdateBranchEventState(eventController, BranchState.Active);
             }
         }
 
         public void OnEventFinish()
         {
-            if(eventData.DialogueAffectedItems.Count > 0){
-                foreach(DialogueAffectedItem dialogueAffectedItem in eventData.DialogueAffectedItems){
+            if(eventController.DialogueAffectedItems.Count > 0){
+                foreach(DialogueAffectedItem dialogueAffectedItem in eventController.DialogueAffectedItems){
                     TextAsset finishDialogueAsset = dialogueAffectedItem.DialogueAsset.FinishDialogueAsset;
 
                     if(finishDialogueAsset){
@@ -129,19 +129,19 @@ namespace TheDuction.Event.DialogueEvent{
                 _questController.UpdateDefinitionOfDone();
                 QuestManager.Instance.UpdateQuestNameText(_questController);
             }
-            eventData.eventState = EventState.Finish;
+            eventController.EventState = EventState.Finish;
             // Set branch state
-            if(eventData.UseBranchEvent){
-                eventData.BranchRunner.UpdateBranchEventState(eventData, BranchState.Finish);
+            if(eventController.UseBranchEvent){
+                eventController.BranchRunner.UpdateBranchEventState(eventController, BranchState.Finish);
             }
             // Deactivate event data renderer
-            eventData.OnEventFinish();
+            eventController.OnEventFinish();
         }
 
         public void SetNextEvent()
         {
-            if(eventData.DialogueAffectedItems.Count > 0){
-                foreach(DialogueAffectedItem dialogueAffectedItem in eventData.DialogueAffectedItems){
+            if(eventController.DialogueAffectedItems.Count > 0){
+                foreach(DialogueAffectedItem dialogueAffectedItem in eventController.DialogueAffectedItems){
                     DialogueAsset dialogueAsset = dialogueAffectedItem.DialogueAsset;
                     
                     if (dialogueAsset.NextEventDialogueAsset ||
@@ -155,7 +155,7 @@ namespace TheDuction.Event.DialogueEvent{
             }
             
             // Deactivate game object
-            eventData.gameObject.SetActive(eventData.KeepObjectAfterFinish);
+            // eventData.gameObject.SetActive(eventData.KeepObjectAfterFinish);
             gameObject.SetActive(false);
         }
     }

@@ -3,9 +3,14 @@ using UnityEngine;
 
 namespace TheDuction.Event.CameraEvent{
     public class CameraEventRunner : MonoBehaviour, IEventRunner {
-        public CameraEventData eventData;
+        [SerializeField] private CameraEventController _eventController;
         private bool _hasSetFinishCondition;
         public bool canStartEvent;
+
+        public CameraEventController EventController{
+            set { _eventController = value; }
+            get { return _eventController; }
+        }
 
         private void OnEnable() {
             canStartEvent = false;
@@ -13,7 +18,7 @@ namespace TheDuction.Event.CameraEvent{
         }
 
         private void Update() {
-            switch(eventData.eventState){
+            switch(_eventController.EventState){
                 case EventState.NotStarted:
                     if(canStartEvent)
                         OnEventStart();
@@ -26,10 +31,10 @@ namespace TheDuction.Event.CameraEvent{
                 case EventState.Active:
                     if(!_hasSetFinishCondition)
                     {
-                        switch (eventData.finishCondition)
+                        switch (_eventController.EventData.FinishCondition)
                         {
                             case FinishCondition.CameraDurationFinished:
-                                eventData.TriggerObject.SetEndingCondition();
+                                _eventController.TriggerObject.SetEndingCondition();
                                 _hasSetFinishCondition = true;
                                 break;
                             case FinishCondition.DialogueFinished:
@@ -37,7 +42,7 @@ namespace TheDuction.Event.CameraEvent{
                                 break;
                         }
                     }
-                    if(eventData.isFinished)
+                    if(_eventController.IsFinished)
                         OnEventFinish();
                     break;
 
@@ -49,23 +54,23 @@ namespace TheDuction.Event.CameraEvent{
 
         public void OnEventStart()
         {
-            eventData.eventState = EventState.Start;
+            _eventController.EventState = EventState.Start;
         }
         
         public void OnEventActive()
         {
-            eventData.eventState = EventState.Active;
-            eventData.canBeInteracted = true;
+            _eventController.EventState = EventState.Active;
+            _eventController.CanBeInteracted = true;
         }
 
         public void OnEventFinish()
         {
-            eventData.eventState = EventState.Finish;
+            _eventController.EventState = EventState.Finish;
         }
 
         public void SetNextEvent()
         {
-            eventData.gameObject.SetActive(eventData.KeepObjectAfterFinish);
+            // eventData.gameObject.SetActive(eventData.KeepObjectAfterFinish);
             gameObject.SetActive(false);
         }
     }

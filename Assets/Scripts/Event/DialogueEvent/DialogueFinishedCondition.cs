@@ -21,7 +21,7 @@ namespace TheDuction.Event.DialogueEvent{
             }
 
             _dialogueManager = DialogueManager.Instance;
-            eventData = GetComponent<DialogueEventData>();
+            eventController = GetComponent<DialogueEventController>();
         }
 
         public override void SetEndingCondition()

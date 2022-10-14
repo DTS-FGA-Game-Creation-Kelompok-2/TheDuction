@@ -7,12 +7,15 @@ using UnityEngine;
 namespace TheDuction.Event.DialogueEvent{
     public class DialogueEventManager : 
         SingletonBaseClass<DialogueEventManager>, IEventManager{
-        [SerializeField] private DialogueEventRunner eventRunnerPrefab;
+        [SerializeField] private DialogueEventController _eventControllerPrefab;
+        [SerializeField] private DialogueEventRunner _eventRunnerPrefab;
 
-        private List<DialogueEventRunner> eventRunnerPool;
+        private List<DialogueEventController> _eventControllerPool;
+        private List<DialogueEventRunner> _eventRunnerPool;
 
         private void Awake() {
-            eventRunnerPool = new List<DialogueEventRunner>(); 
+            _eventControllerPool = new List<DialogueEventController>();
+            _eventRunnerPool = new List<DialogueEventRunner>(); 
         }
 
         /// <summary>
@@ -21,8 +24,11 @@ namespace TheDuction.Event.DialogueEvent{
         /// <param name="eventData">Event data</param>
         public void SetEventData(EventData eventData)
         {
+            DialogueEventController eventController = GetOrCreateEventController();
+            eventController.EventData = eventData as DialogueEventData;
+
             DialogueEventRunner eventRunner = GetOrCreateEventRunner();
-            eventRunner.eventData = eventData as DialogueEventData;
+            eventRunner.eventController = eventController;
             StartCoroutine(StartEvent(eventRunner));
         }
         
@@ -44,19 +50,40 @@ namespace TheDuction.Event.DialogueEvent{
         /// <returns>Return inactive or new event runner</returns>
         private DialogueEventRunner GetOrCreateEventRunner()
         {
-            DialogueEventRunner eventRunner = eventRunnerPool.Find(runner =>
-                runner.eventData.eventState == EventState.Finish &&
+            DialogueEventRunner eventRunner = _eventRunnerPool.Find(runner =>
+                runner.eventController.EventState == EventState.Finish &&
                 !runner.gameObject.activeInHierarchy);
 
             if (eventRunner == null)
             {
-                eventRunner = Instantiate(eventRunnerPrefab, transform).GetComponent<DialogueEventRunner>();
+                eventRunner = Instantiate(_eventRunnerPrefab, transform).GetComponent<DialogueEventRunner>();
                 
-                eventRunnerPool.Add(eventRunner);
+                _eventRunnerPool.Add(eventRunner);
             }
             
             eventRunner.gameObject.SetActive(true);
             return eventRunner;
+        }
+
+        /// <summary>
+        /// Event controller object pooling
+        /// </summary>
+        /// <returns>Return inactive or new event controller</returns>
+        private DialogueEventController GetOrCreateEventController()
+        {
+            DialogueEventController eventController = _eventControllerPool.Find(controller =>
+                controller.EventState == EventState.Finish &&
+                !controller.gameObject.activeInHierarchy);
+
+            if (eventController == null)
+            {
+                eventController = Instantiate(_eventControllerPrefab, transform).GetComponent<DialogueEventController>();
+                
+                _eventControllerPool.Add(eventController);
+            }
+            
+            eventController.gameObject.SetActive(true);
+            return eventController;
         }
     }
 }
