@@ -111,9 +111,16 @@ namespace TheDuction.Event.BranchEvent{
                 eventController.InteractableObject.Mode = InteractableMode.NormalMode;
                 eventController.CanBeInteracted = false;
             });
-
+            
             DialogueManager.Instance.SetDialogue(_activeBranchPart.FinishedEventDialogue);
 
+            yield return new WaitForSeconds(0.5f);
+            yield return new WaitUntil(() => !DialogueManager.Instance.DialogueIsPlaying);
+
+            _activeBranchPart.BranchEvents.ForEach(branchEvent =>{
+                DialogueEventController eventController = DialogueEventManager.Instance.GetDialogueEventController(branchEvent.DialogueEventData);
+                eventController.gameObject.SetActive(false);
+            });
             Destroy(gameObject);
         }
     }
