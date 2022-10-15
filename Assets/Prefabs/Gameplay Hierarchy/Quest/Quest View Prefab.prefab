@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 445241881019204958}
   - component: {fileID: 6363147569730559058}
   m_Layer: 5
-  m_Name: Quest Prefab
+  m_Name: Quest View Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

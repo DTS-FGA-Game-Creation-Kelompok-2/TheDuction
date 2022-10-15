@@ -20,6 +20,12 @@ namespace TheDuction.Quest{
             get{ return _questModel; }
         }
 
+        private void OnDisable() {
+            _questModel = null;
+            _currentDefinitionOfDone = 0;
+            _questState = QuestState.NotStarted;
+        }
+
         /// <summary>
         /// Update definition of done for the quest
         /// </summary>

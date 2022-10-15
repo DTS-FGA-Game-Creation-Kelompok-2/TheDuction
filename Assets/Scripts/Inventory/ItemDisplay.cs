@@ -26,8 +26,8 @@ namespace TheDuction.Inventory{
 
         private void SetItemDetails(ClueData clueData)
         {
-            _itemName = clueData.ClueName;
-            _itemDescription = clueData.ClueDescription;
+            _itemName = clueData.InteractableName;
+            _itemDescription = clueData.InteractableDescription;
             _itemSprite = clueData.ClueImage;
             
             SetObject();

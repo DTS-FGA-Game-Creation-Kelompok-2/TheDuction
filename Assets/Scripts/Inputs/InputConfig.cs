@@ -39,7 +39,7 @@ namespace TheDuction.Inputs
 
         private void OnTriggerStay(Collider other)
         {
-            IInteractable interactable = other.GetComponent<IInteractable>();
+            IInteractable interactable = other.GetComponentInChildren<IInteractable>();
             if (interactable != null && Input.GetKeyDown(_inputManager.InteractKey))
             {
                 interactable.Interact();

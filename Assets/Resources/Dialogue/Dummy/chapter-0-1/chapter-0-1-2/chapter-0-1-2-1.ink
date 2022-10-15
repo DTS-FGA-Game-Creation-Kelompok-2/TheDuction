@@ -1,3 +1,3 @@
 #speaker:NPC B-1
-Berikan ini ke dia
-Pergilah
+Tidak ada yang perlu saya berikan
+Sampaikan salam saja
