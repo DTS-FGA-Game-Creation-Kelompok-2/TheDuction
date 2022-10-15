@@ -17,7 +17,7 @@ namespace TheDuction.BackgroundMusics{
             bgmAudioSource.outputAudioMixerGroup = bgmAudioMixer;
             bgmAudioSource.loop = true;
                 
-            Play(ListBackgroundMusic.MainMenuBGM);
+            // Play(ListBackgroundMusic.MainMenuBGM);
         }
 
         /// <summary>
