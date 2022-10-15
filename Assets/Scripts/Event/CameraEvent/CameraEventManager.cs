@@ -7,18 +7,15 @@ using UnityEngine;
 namespace TheDuction.Event.CameraEvent{
     public class CameraEventManager: SingletonBaseClass<CameraEventManager>, IEventManager{
         [Header("Event Controller")]
-        [SerializeField] private CameraEventController _eventControllerPrefab;
-        [SerializeField] private Transform _eventControllerParent;
+        [SerializeField] private List<CameraEventController> _eventControllers;
 
         [Header("Event Runner")]
         [SerializeField] private CameraEventRunner _eventRunnerPrefab;
         [SerializeField] private Transform _eventRunnerParent;
 
-        private List<CameraEventController> _eventControllerPool;
         private List<CameraEventRunner> _eventRunnerPool;
 
         private void Awake() {
-            _eventControllerPool = new List<CameraEventController>();
             _eventRunnerPool = new List<CameraEventRunner>(); 
         }
 
@@ -28,9 +25,7 @@ namespace TheDuction.Event.CameraEvent{
         /// <param name="eventData">Event data</param>
         public void SetEventData(EventData eventData)
         {
-            CameraEventController eventController = GetOrCreateEventController();
-            eventController.EventData = eventData as CameraEventData;
-
+            CameraEventController eventController = GetEventController(eventData);
             CameraEventRunner eventRunner = GetOrCreateEventRunner();
             eventRunner.EventController = eventController;
             StartCoroutine(StartEvent(eventRunner));
@@ -73,21 +68,16 @@ namespace TheDuction.Event.CameraEvent{
         /// Event controller object pooling
         /// </summary>
         /// <returns>Return inactive or new event controller</returns>
-        private CameraEventController GetOrCreateEventController()
+        private CameraEventController GetEventController(EventData eventData)
         {
-            CameraEventController eventController = _eventControllerPool.Find(controller =>
-                controller.EventState == EventState.Finish &&
-                !controller.gameObject.activeInHierarchy);
-
-            if (eventController == null)
-            {
-                eventController = Instantiate(_eventControllerPrefab, _eventControllerParent).GetComponent<CameraEventController>();
-                
-                _eventControllerPool.Add(eventController);
+            foreach(CameraEventController eventController in _eventControllers){
+                if(eventController.EventData == eventData){
+                    return eventController;
+                }
             }
-            
-            eventController.gameObject.SetActive(true);
-            return eventController;
+
+            Debug.LogError($"Camera event controller with ID: {eventData.EventId} not found");
+            return null;
         }
     }
 }
