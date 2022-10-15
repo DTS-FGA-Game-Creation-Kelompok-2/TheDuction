@@ -6,20 +6,27 @@ namespace TheDuction.UI
 {
     public class GameplayScene : MonoBehaviour
     {
+        [Header("Inventory")]
         [SerializeField] private Button _inventoryButton;
         [SerializeField] private Button _closeInventoryButton;
-        [SerializeField] private GameObject _inventoryPanel;
-        
+        [SerializeField] private RectTransform _inventoryHolderTransform;
+        [SerializeField] private Image _blurInventoryBackground;
+        private bool _isInventoryOpen;
+
         private void Start()
         {
             _inventoryButton.onClick.AddListener(OpenInventory);
-            _closeInventoryButton.onClick.AddListener(OpenInventory);
         }
 
         private void OpenInventory()
         {
-            bool isActive = _inventoryPanel.activeSelf;
-            _inventoryPanel.SetActive(!isActive);
+            _isInventoryOpen = !_isInventoryOpen;
+            Vector2 inventoryHolderPos = _inventoryHolderTransform.anchoredPosition;
+            _inventoryHolderTransform.anchoredPosition = new Vector2(
+                -1 * inventoryHolderPos.x, inventoryHolderPos.y
+            );
+
+            _blurInventoryBackground.enabled = _isInventoryOpen;
         }
     }
 }

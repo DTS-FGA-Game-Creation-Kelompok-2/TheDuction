@@ -1,5 +1,5 @@
+using TheDuction.Global.Effects;
 using TheDuction.Interaction;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,9 +7,10 @@ namespace TheDuction.Inventory{
     public class ItemDisplay : MonoBehaviour
     {
         [SerializeField] private Text _itemNameText;
-        [SerializeField] private TextMeshProUGUI _itemDescriptionText;
+        [SerializeField] private Text _itemDescriptionText;
         [SerializeField] private Image _itemImage;
-        
+        [SerializeField] private CanvasGroup _itemDisplay;
+
         private string _itemName;
         private string _itemDescription;
         private Sprite _itemSprite;
@@ -35,9 +36,14 @@ namespace TheDuction.Inventory{
         
         private void SetObject()
         {
+            StartCoroutine(AlphaFadingEffect.FadeIn(_itemDisplay));
             _itemNameText.text = _itemName;
             _itemDescriptionText.text = _itemDescription;
             _itemImage.sprite = _itemSprite;
+        }
+
+        public void ClosePanel(){
+            StartCoroutine(AlphaFadingEffect.FadeOut(_itemDisplay));
         }
     }
 }

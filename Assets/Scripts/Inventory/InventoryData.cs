@@ -9,8 +9,7 @@ namespace TheDuction.Inventory
         [SerializeField] private ClueData _clueData;
         [SerializeField] private Image _itemImage;
         [SerializeField] private Button _itemButton;
-        [SerializeField] private GameObject _itemPanel;
-        
+
         public delegate void ButtonItemClicked(ClueData clueData);
         public static event ButtonItemClicked OnButtonClicked;
 
@@ -19,23 +18,16 @@ namespace TheDuction.Inventory
             _itemButton.onClick.AddListener(OnItemButtonClicked);
         }
         
-        public void SetItemDetails(ClueData clueData, GameObject itemPanel)
+        public void SetItemDetails(ClueData clueData)
         {
             _clueData = clueData;
             _itemImage.sprite = clueData.ClueImage;
-            _itemPanel = itemPanel;
+            _itemImage.SetNativeSize();
         }
         
         private void OnItemButtonClicked()
         {
-            OpenItemPanel();
             OnButtonClicked?.Invoke(_clueData);
-        }
-        
-        public void OpenItemPanel()
-        {
-            bool isActive = _itemPanel.activeSelf;
-            _itemPanel.SetActive(!isActive);
         }
     }
 }
