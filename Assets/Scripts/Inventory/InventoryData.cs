@@ -1,6 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using TheDuction.Interaction;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,12 +6,12 @@ namespace TheDuction.Inventory
 {
     public class InventoryData : MonoBehaviour
     {
-        [SerializeField] private string _itemName;
+        [SerializeField] private ClueData _clueData;
         [SerializeField] private Image _itemImage;
         [SerializeField] private Button _itemButton;
         [SerializeField] private GameObject _itemPanel;
         
-        public delegate void ButtonItemClicked(string itemName);
+        public delegate void ButtonItemClicked(ClueData clueData);
         public static event ButtonItemClicked OnButtonClicked;
 
         private void Start()
@@ -21,17 +19,17 @@ namespace TheDuction.Inventory
             _itemButton.onClick.AddListener(OnItemButtonClicked);
         }
         
-        public void SetItemDetails(string itemName, Sprite itemImage, GameObject itemPanel)
+        public void SetItemDetails(ClueData clueData, GameObject itemPanel)
         {
-            _itemName = itemName;
-            _itemImage.sprite = itemImage;
+            _clueData = clueData;
+            _itemImage.sprite = clueData.ClueImage;
             _itemPanel = itemPanel;
         }
         
         private void OnItemButtonClicked()
         {
             OpenItemPanel();
-            OnButtonClicked?.Invoke(_itemName);
+            OnButtonClicked?.Invoke(_clueData);
         }
         
         public void OpenItemPanel()

@@ -1,6 +1,9 @@
 using System.Collections;
+using TheDuction.Dialogue;
 using TheDuction.Event.DialogueEvent;
+using TheDuction.Interaction;
 using UnityEngine;
+using System.Linq;
 
 namespace TheDuction.Event.BranchEvent{
     public class BranchEventRunner : MonoBehaviour {
@@ -19,12 +22,12 @@ namespace TheDuction.Event.BranchEvent{
         private void Update() {
             if(_observeInUpdate){
                 for (int i = 0; i < _branchEventData.BranchParts.Count; i++){
-                    if(_branchEventData.BranchParts[i].branchPartState == BranchState.Active) continue;
+                    if(_branchEventData.BranchParts[i].BranchPartState == BranchState.Active) continue;
 
-                    _branchEventData.BranchParts[i].EventDatas.ForEach(eventData =>
+                    _branchEventData.BranchParts[i].BranchEvents.ForEach(branchEvent =>
                     {
-                        if(eventData.ItemData)
-                            eventData.ItemData.itemMode = Items.ItemData.ItemMode.NormalMode;
+                        if(branchEvent.EventData.InteractableObject)
+                            branchEvent.EventData.InteractableObject.Mode = InteractableMode.NormalMode;
                     });
                 }
 
@@ -33,28 +36,46 @@ namespace TheDuction.Event.BranchEvent{
         }
 
         /// <summary>
-        /// Update branch event state
-        /// If finish update all item in event data to normal mode, 
-        /// so it doesn't trigger the dialogue
+        /// Update branch event's state
         /// </summary>
-        /// <param name="newState"></param>
-        public void UpdateBranchPartState(DialogueEventData dialogueEventData, BranchState newState){
+        /// <param name="dialogueEventData">Event data</param>
+        /// <param name="newState">New state</param>
+        public void UpdateBranchEventState(DialogueEventData dialogueEventData, BranchState newState){
             foreach (BranchPart branchPart in _branchEventData.BranchParts)
             {
-                foreach (DialogueEventData eventData in branchPart.EventDatas){
-                    // Check which dialogue event data
-                    if(eventData == dialogueEventData){
-                        branchPart.branchPartState = newState;
+                foreach (BranchEvent branchEvent in branchPart.BranchEvents)
+                {
+                    if (branchEvent.EventData == dialogueEventData)
+                    {
+                        branchEvent.BranchEventState = newState;
+                        UpdateBranchPartState(branchPart, newState);
 
-                        // Look at new state
-                        if(newState == BranchState.Active){
-                            _activeBranchPart = branchPart;
-                            _canObserveActive = true;
-                        }
-
-                        break;
+                        return;
                     }
                 }
+            }
+        }
+
+        /// <summary>
+        /// Update branch part's event state
+        /// </summary>
+        /// <param name="branchPart">Branch Part</param>
+        /// <param name="newState">New state</param>
+        private void UpdateBranchPartState(BranchPart branchPart, BranchState newState){
+            switch(newState){
+                case BranchState.NotStarted:
+                    break;
+                case BranchState.Active:
+                    branchPart.BranchPartState = newState;
+                    _activeBranchPart = branchPart;
+                    _canObserveActive = true;
+                    break;
+                case BranchState.Finish:
+                    foreach(BranchEvent branchEvent in branchPart.BranchEvents.Where(branchEvent => branchEvent.RequiredToFinish)){
+                        if(branchEvent.BranchEventState != newState) return;
+                    }
+                    branchPart.BranchPartState = newState;
+                    break;
             }
         }
 
@@ -74,12 +95,21 @@ namespace TheDuction.Event.BranchEvent{
         /// <returns></returns>
         private IEnumerator ObserveFinish(){
             yield return new WaitUntil(() => _activeBranchPart != null);
-            yield return new WaitUntil(() => _activeBranchPart.EventToFinish.isFinished);
+            yield return new WaitUntil(() => {
+                // Check branch event that is required to finish only
+                foreach(BranchEvent branchEvent in _activeBranchPart.BranchEvents.Where(branchEvent => branchEvent.RequiredToFinish)){
+                    if(!branchEvent.EventData.isFinished) return false;
+                }
 
-            _activeBranchPart.EventDatas.ForEach(eventData =>{
-                eventData.ItemData.itemMode = Items.ItemData.ItemMode.NormalMode;
-                eventData.canBeInteracted = false;
+                return true;
             });
+
+            _activeBranchPart.BranchEvents.ForEach(branchEvent =>{
+                branchEvent.EventData.InteractableObject.Mode = InteractableMode.NormalMode;
+                branchEvent.EventData.canBeInteracted = false;
+            });
+
+            DialogueManager.Instance.SetDialogue(_activeBranchPart.FinishedEventDialogue);
 
             Destroy(gameObject);
         }

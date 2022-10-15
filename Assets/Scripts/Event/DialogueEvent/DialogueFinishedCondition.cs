@@ -1,21 +1,21 @@
 using System.Collections;
 using TheDuction.Dialogue;
 using TheDuction.Event.FinishConditionScripts;
-using TheDuction.Items;
+using TheDuction.Interaction;
 using UnityEngine;
 
 namespace TheDuction.Event.DialogueEvent{
     public class DialogueFinishedCondition: FinishConditionManager{
         private DialogueManager _dialogueManager;
-        private ItemData _itemData;
+        private Interactable _interactable;
         
         private void Awake()
         {
-            _itemData = GetComponent<ItemData>();
-            if(_itemData == null){
-                _itemData = GetComponentInParent<ItemData>();
+            _interactable = GetComponent<Interactable>();
+            if(_interactable == null){
+                _interactable = GetComponentInParent<Interactable>();
 
-                if(_itemData == null){
+                if(_interactable == null){
                     Debug.LogError($"Item data in {gameObject.name} is not found!");
                 }
             }
@@ -39,7 +39,7 @@ namespace TheDuction.Event.DialogueEvent{
             Debug.Log("Wait for dialogue finished");
             yield return new WaitUntil(() => 
                 _dialogueManager.DialogueModeStackList.Count == 0 &&
-                _dialogueManager.CurrentDialogueAsset == _itemData.currentDialogue);
+                _dialogueManager.CurrentDialogueAsset == _interactable.CurrentDialogue);
             Debug.Log("Dialogue finished");
             OnEndingCondition();
         }

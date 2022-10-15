@@ -32,5 +32,10 @@ namespace TheDuction.Dialogue.Logs
             }
             _dialogueLineText.text = $"\"{_dialogueLine.Trim()}\"";
         }
+
+        public void ResetPrefab(){
+            _speakerNameText.text = "";
+            _dialogueLineText.text = "";
+        }
     }
 }
