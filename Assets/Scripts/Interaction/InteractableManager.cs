@@ -28,17 +28,20 @@ namespace TheDuction.Interaction{
             return null;
         }
 
-        public void HandleInteractionView(string interactableName){
+        public void HandleInteractionName(string interactableName){
             _interactableNameText.text = interactableName;
             StartCoroutine(PlayInteractionView());
         }
 
         private IEnumerator PlayInteractionView() {
-            StartCoroutine(AlphaFadingEffect.FadeIn(_interactionInstruction));
             StartCoroutine(AlphaFadingEffect.FadeIn(_interactionName));
 
             yield return new WaitForSeconds(5.0f);
             StartCoroutine(AlphaFadingEffect.FadeOut(_interactionName));
+        }
+
+        public void InstructionFadeIn(){
+            StartCoroutine(AlphaFadingEffect.FadeIn(_interactionInstruction));
         }
 
         public void InstructionFadeOut(){

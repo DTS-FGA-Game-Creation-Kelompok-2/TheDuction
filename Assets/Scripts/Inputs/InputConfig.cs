@@ -41,13 +41,25 @@ namespace TheDuction.Inputs
             Interactable interactable = other.GetComponentInChildren<Interactable>();
             if(interactable == null) return;
 
-            InteractableManager.Instance.HandleInteractionView(interactable.Data.InteractableName);
+            switch(interactable.Mode){
+                case InteractableMode.DialogueMode:
+                    InteractableManager.Instance.HandleInteractionName(interactable.Data.InteractableName);
+                    InteractableManager.Instance.InstructionFadeIn();
+                    break;
+                case InteractableMode.InformationOnly:
+                case InteractableMode.NormalMode:
+                    InteractableManager.Instance.HandleInteractionName(interactable.Data.InteractableName);
+                    break;
+                default:
+                    break;
+            }
         }
 
         private void OnTriggerStay(Collider other)
         {
             Interactable interactable = other.GetComponentInChildren<Interactable>();
             if(interactable == null) return;
+            if(interactable.Mode != InteractableMode.DialogueMode) return;
             
             if (Input.GetKeyDown(_inputManager.InteractKey))
             {

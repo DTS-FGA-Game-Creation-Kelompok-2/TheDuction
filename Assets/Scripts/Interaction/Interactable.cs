@@ -2,7 +2,7 @@ using TheDuction.Dialogue;
 using UnityEngine;
 
 namespace TheDuction.Interaction{
-    public enum InteractableMode{ DialogueMode, NormalMode }
+    public enum InteractableMode{ DialogueMode, NormalMode, InformationOnly }
 
     public class Interactable : MonoBehaviour, IInteractable
     {
@@ -29,6 +29,8 @@ namespace TheDuction.Interaction{
                     HandleDialogue();
                     break;
                 case InteractableMode.NormalMode:
+                    break;
+                case InteractableMode.InformationOnly:
                     break;
                 default:
                     Debug.LogError("Item mode belum dimasukkan ke dalam switch case");
