@@ -3,6 +3,10 @@ using UnityEngine;
 
 namespace TheDuction.Player
 {
+    [RequireComponent(typeof(Rigidbody))]
+    [RequireComponent(typeof(BoxCollider))]
+    [RequireComponent(typeof(CapsuleCollider))]
+    [RequireComponent(typeof(InputConfig))]
     public class PlayerController : MonoBehaviour
     {
         [SerializeField] private float _moveSpeed = 10f;

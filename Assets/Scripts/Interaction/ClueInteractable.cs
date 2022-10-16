@@ -1,5 +1,3 @@
-using UnityEngine;
-
 namespace TheDuction.Interaction{
     public class ClueInteractable : Interactable {
         public delegate void ItemAction(ClueData clueData);
