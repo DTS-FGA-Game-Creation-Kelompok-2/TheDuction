@@ -37,13 +37,30 @@ namespace TheDuction.Inputs
             return Vector3.zero;
         }
 
+        private void OnTriggerEnter(Collider other) {
+            Interactable interactable = other.GetComponentInChildren<Interactable>();
+            if(interactable == null) return;
+
+            InteractableManager.Instance.HandleInteractionView(interactable.Data.InteractableName);
+        }
+
         private void OnTriggerStay(Collider other)
         {
-            IInteractable interactable = other.GetComponentInChildren<IInteractable>();
-            if (interactable != null && Input.GetKeyDown(_inputManager.InteractKey))
+            Interactable interactable = other.GetComponentInChildren<Interactable>();
+            if(interactable == null) return;
+            
+            if (Input.GetKeyDown(_inputManager.InteractKey))
             {
                 interactable.Interact();
+                InteractableManager.Instance.InstructionFadeOut();
             }
+        }
+
+        private void OnTriggerExit(Collider other) {
+            Interactable interactable = other.GetComponentInChildren<Interactable>();
+            if(interactable == null) return;
+
+            InteractableManager.Instance.InstructionFadeOut();
         }
     }
 }
