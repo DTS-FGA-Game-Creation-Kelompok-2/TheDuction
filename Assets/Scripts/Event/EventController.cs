@@ -1,6 +1,7 @@
 using TheDuction.Event.CameraEvent;
 using TheDuction.Event.DialogueEvent;
 using TheDuction.Event.FinishConditionScripts;
+using TheDuction.Event.MovementEvent;
 using UnityEngine;
 
 namespace TheDuction.Event{
@@ -62,6 +63,12 @@ namespace TheDuction.Event{
                     break;
                 case FinishCondition.CameraDurationFinished:
                     gameObject.AddComponent(typeof(CameraFinishedCondition));
+                    break;
+                case FinishCondition.TeleportFinished:
+                    gameObject.AddComponent(typeof(MovementFinishedCondition));
+                    break;
+                default:
+                    Debug.LogError("Can't set finish condition. Register it in switch case");
                     break;
             }
 

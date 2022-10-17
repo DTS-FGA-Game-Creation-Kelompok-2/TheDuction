@@ -8,7 +8,6 @@ namespace TheDuction.Player{
     public class CharacterMovement : MonoBehaviour {
         [SerializeField] private bool _isCharacterWalking = false;
         
-        [DrawIf("_isCharacterWalking", true)]
         [Header("Walking")]
         [DrawIf("_isCharacterWalking", true)]
         [SerializeField] private float _moveSpeed = 10f;
@@ -21,6 +20,8 @@ namespace TheDuction.Player{
         public bool IsWalking => _isWalking;
 
         private void Start() {
+            if(!_isCharacterWalking) return;
+            
             _navAgent = GetComponent<NavMeshAgent>();
 
             _navAgent.updateRotation = false;
