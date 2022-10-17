@@ -15,7 +15,7 @@ namespace TheDuction.Event.DialogueEvent{
             eventController = GetComponent<DialogueEventController>();
         }
 
-        private void Start() {
+        private void OnEnable() {
             DialogueEventData dialogueEventData = eventController.EventData as DialogueEventData;
             _interactable = InteractableManager.Instance.GetInteractable(dialogueEventData.InteractableObject);
         }
