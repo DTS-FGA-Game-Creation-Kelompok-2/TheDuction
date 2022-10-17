@@ -6,11 +6,15 @@ using UnityEngine;
 
 namespace TheDuction.Inventory
 {
-    public class Inventory : MonoBehaviour
+    public class InventoryManager : SingletonBaseClass<InventoryManager>
     {
-        [SerializeField] private List<ClueData> _items = new List<ClueData>();
+        [SerializeField] private List<ClueData> _items;
         [SerializeField] private InventoryData _itemsPrefab;
         [SerializeField] private Transform _itemsParent;
+
+        private void Awake() {
+            _items = new List<ClueData>();
+        }
 
         private void OnEnable()
         {
