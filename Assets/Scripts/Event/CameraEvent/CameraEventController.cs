@@ -1,5 +1,6 @@
 using Cinemachine;
 using TheDuction.Global.Attributes;
+using TheDuction.Player;
 using UnityEngine;
 using UnityEngine.Playables;
 
@@ -11,22 +12,18 @@ namespace TheDuction.Event.CameraEvent{
 
         [Header("Target")]
         [SerializeField] private bool _useTarget;
-        [DrawIf("useTarget", true)]
-        // [SerializeField] private NavigationMovement _targetCharacter;
-        [DrawIf("useTarget", true)]
+        [DrawIf("_useTarget", true)]
+        [SerializeField] private CharacterMovement _targetCharacter;
+        [DrawIf("_useTarget", true)]
         [SerializeField] private Transform _targetPosition;
-        [DrawIf("useTarget", true)]
+        [DrawIf("_useTarget", true)]
         [SerializeField] private Transform _lookAtTarget;
 
         public CinemachineVirtualCamera TargetVirtualCamera => _targetVirtualCamera;
         public PlayableDirector CutsceneTimeline => _cutsceneTimeline;
-        // public NavigationMovement TargetCharacter => _targetCharacter;
+        public CharacterMovement TargetCharacter => _targetCharacter;
         public Transform TargetPosition => _targetPosition;
         public Transform LookAtTarget => _lookAtTarget;
         public bool UseTarget => _useTarget;
-
-        private void Start() {
-            SetFinishCondition();
-        }
     }
 }
