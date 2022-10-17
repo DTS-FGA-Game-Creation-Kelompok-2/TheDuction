@@ -2,12 +2,9 @@ using UnityEngine;
 
 namespace TheDuction.Interaction
 {
-    [CreateAssetMenu(fileName = "New Item", menuName = "Scriptable Objects/Item")]
-    public class ClueData : ScriptableObject
+    [CreateAssetMenu(fileName = "New Clue", menuName = "Scriptable Objects/Interactable/Clue")]
+    public class ClueData : InteractableData
     {
-        public string ClueID;
-        public string ClueName;
-        public string ClueDescription;
         public Sprite ClueImage;
     }
 }

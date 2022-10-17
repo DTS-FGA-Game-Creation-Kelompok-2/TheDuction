@@ -144,7 +144,7 @@ namespace TheDuction.Dialogue.Tags{
                             break;
                     }
                     
-                    eventData.gameObject.SetActive(true);
+                    // eventData.gameObject.SetActive(true);
                     break;
                 }
             }

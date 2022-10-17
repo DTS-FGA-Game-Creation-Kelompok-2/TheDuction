@@ -6,12 +6,12 @@ using UnityEngine;
 namespace TheDuction.Event.CameraEvent{
     public class CameraFinishedCondition: FinishConditionManager{
         // private CameraMovement _cameraMovement;
-        private CameraEventData _cameraEventData;
+        private CameraEventController _cameraEventController;
 
         private void Awake() {
             // _cameraMovement = CameraMovement.Instance;
-            eventData = GetComponent<CameraEventData>();
-            _cameraEventData = eventData as CameraEventData;
+            eventController = GetComponent<CameraEventController>();
+            _cameraEventController = eventController as CameraEventController;
         }
 
         public override void SetEndingCondition()
@@ -32,15 +32,15 @@ namespace TheDuction.Event.CameraEvent{
             // Move the camera to target object
             // _cameraMovement.SetVirtualCameraPriority(cameraEventData.TargetVirtualCamera,
             //     _cameraMovement.CAMERA_HIGHER_PRIORITY);
-            _cameraEventData.CutsceneTimeline.Play();
+            _cameraEventController.CutsceneTimeline.Play();
 
             // Move the character
-            if(_cameraEventData.UseTarget){
+            if(_cameraEventController.UseTarget){
                 // cameraEventData.TargetCharacter.Move(cameraEventData.TargetPosition.position);
             }
 
             // Wait for camera duration
-            yield return new WaitForSeconds((float) _cameraEventData.CutsceneTimeline.duration + 2f);
+            yield return new WaitForSeconds((float) _cameraEventController.CutsceneTimeline.duration + 2f);
 
             // Camera finish
             Debug.Log("Camera finished");
