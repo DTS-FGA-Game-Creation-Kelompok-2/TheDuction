@@ -226,7 +226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _choicesParent: {fileID: 0}
-  _choicePrefab: {fileID: 7460958252311173304, guid: a295743e8fe72dd4f9a0fe2863cbc0f1, type: 3}
+  _choicePrefab: {fileID: 6976226608688835975, guid: ad9ccfff710973349b86792905684ff3, type: 3}
   _choiceMode: 0
 --- !u!1 &2271153889675070521
 GameObject:
