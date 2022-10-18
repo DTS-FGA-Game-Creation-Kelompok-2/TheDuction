@@ -12,7 +12,6 @@ using TheDuction.Event.MovementEvent;
 using TheDuction.Global;
 using TheDuction.Global.Effects;
 using TheDuction.Quest;
-using TheDuction.SceneLoading;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -20,6 +19,7 @@ using UnityEngine.UI;
 
 namespace TheDuction.Dialogue.Tags{
     public class DialogueTagManager: SingletonBaseClass<DialogueTagManager>{
+        [SerializeField] private string _creditsSceneName = "Credits";
         [SerializeField] private TextMeshProUGUI _dayText;
         [SerializeField] private Image _blackScreen;
 
@@ -118,7 +118,7 @@ namespace TheDuction.Dialogue.Tags{
 
             StartCoroutine(AlphaFadingEffect.FadeIn(_blackScreen,
                 fadingSpeed: 0.02f,
-                afterEffect: () => SceneManager.LoadScene("Credits")
+                afterEffect: () => SceneManager.LoadScene(_creditsSceneName)
             ));
         }
 
