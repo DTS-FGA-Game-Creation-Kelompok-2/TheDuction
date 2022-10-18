@@ -6,6 +6,7 @@ namespace TheDuction.Dialogue.Tags{
         public const string BGM_TAG = "bgm";
         public const string DIALOGUE_BOX_TAG = "dialogue-box";
         public const string ENDING_TAG = "end";
+        public const string END_CHAPTER_TAG = "end-chapter";
         public const string EVENT_TAG = "event";
         public const string ILLUST_TAG = "illust";
         public const string PORTRAIT_TAG = "portrait";

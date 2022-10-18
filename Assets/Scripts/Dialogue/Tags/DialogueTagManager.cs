@@ -1,5 +1,8 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using TheDuction.Audios.SoundEffects;
+using TheDuction.BackgroundMusics;
 using TheDuction.Dialogue.Illustrations;
 using TheDuction.Dialogue.Portraits;
 using TheDuction.Event;
@@ -10,11 +13,14 @@ using TheDuction.Global;
 using TheDuction.Global.Effects;
 using TheDuction.Quest;
 using TheDuction.SceneLoading;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace TheDuction.Dialogue.Tags{
     public class DialogueTagManager: SingletonBaseClass<DialogueTagManager>{
+        [SerializeField] private TextMeshProUGUI _dayText;
         [SerializeField] private Image _blackScreen;
 
         private DialogueManager _dialogueManager;
@@ -45,11 +51,15 @@ namespace TheDuction.Dialogue.Tags{
                 switch (tagKey)
                 {
                     case DialogueTags.BGM_TAG:
-                        // BackgroundMusicManager.Instance.Play(tagValue);
+                        BackgroundMusicManager.Instance.Play(tagValue);
                         break;
                     
                     case DialogueTags.DIALOGUE_BOX_TAG:
                         _dialogueManager.ShowOrHideDialogueBox(tagValue);
+                        break;
+
+                    case DialogueTags.END_CHAPTER_TAG:
+                        HandleEndChapterTag(tagValue);
                         break;
                     
                     case DialogueTags.ENDING_TAG:
@@ -76,7 +86,7 @@ namespace TheDuction.Dialogue.Tags{
                         break;
 
                     case DialogueTags.SFX_TAG:
-                        // SoundEffectManager.Instance.Play(tagValue);
+                        SoundEffectManager.Instance.Play(tagValue);
                         break;
                     
                     case DialogueTags.SPEAKER_TAG:
@@ -90,27 +100,25 @@ namespace TheDuction.Dialogue.Tags{
             }
         }
 
+        private void HandleEndChapterTag(string tagValue)
+        {
+            StartCoroutine(AlphaFadingEffect.FadeIn(_blackScreen, afterEffect: () => {
+                _dayText.text = tagValue;
+                StartCoroutine(AlphaFadingEffect.FadeOut(_blackScreen));
+            }));
+        }
+
         /// <summary>
         /// Handle ending tag
         /// </summary>
         /// <param name="tagValue"></param>
         private void HandleEndingTag(string tagValue){
             // Handle ending tag
-            SceneList.SceneNames().ForEach(sceneName =>
-            {
-                if (sceneName == tagValue)
-                {
-                    // TODO: Make scene load trigger
-                    // SceneLoadTrigger.Instance.LoadScene(tagValue);
-                    return;
-                }
-            });
-
             if (tagValue != DialogueTags.CONFIRM_ENDING) return;
 
             StartCoroutine(AlphaFadingEffect.FadeIn(_blackScreen,
-                fadingSpeed: 0.02f
-                // afterEffect: () => SceneLoadTrigger.Instance.LoadScene("HomeScene")
+                fadingSpeed: 0.02f,
+                afterEffect: () => SceneManager.LoadScene("Credits")
             ));
         }
 
