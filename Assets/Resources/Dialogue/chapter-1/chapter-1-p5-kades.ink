@@ -71,8 +71,9 @@ Nanti Abdul coba mampir ke rumah beliau untuk ngobrol.
 Iya, Nak.
 Mampir sekarang juga boleh, mumpung masih siang begini.
 
-#event: chapter-1-p5-udin
+#event: chapter-1-p6-udin
 #quest: quest-1-4
+#bgm: DefaultBGM
 
 #speaker: Abdul
 #portrait: main-character/mc-smile

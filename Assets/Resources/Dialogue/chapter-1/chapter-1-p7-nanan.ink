@@ -71,7 +71,7 @@ Entah. Kena azab, mungkin.
 #portrait: ibu-ibu/ibu-mad2
 Ah, sudah! Pergi sana. Enggak lihat saya lagi sibuk ngurus kebun?
 
-#event: chapter-1-p7-kades
+#event: chapter-1-p8-kades
 #quest: quest-1-6
 
 #speaker: Abdul

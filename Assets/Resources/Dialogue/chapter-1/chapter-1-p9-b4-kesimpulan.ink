@@ -7,7 +7,7 @@ Tapi dari semua kebun ini, cuma kebun Bu Nanan yang subur.
 Kenapa begini, ya?
 Harusnya peralatan warga sama semua, bahkan dari jenis bibit, pupuk, dan tanahnya.
 
-#event: chapter-1-p9-endmonolog
+#event: chapter-1-p10-endmonolog
 #quest: quest-1-8
 
 Masa sih, anggarannya yang salah...?
