@@ -19,6 +19,7 @@ namespace TheDuction.Dialogue.Tags{
         public const string BLANK_VALUE = "none";
         [Header("Tag: effect")]
         public const string BLUR_EFFECT = "illust-blur";
+        public const string FADE_IN_OUT = "fade-in-out";
         [Header("Tag: dialogue-box")]
         public const string SHOW_DIALOGUE_BOX = "show";
         [Header("Tag: ending")]

@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TheDuction.Audios.SoundEffects;
@@ -62,6 +63,9 @@ namespace TheDuction.Dialogue.Tags{
                         switch(tagValue){
                             case DialogueTags.BLUR_EFFECT:
                                 _dialogueIllustrationManager.BlurBackground();
+                                break;
+                            case DialogueTags.FADE_IN_OUT:
+                                StartCoroutine(BlackScreenFade());
                                 break;
                         }
                         break;
@@ -130,6 +134,22 @@ namespace TheDuction.Dialogue.Tags{
             ));
         }
 
+        private IEnumerator BlackScreenFade(){
+            StartCoroutine(AlphaFadingEffect.FadeIn(_blackScreen, 
+                beforeEffect: () => {
+                    _dialogueManager.PushDialogueMode(DialogueMode.Pause);
+                }
+            ));
+            yield return new WaitForSeconds(3.0f);
+
+            StartCoroutine(AlphaFadingEffect.FadeOut(_blackScreen, 
+                afterEffect: () => {
+                    _dialogueManager.PopDialogueMode(DialogueMode.Pause);
+                }
+            ));
+
+        }
+
         /// <summary>
         /// Find event data in list
         /// </summary>
@@ -141,9 +161,10 @@ namespace TheDuction.Dialogue.Tags{
             string[] eventIds = tagValue.Split(',');
             
             foreach(string eventId in eventIds){
+                string eventIdTrim = eventId.Trim();
                 // Find event data in list
                 foreach (EventData eventData in eventDatas.Where(
-                    eventData => eventData.EventId == eventId))
+                    eventData => eventData.EventId == eventIdTrim))
                 {
                     // Set event data
                     switch(eventData){
