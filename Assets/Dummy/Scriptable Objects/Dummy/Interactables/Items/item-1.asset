@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d2f2fbc4b1444b4e94fd97e4500fd47, type: 3}
   m_Name: item-1
   m_EditorClassIdentifier: 
-  ClueID: item-1
-  ClueName: Item A
-  ClueDescription: Item ini dibutuhkan NPC A
+  InteractableID: pestisida
+  InteractableName: pestisida
+  InteractableDescription: ini pestisida
   ClueImage: {fileID: 728017172041052461, guid: f8579b10a8b9a714e8e1abb6e3c165be, type: 3}

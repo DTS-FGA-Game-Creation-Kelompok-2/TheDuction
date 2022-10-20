@@ -11,9 +11,11 @@ namespace TheDuction.Global.SaveLoad
     public class SaveLoadData : SingletonBaseClass<SaveLoadData>
     {
         private const string SAVE_KEY = "save";
-        [SerializeField] private List<string> _inventory = new List<string>();
+        [SerializeField] private List<ClueData> _inventory = new List<ClueData>();
         [SerializeField] private string _currentEvent;
         [SerializeField] private string _currentQuest;
+        
+        public List<ClueData> Inventory => _inventory;
 
         private void OnEnable()
         {
@@ -32,7 +34,7 @@ namespace TheDuction.Global.SaveLoad
 
         private void SaveInventory(ClueData clueData)
         {
-            _inventory.Add(clueData.InteractableID);
+            _inventory.Add(clueData);
             Save();
         }
 
