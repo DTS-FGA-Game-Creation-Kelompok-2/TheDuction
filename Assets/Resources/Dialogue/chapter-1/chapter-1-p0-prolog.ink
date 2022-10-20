@@ -44,5 +44,6 @@ Desa kita apa kabar, Meng?
 #speaker: Meng
 Mmmm, itu...
 #event: chapter-1-p1-kades
+#quest:quest-1-1
 
 Miauw...
