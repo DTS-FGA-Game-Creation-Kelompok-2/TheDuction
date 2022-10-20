@@ -6,6 +6,7 @@ public class TutorialManager : MonoBehaviour
 {
     [SerializeField] private TutorialState _tutorialState;
     [SerializeField] private Button _nextButton;
+    [SerializeField] private Sprite _closeSprite;
     private int _currentPage = 0;
     [Header("UI Data")]
     [SerializeField] private Text _tutorialTitleText;
@@ -48,6 +49,7 @@ public class TutorialManager : MonoBehaviour
             case TutorialState.Inventory:
                 _tutorialTitleText.text = _inventoryTutorialTitle;
                 _tutorialImage.sprite = _inventoryTutorialImage;
+                _nextButton.GetComponent<Image>().sprite = _closeSprite;
                 break;
             case TutorialState.End:
                 _tutorialTitleText.text = "";
@@ -64,18 +66,6 @@ public class TutorialManager : MonoBehaviour
 
     private void NextPage()
     {
-        // if(_currentPage == 0)
-        // {
-        //     _currentPage++;
-        //     _tutorialState = TutorialState.Inventory;
-        // }
-        //
-        // else if(_currentPage == 1)
-        // {
-        //     _currentPage++;
-        //     InitEndTutorial();
-        // }
-
         switch (_currentPage)
         {
             case 0:
