@@ -21,7 +21,7 @@ namespace TheDuction.Inventory
         public void SetItemDetails(ClueData clueData)
         {
             _clueData = clueData;
-            _itemImage.sprite = clueData.ClueImage;
+            _itemImage.sprite = clueData.ClueImageSmall;
             _itemImage.SetNativeSize();
         }
         

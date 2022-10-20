@@ -29,7 +29,7 @@ namespace TheDuction.Inventory{
         {
             _itemName = clueData.InteractableName;
             _itemDescription = clueData.InteractableDescription;
-            _itemSprite = clueData.ClueImage;
+            _itemSprite = clueData.ClueImageLarge;
             
             SetObject();
         }
