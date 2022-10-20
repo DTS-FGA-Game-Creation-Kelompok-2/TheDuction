@@ -6,6 +6,8 @@ Terus, kebun warga banyak yang layu, padahal di anggaran desa sudah jelas tertul
 Tapi dari semua kebun ini, cuma kebun Bu Nanan yang subur.
 Kenapa begini, ya?
 Harusnya peralatan warga sama semua, bahkan dari jenis bibit, pupuk, dan tanahnya.
-Masa sih, anggarannya yang salah...?
+
 #event: chapter-1-p9-endmonolog
 #quest: quest-1-8
+
+Masa sih, anggarannya yang salah...?

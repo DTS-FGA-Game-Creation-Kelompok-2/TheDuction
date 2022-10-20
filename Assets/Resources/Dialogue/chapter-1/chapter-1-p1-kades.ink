@@ -38,6 +38,6 @@ Bapak akui, lagi ada banyak masalah di desa yang membuat bapak kewalahan sekaran
 #portrait: pak-kades/kades-relieved
 Haduh... Sudahlah, kita ngobrol sambil ngopi aja di rumah, yuk. 
 
-#event: tutorial-movement, chapter-1-p2-kades
-#quest-1-1
+#event: chapter-1-p2-kades
+#quest: quest-1-1
 Ayo, pulang.
