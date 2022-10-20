@@ -1,45 +1,43 @@
-#dialogue-box: show
 #speaker: Pak Kepala Desa
-#portrait: kades
-#bgm: a
-#sfx: a
+#portrait: pak-kades/kades-laugh
+#bgm: bgm-calm
 Abdul!
 
 #speaker: Abdul
+#portrait: main-character/mc-smile4
 Oh, Bapak!
 
 #speaker: Pak Kepala Desa
+#portrait: pak-kades/kades-relieved
 Aduh.. akhirnya sampai juga kamu, Nak. Sudah tidak sabar Bapak tunggu-tunggu dari pagi tadi.
 
 #speaker: Abdul
-Hehe. Abdul pulang, Pak.
+#portrait: main-character/mc-smile
+Abdul pulang, Pak.
+#portrait: main-character/mc-smile2
 Bapak apa kabar? Sehat, kan?
 
 #speaker: Pak Kepala Desa
+#portrait: pak-kades/kades-smile
 Iya, iya.. Bapak sehat.
+#portrait: pak-kades/kades-laugh
 Ayo ke rumah, kamu makan dan istirahat dulu, ya. Pasti capek kan, sudah jauh-jauh datang dari kota?
 
 #speaker: Abdul
+#portrait: main-character/mc-smile3
 Ah, gapapa kok, Pak. Abdul kan pulang untuk bantuin Bapak.
-Mau disuruh langsung kerja juga Abdul siap! Hehe.
+#portrait: main-character/mc-smile2
+Gimana keadaan desa, Pak? Ada yang bisa Abdul bantu?
 
 #speaker: Pak Kepala Desa
+#portrait: pak-kades/kades-relieved
 Aduh, dasar anak muda ini.. tinggi sekali semangatnya.
-
-#speaker: Abdul
-Bapak kan sampai minta bantuan Abdul untuk pulang, berarti ada masalah besar, dong.
-Abdul siap kok, ngebantu Bapak kapan aja.
-
-#speaker: Pak Kepala desa
 Makasih ya, Nak...
-Bapak memang agak kewalahan sekarang. Ada krisis keuangan, banyak warga sakit, sampai banyak kabar-kabar aneh soal Bapak juga...
-Haduh...
-Sudahlah, kita ngobrol sambil ngopi aja di rumah, yuk. 
+#portrait: pak-kades/kades-sad
+Bapak akui, lagi ada banyak masalah di desa yang membuat bapak kewalahan sekarang.
+#portrait: pak-kades/kades-relieved
+Haduh... Sudahlah, kita ngobrol sambil ngopi aja di rumah, yuk. 
+
+#event: tutorial-movement, chapter-1-p2-kades
+#quest-1-1
 Ayo, pulang.
-
-#event: tutorial-movement
-#event: chapter-1-p2-kades
-
-#speaker: Abdul
-Ayo, Pak.
-

@@ -1,148 +1,192 @@
-#dialogue-box: show
 #speaker: Abdul
-#portrait: Abdul
-#bgm: a
-#sfx: a
+#portrait: main-character/mc-smile
 Permisi... Selamat siang, Pak Udin.
 
 #speaker: Pak Udin
+#portrait: pedagang/pedagang-laugh
 Ehh, halo!
+#portrait: pedagang/pedagang-smile
 Kamu pasti itu ya, anaknya Pak Kades! Aduh, siapa namanya, saya lupa...
 
 #speaker: Abdul
+#portrait: main-character/mc-smile2
 Abdul, Pak.
 
 #speaker: Pak Udin
+#portrait: pedagang/pedagang-talking
 Ah, iya! Abdul!
+#portrait: pedagang/pedagang-laugh
 Wah, wah, akhirnya ketemu juga. Saya sering dengar cerita soal kamu dari Pak Kades. Bangga sekali beliau setiap cerita soal kamu.
-Hahah. Sudah sukses ya kamu di kota? Kapan sampai disini?
+#portrait: pedagang/pedagang-talking
+Sudah sukses ya kamu di kota? Kapan sampai disini?
 
 #speaker: Abdul
-Hehe, iya, Pak. Saya baru aja sampai kok.
+#portrait: main-character/mc-smile
+Baru aja sampai kok, Pak.
 
 #speaker: Pak Udin
+#portrait: pedagang/pedagang-talking
 Waduh, kok saya enggak lihat ya, tadi. Padahal rumah saya ini pas di depan gapura desa.
+#portrait: pedagang/pedagang-laugh
 Udah kayak pos satpam, saya biasanya tahu siapa aja yang keluar masuk, hahah!
+#portrait: pedagang/pedagang-talking
 Eh, ayo ayo masuk, saya siapkan teh sama cemilan, ya? Kamu suka apa?
 
 #speaker: Abdul
-Aduh, enggak usah repot-repot, Pak. Saya cuma mau menyapa sebentar aja, kok.
+#portrait: main-character/mc-smile2
+Eh, enggak usah repot-repot, Pak. Saya cuma mau menyapa sebentar aja, kok.
+#portrait: main-character/mc-smile3
+Saya dengar Bapak sekarang ngebantu ngurus hasil panen warga sini ya, Pak?
 
 #speaker: Pak Udin
-Wahh, padahal saya mau ngobrol banyak sama kamu. Anak muda yang sukses di kota kayak kamu ini biasanya punya banyak ide-ide kreatif, kan.
-Sering-sering mampir kesini, ya. Saya bisa belajar banyak dari kamu.
+#portrait: pedagang/pedagang-laugh
+Ah, iya, cuma bantu sedikit, kok.
+#portrait: pedagang/pedagang-talking
+Saya ini udah hampir dua tahun dipercayai warga buat jual hasil panen mereka.
+#portrait: pedagang/pedagang-sad
+Tapi aduh... Kamu mungkin udah dengar kabarnya juga, ya?
+#portrait: pedagang/pedagang-sad2
+Sudah setahun ini hasil jual panen kita makin menurun. Kondisi pasar enggak stabil. Aneh. Padahal tahun lalu masih lancar.
 
 #speaker: Abdul
-Ah, Bapak bisa aja. Justru saya yang harusnya belajar dari Bapak.
-Saya dengar Bapak sering ngebantu warga desa, ya? Makasih banyak, Pak.
-Berkat Bapak, beban Pak Kades enggak terlalu berat.
+#portrait: main-character/mc-serious
+Kira-kira kenapa bisa begitu, Pak?
 
 #speaker: Pak Udin
-Ah, enggak kok, saya cuma bisa bantu sedikit. Justru masih banyak warga yang belum bisa saya bantu.
-Haduh... Karena kamu bahas ini, saya jadi sedih lagi mengingatnya.
-Kasihan warga desa ini, Dul.
-
-#speaker: Abdul
-Iya Pak. Tadi saya sudah dengar sedikit ceritanya di rumah.
-Ini saya juga pulang ke desa tujuannya untuk ngebantu warga.
-Bapak tahu, gak, kira-kira kenapa desa kita tiba-tiba begini?
-
-#speaker: Pak Udin
-Hmm... Enggak tiba-tiba juga sih ya, Dul.
-Saya ini udah dipercayai warga buat jual hasil panen mereka. Udah hampir dua tahun.
-Tapi sayangnya sudah setahun ini kondisi pasar enggak stabil. Aneh. Padahal tahun lalu masih lancar.
-Saya udah ngejalin kerjasama sama stakeholder gede tuh, di kota. Mereka udah mau langganan panen kita.
-
-#speaker: Abdul
-Tapi tadi saya dengar kalau hasil jual panen kita makin menurun, Pak. Kenapa begitu?
-
-#speaker: Pak Udin
-Itu dia. Mungkin memang permintaan pasar lagi berubah-ubah, ya.
-Saya paham kok, kualitas panen desa ini bagus sekali. Itu selalu saya tekankan setiap kali mau kerjasama dengan pihak luar.
-Tapi tetap aja, mungkin kita juga punya saingan. Mungkin ada supplier lain yang tawarannya lebih bagus, jadi hasil panen dari desa kita kalah saing...
+#portrait: pedagang/pedagang-sad
+Aduh, apa ya... Mungkin memang permintaan pasar lagi berubah-ubah.
+#portrait: pedagang/pedagang-sad2
+Saya paham betul kok, kualitas panen desa ini bagus sekali.
+Tapi tetap aja, mungkin kita punya saingan. Mungkin ada supplier lain yang tawarannya lebih bagus, jadi hasil panen dari desa kita kalah saing...
+#portrait: pedagang/pedagang-sad
+Menurut saya sih begitu, tapi...
+#portrait: pedagang/pedagang-sad2
 Haduh... Jujur, saya merasa bersalah, Dul.
 Padahal warga desa ini percaya sekali sama saya. Saya juga udah berusaha keras untuk ngebantu warga.
-Sedih sekali saya kalau melihat warga yang penghasilannya bahkan tidak cukup untuk kehidupan sehari-hari mereka.
+Sedih sekali melihat ada warga yang penghasilannya bahkan tidak cukup untuk kehidupan sehari-hari mereka...
 
 #speaker: Abdul
-Ehh, Bapak sudah cukup membantu kok, Pak.
-Tenang saja, saya akan bantu cari jalan keluarnya.
-Hmmm... Kalau kita kalah saing, apa mungkin harus cari inovasi baru, ya? Supaya panen kita lebih menarik?
+#portrait: main-character/mc-serious
+Katanya banyak warga yang sakit sampai tidak mau berobat karena tidak ada uang ya, Pak?
 
 #speaker: Pak Udin
-Wah, inovasi, ya? Saya bukan orang yang kreatif, nih, Dul. Hehe.
-Kamu deh, yang coba cari-cari ide inovasi begitu.
-Ini sekarang saya juga lagi khawatir karena banyak warga yang sakit...
+#portrait: pedagang/pedagang-sad2
+Nah, iya. Itu juga. Kasihan, Dul.
+#portrait: pedagang/pedagang-talking
+Untung saya kebetulan punya stok obat yang pas untuk penyakit warga, jadi obat-obatannya bisa saya jual murah, atau kadang bahkan saya bagi-bagikan dengan gratis.
 
 #speaker: Abdul
-Oh, iya, soal penyakit itu juga.
-Katanya banyak warga yang mengira kalau ini wabah, ya?
-Menurut Bapak bagaimana? Kalau memang benar ada wabah, kita harus langsung lapor ke puskesmas atau rumah sakit, dong?
+#portrait: main-character/mc-serious
+Oh, memangnya gejala penyakit warga bagaimana, Pak? Apa memang cukup dirawat cuma dengan obat dari Bapak?
+#portrait: main-character/mc-serious2
+Kalau penyakitnya serius, lebih baik kita lapor ke puskesmas atau rumah sakit, dong?
 
 #speaker: Pak Udin
+#portrait: pedagang/pedagang-shock
 Ah, enggak, gapapa kok, Dul.
-Menurut saya mungkin ini cuma penyakit musiman. Obat saya masih cukup untuk mengobati gejalanya.
-Untungnya ada beberapa warga juga yang sudah bisa sembuh.
-Kalau kita bawa ke rumah sakit, saya justru kasihan sama warga. Pasti biayanya mahal. Pergi ke kota juga jauh sekali. Bisa-bisa mereka lemas di jalan.
+#portrait: pedagang/pedagang-talking
+Menurut saya mungkin ini cuma penyakit musiman. Cuma diare, mual-mual, dan pusing sedikit. 
+#portrait: pedagang/pedagang-smile
+Obat saya masih cukup untuk mengobati gejalanya.
+#portrait: pedagang/pedagang-sad
+Kalau kita bawa ke rumah sakit, saya justru kasihan sama warga. Pasti biayanya mahal.
+Pergi ke kota juga jauh sekali. Bisa-bisa mereka lemas di jalan.
 
 #speaker: Abdul
-Hmmm... Iya juga sih, Pak.
+#portrait: main-character/mc-serious
+Hmmm...
+(Enggak salah, sih. Agak beresiko kalau warga yang sakit dibawa jalan jauh ke kota untuk berobat.)
+(Tapi memangnya diare, mual, dan pusing itu penyakit musiman, ya...?)
 
 #speaker: Pak Udin
-Tapi tenang saja. Kalau memang ada warga yang kondisinya semakin parah dan saya tidak punya obatnya, pasti akan segera saya usahakan untuk dibawa ke rumah sakit.
+#portrait: pedagang/pedagang-laugh
+Tenang saja, enggak perlu khawatir.
+Saya masih punya obat yang cukup untuk merawat warga.
+#portrait: pedagang/pedagang-serious
+Toh, penyakit musiman kayak gini pasti enggak akan tahan lama, kok, Dul.
 
 #speaker: Abdul
-Wah, makasih, Pak. Saya dan Pak Kades juga pasti akan membantu, kok.
+#portrait: main-character/mc-serious
+(Kok, Pak Udin yakin sekali ya, ini cuma penyakit musiman?)
+#portrait: main-character/mc-serious2
+Tapi kalau penyakitnya makin parah, kita harus bawa warga ke rumah sakit, ya, Pak.
+Soal biaya enggak masalah, kok. Bisa dibantu dari anggaran desa.
+
+#speaker: Pak Udin
+#portrait: pedagang/pedagang-laugh
+Iyaa, ya ampun, perhatian sekali kamu ini.
+Mirip sekali dengan Pak Kades!
+
+#speaker: Abdul
+#portrait: main-character/mc-smile
 Oh iya, soal Pak Kades.
-Katanya ada kabar yang bilang kalau Pak Kades salah mengurus anggaran desa. Apa Bapak tahu kira-kira itu kabar darimana?
+#portrait: main-character/mc-serious2
+Bapak tahu, tidak, kabar yang bilang kalau krisis keuangan desa sekarang ini karena Pak Kades salah mengurus anggaran?
 
 #speaker: Pak Udin
-Aduh, ya ampun!
-Saya juga makin sering dengar kabar seperti itu belakangan ini.
-Entah darimana kabarnya mulai, tapi astaga, jahat sekali yang menyebarkannya.
-Padahal desa sedang krisis begini. Harusnya kita saling mendukung, bukannya malah memancing perpecahan begini....
-Saya yakin sekali Pak Kades tidak mungkin ceroboh mengurus anggaran.
-
-#speaker: Abdul
-Memang benar, Pak. Saya sudah mengecek anggaran desa yang disusun beliau. Tidak ada yang salah, sama sekali.
-
-#speaker: Pak Udin
-Nah, iya kan!
+#portrait: pedagang/pedagang-mad
+Wah, tahu!
+Belakangan ini sering sekali saya dengar kabar itu.
+#portrait: pedagang/pedagang-mad2
+Padahal desa sedang krisis begini. Harusnya kita saling mendukung, bukannya malah memancing perpecahan begini...
+#portrait: pedagang/pedagang-mad
 Huh, kesal saya sama yang seenaknya menebar kabar aneh begitu.
-Tapi kalau kamu mau cari siapa pelakunya, hmm... Gimana ya...
-Ini sih cuma perkiraan saya, ya. Tapi coba kamu cek Ibu Nanan.
 
 #speaker: Abdul
-Ibu Nanan? Kenapa, Pak?
+#portrait: main-character/mc-serious
+Bapak tahu, tidak, kira-kira siapa yang mungkin menyebar kabar itu?
 
 #speaker: Pak Udin
-Iya. Kamu masih ingat rumahnya? Rumah biru di sebelah rumah Pak Kades. Kebunnya luas dan subur sekali.
+#portrait: pedagang/pedagang-serious
+Hmm... Gimana ya...
+Ini sih cuma perkiraan saya. Tapi coba kamu cek Ibu Nanan.
+
+#speaker: Abdul
+#portrait: main-character/mc-serious2
+Ibu Nanan? Ada apa dengan beliau, Pak?
+
+#speaker: Pak Udin
+#portrait: pedagang/pedagang-talking
+Kamu tahu rumahnya? Rumah biru di sebelah rumah Pak Kades. Kebunnya luas dan subur sekali.
+#portrait: pedagang/pedagang-mad2
 Tapi Bu Nanan itu ya, astaga, sombong sekali!
 Kebunnya sesubur itu, tapi dia enggak pernah mau berbagi ke warga, padahal banyak warga yang kelaparan.
-Sifatnya juga kasar, egois! Tahu tidak, waktu warga lain susah mencari duit seperti ini, kemarin Bu Nanan malah dengan sombongnya merenovasi rumahnya.
+#portrait: pedagang/pedagang-mad
+Sifatnya juga kasar, egois! Tahu tidak, waktu warga sedang kesusahan seperti ini, kemarin Bu Nanan malah dengan sombongnya merenovasi rumahnya.
+#portrait: pedagang/pedagang-mad2
 Aduh, gak tahan saya melihat dia. Enggak punya rasa simpati.
 
 #speaker: Abdul
+#portrait: main-character/mc-serious
 Loh... Tapi Bu Nanan yang saya kenal dulu orangnya ramah kok, Pak?
 
 #speaker: Pak Udin
-Yahh... Orang kan bisa berubah, Dul. Apalagi sudah bertahun-tahun.
-Kamu juga seharusnya paham, sifat asli manusia itu paling kelihatan di saat krisis seperti ini.
+#portrait: pedagang/pedagang-serious
+Ah, orang kan bisa berubah, Dul. Apalagi sudah bertahun-tahun.
+#portrait: pedagang/pedagang-talking
 Pokoknya, menurut saya nih ya, cuma dia yang mungkin bisa menebar kabar-kabar aneh begitu.
 
 #speaker: Abdul
+#portrait: main-character/mc-serious2
 Tapi kalau begitu, apa untungnya untuk Bu Nanan?
 
 #speaker: Pak Udin
-Wah, kalau itu sih saya enggak tahu. Coba kamu ajak ngobrol saja dia.
+#portrait: pedagang/pedagang-talking
+Wah, itu sih enggak tahu saya. Pokoknya sih cuma dia yang paling menutup diri di desa ini. Kan aneh!
 
 #speaker: Abdul
+#portrait: main-character/mc-serious
 Hmm...
-Ya sudah, kalau begitu saya pamit dulu, Pak.
-Makasih banyak buat info-infonya.
+(Agak aneh rasanya kalau Pak Udin sampai segitunya menuduh Bu Nanan tanpa bukti...)
+(Aku harus cari tahu lebih lanjut dan coba ngomong ke Bu Nanan.)
+#portrait: main-character/mc-smile
+Ya sudah, Pak. Saya paham maksud Bapak.
+#portrait: main-character/mc-smile2
+Kalau begitu, saya pamit dulu. Saya masih mau menyapa warga lain.
 
 #event: chapter-1-p6-nanan
-#quest: quest-1-2
+#quest: quest-1-5
 
 #speaker: Pak Udin
-Iya iya, sama-sama.
+#portrait: pedagang/pedagang-laugh
+Oh, iya, iya, silahkan.

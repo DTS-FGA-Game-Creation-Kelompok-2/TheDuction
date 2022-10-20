@@ -1,47 +1,42 @@
-#dialogue-box: show
 #speaker: Pak Kepala Desa
-#portrait: kades
-#bgm: a
-#sfx: a
+#portrait: pak-kades/kades-laugh
 Sudah pulang, Nak. Cepat sekali.
+#portrait: pak-kades/kades-smile
 Gimana, sudah ketemu warga?
 
 #speaker: Abdul
-Iya, Pak. Tadi Abdul ketemu Pak Udin dan Bu Nanan.
+#portrait: main-character/mc-smile
+Iya, Pak. Tadi sudah ketemu Pak Udin dan Bu Nanan.
 
 #speaker: Pak Kepala Desa
+#portrait: pak-kades/kades-relieved
 Oh, baguslah.
-Jadi bagaimana pendapatmu, Dul?
-Sudah dapat ide?
+#portrait: pak-kades/kades-smile
+Jadi, bagaimana? Sudah dapat ide?
 
 #speaker: Abdul
+#portrait: main-character/mc-serious2
 Hmmm, gimana ya, Pak... Belum ada ide sih.
-Kalau menurut Pak Udin, hasil panen kita kurang laku karena kurang saing.
-Tapi kan aneh. Kualitas panen kita enggak menurun. Kok, tiba-tiba kalah saing?
-Terus Abdul juga belum paham kira-kira kenapa banyak warga yang sakit. Kata Pak Udin sih bukan wabah, cuma penyakit musiman.
-Tapi hmm, Bapak bilang gejalanya sampai ada yang diare dan sesak napas. Abdul belum pernah dengar ada penyakit musiman yang gejalanya begitu.
-Aduhh, mau cari di internet tapi disini hampir enggak ada sinyal internet...
 
 #speaker: Pak Kepala Desa
-Hahah. Sudah, sudah. Tidak perlu buru-buru. Bapak sudah senang melihat kamu semangat sekali mau membantu.
-Itu di rumah ada makanan, jangan lupa makan dan istirahat, ya. Kamu kan baru sampai.
+#portrait: pak-kades/kades-laugh
+Hahah. Ya sudah. Tidak perlu buru-buru. Bapak sudah senang melihat kamu semangat sekali mau membantu.
+#portrait: pak-kades/kades-smile
+Sekarang Bapak pamit dulu, ya. Mau minta bantuan obat-obatan ke desa sebelah.
 
 #speaker: Abdul
-Hehe, iya Pak.
-
-#speaker: Pak Kepala Desa
-Bapak pamit dulu, ya. Mau minta bantuan obat-obatan ke desa sebelah.
-
-#speaker: Abdul
-Eh, mau Abdul temenin, Pak?
+#portrait: main-character/mc-smile
+Oh, mau ditemenin, Pak?
 
 #speaker: Pak Kepala desa
-Ah, enggak usah. Bapak sendiri aja. Kamu jaga rumah aja.
+#portrait: pak-kades/kades-laugh
+Ah, enggak usah. Bapak sendiri aja. Kamu jaga rumah aja. Makan dan istirahat.
+#portrait: pak-kades/kades-smile
 Kalau mau main dan lihat-lihat desa lagi juga boleh, tapi jangan pulang terlalu larut, ya.
 
-#event: chapter-1-p8-kades
-#quest: quest-1-4
+#event: chapter-1-p8-b1-sumur, chapter-1-p8-b2-kebunwarga, chapter-1-p8-b3-kebunnanan
+#quest: quest-1-7
 
 #speaker: Abdul
-Oke, Pak.
-Hati-hati di jalan.
+#portrait: main-character/mc-smile2
+Oke. Hati-hati di jalan, Pak..
