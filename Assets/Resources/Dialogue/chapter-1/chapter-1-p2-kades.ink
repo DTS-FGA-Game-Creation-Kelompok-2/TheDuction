@@ -80,7 +80,7 @@ Pokoknya sekarang ada kabar seperti itu di desa...
 #portrait: pak-kades/kades-relieved
 Coba kamu ambil map anggaran desa di meja depan rumah kita.
 
-#event: tutorial-eksplorasi, tutorial-interaksi-objek, chapter-1-p3-kades
-#quest-1-2
+#event: chapter-1-p3-kades
+#quest: quest-1-2
 
 Bapak mau minta pendapat kamu. Kamu kan masih muda, lebih teliti. Kalau memang ada yang salah, biar bisa Bapak perbaiki.

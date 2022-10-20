@@ -18,7 +18,6 @@ Duh, mau cari di internet tapi disini enggak ada sinyal.
 Bu Nanan tadi juga agak aneh. Kenapa ketus sekali, ya, bicaranya?
 Ah, bingung.
 
-#ending: true
 #end-chapter: Hari Ke-2
 
 #portrait: main-character/mc-smile4
