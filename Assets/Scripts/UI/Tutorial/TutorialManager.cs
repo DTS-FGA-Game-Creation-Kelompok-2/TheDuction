@@ -1,9 +1,14 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TutorialManager : MonoBehaviour
 {
     [SerializeField] private TutorialState _tutorialState;
+    [SerializeField] private Text _tutorialTitleText;
+    [SerializeField] private Text _tutorialDescriptionText;
+    [SerializeField] private Image _tutorialImage;
+    
     
     public enum TutorialState
     {
@@ -23,16 +28,24 @@ public class TutorialManager : MonoBehaviour
         switch (newState)
         {
             case TutorialState.Move:
-                Debug.Log("Move tutorial");
+                _tutorialTitleText.text = "Move";
+                _tutorialDescriptionText.text = "Use WASD to move";
+                // _tutorialImage.sprite = Resources.Load<Sprite>("Sprites/Move");
                 break;
             case TutorialState.Interact:
-                Debug.Log("Interact tutorial");
+                _tutorialTitleText.text = "Interact";
+                _tutorialDescriptionText.text = "Press E to interact";
+                // _tutorialImage.sprite = Resources.Load<Sprite>("Sprites/Interact");
                 break;
             case TutorialState.Inventory:
-                Debug.Log("Inventory tutorial");
+                _tutorialTitleText.text = "Inventory";
+                _tutorialDescriptionText.text = "Press I to open inventory";
+                // _tutorialImage.sprite = Resources.Load<Sprite>("Sprites/Inventory");
                 break;
             case TutorialState.End:
-                Debug.Log("End tutorial");
+                _tutorialTitleText.text = "";
+                _tutorialDescriptionText.text = "";
+                // _tutorialImage.sprite = Resources.Load<Sprite>("Sprites/End");
                 break;
         }
     }
