@@ -43,6 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba91aa4f36152324c85fede15dacbfe1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _questControllerContainer: []
-  _questPrefab: {fileID: 445241881019204958, guid: c442ef3b24e66064d8d7a013d0be3751, type: 3}
-  _questParent: {fileID: 0}
+  _questsContainer: []
+  _questControllerPrefab: {fileID: 3039335524507967646, guid: ab63ea2a8b1312341a9db34b9def7263, type: 3}
+  _questControllerParent: {fileID: 9066015312606349436}
+  _questViewPrefab: {fileID: 445241881019204958, guid: c442ef3b24e66064d8d7a013d0be3751, type: 3}
+  _questViewParent: {fileID: 0}

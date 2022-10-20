@@ -22,7 +22,8 @@ namespace TheDuction.Dialogue{
         private void StartChapter()
         {
             dialogueManager.gameObject.SetActive(true);
-            dialogueManager.SetDialogue(initialTextAsset);
+            if(initialTextAsset)
+                dialogueManager.SetDialogue(initialTextAsset);
         }
     }
 }

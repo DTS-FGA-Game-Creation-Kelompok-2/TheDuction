@@ -11,17 +11,13 @@ namespace TheDuction.Event.DialogueEvent{
         
         private void Awake()
         {
-            _interactable = GetComponent<Interactable>();
-            if(_interactable == null){
-                _interactable = GetComponentInParent<Interactable>();
-
-                if(_interactable == null){
-                    Debug.LogError($"Item data in {gameObject.name} is not found!");
-                }
-            }
-
             _dialogueManager = DialogueManager.Instance;
-            eventData = GetComponent<DialogueEventData>();
+            eventController = GetComponent<DialogueEventController>();
+        }
+
+        private void Start() {
+            DialogueEventData dialogueEventData = eventController.EventData as DialogueEventData;
+            _interactable = InteractableManager.Instance.GetInteractable(dialogueEventData.InteractableObject);
         }
 
         public override void SetEndingCondition()
