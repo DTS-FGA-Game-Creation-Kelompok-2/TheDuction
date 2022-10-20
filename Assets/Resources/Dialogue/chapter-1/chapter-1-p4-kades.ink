@@ -1,95 +1,78 @@
-#dialogue-box: show
 #speaker: Pak Kepala Desa
-#portrait: kades
-#bgm: a
-#sfx: a
+#portrait: pak-kades/kades-smile
 Gimana, Nak? Ada yang salah?
 
 #speaker: Abdul
-Hmm... Enggak ada sih, Pak.
-Ini anggarannya udah rapi sekali. Abdul aja mana mungkin kepikiran untuk ngebagi dana sedetail ini.
+#portrait: main-character/mc-serious
+Hmm... 
+(Anggarannya rapi sekali. Semua dananya jelas dialirkan kemana.)
+(Biaya kecil-kecil aja sampai ditulis Bapak, wah.)
+#portrait: main-character/mc-smile2
+Enggak, Pak. Enggak ada yang salah.
 
 #speaker: Pak Kepala Desa
+#portrait: pak-kades/kades-relieved
 Ah, kamu ini berlebihan. Ayo, jujur saja kalau memang ada yang salah.
 
 #speaker: Abdul
-Loh, Abdul serius kok, Pak.
-Misalnya ini. Ada alokasi dana untuk ngebangun saluran dari sumber air ke ladang warga.
-Bapak bahkan nulis biaya untuk konsumsi pekerja, transport pekerja, biaya pengganti untuk warga yang lahannya terganggu, sampai biaya perawatan peralatan pekerjanya.
-Aduh, kalau di kota sih, biaya kayak gini itu cuma ditulis "biaya lain-lain," Pak. Jarang ada yang mau nulis sedetail ini. Kepikiran buat bayarin transport pekerjanya aja enggak.
+#portrait: main-character/mc-smile2
+Loh, serius, Pak.
+Abdul enggak lihat ada yang salah.
+#portrait: main-character/mc-smile
+Alokasinya sudah bagus sekali. Semuanya Bapak arahkan untuk beli peralatan baru buat warga. Beli pupuk, tanah, bibit, cangkul.. 
+#portrait: main-character/mc-smile2
+Sampai sarung tangan dan sepatu bot aja Bapak belikan dari anggaran desa.
 
 #speaker: Pak Kepala Desa
-Yahh, itu kan supaya jelas, Nak, uangnya habis dimana.
+#portrait: pak-kades/kades-relieved
+Yahh, tapi coba dilihat lagi, Nak. Kalau memang anggaran yang Bapak susun sudah benar, jadi masalahnya dimana?
 
 #speaker: Abdul
-Nah, makanya itu, Pak. Abdul enggak lihat ada yang salah.
-Anggaran setahun ini rata-rata Bapak arahkan untuk beli peralatan baru buat warga. Beli pupuk, tanah, bibit, cangkul..
-Aduh, sampai sarung tangan dan sepatu bot aja Bapak belikan dari anggaran desa.
-
-#speaker: Pak Kepala Desa
-Kasihan, Nak. Bapak lihat banyak yang sarung tangan dan sepatunya sudah usang.
-Mumpung anggarannya cukup, ya sekalian Bapak belikan saja yang baru, yang bagus untuk warga.
-
-#speaker: Abdul
-Hahah. Ini sih, anggaran desa sudah benar-benar Bapak habiskan untuk keperluan desa.
-Huh... Siapa sih, yang berani-beraninya nuduh Bapak enggak bijak membagi anggaran?
-
-#speaker: Pak Kepala Desa 
-Tapi coba dilihat lagi, Nak. Kalau memang anggaran yang Bapak susun sudah benar, jadi masalahnya dimana?
-
-#speaker: Abdul
+#portrait: main-character/mc-serious
 Nah, itu dia...
-Kalau dari yang Abdul baca di sini sih, memang masalahnya ada di penjualan panen yang makin turun, Pak.
-Tapi kok aneh, ya? Jumlah panennya enggak berbeda jauh, tapi keuntungannya kenapa menurun?
+#portrait: main-character/mc-serious2
+Kalau dari yang tertulis disini sih, masalahnya ada di penjualan panen yang makin turun, Pak.
+#portrait: main-character/mc-serious
+Tapi aneh. Jumlah panennya enggak berbeda jauh, tapi keuntungannya kenapa menurun?
 
-#speaker: Pak Kepala Desa 
-Hmm... Bapak juga enggak paham.
+#speaker: Pak Kepala Desa
+#portrait: pak-kades/kades-dissapointed
+Hmm... Bapak juga enggak paham...
+#portrait: pak-kades/kades-relieved
 Tadi waktu kamu baru sampai, kamu lihat ada rumah hijau di dekat gapura, enggak?
+#portrait: pak-kades/kades-smile
+Itu rumah Pak Udin. Pedagang sekaligus distributor desa. 
+Beliau pendatang baru. Kalau enggak salah baru dua atau hampir tiga tahun disini.
 
 #speaker: Abdul
-Oh, yang ada pagar dan tokonya itu, Pak?
+#portrait: main-character/mc-smile2
+Wah, tapi rumahnya bagus, ya. Hebat juga bisa langsung buka toko disini.
 
 #speaker: Pak Kepala Desa
-Iya. Itu rumah Pak Udin. Pendatang baru di desa, kalau enggak salah baru dua atau hampir tiga tahun disini.
-
-#speaker: Abdul
-Wahh, tapi rumahnya bagus ya, Pak. Hebat juga bisa langsung buka toko disini.
-
-#speaker: Pak Kepala Desa
-Iya, Pak Udin itu distributor dari kota. Dia pindah kesini karena lebih suka suasana desa yang adem, katanya. Hahah.
-Baik sekali orangnya, ramah dan sopan. Beliau juga selama ini rajin ngebantu warga sini.
-
-#speaker: Abdul
-Oh? Ngebantu gimana, Pak?
-
-#speaker: Pak Kepala Desa
-Wah, macem-macem pokoknya. Sekarang warga kalau panen langsung melapor saja ke Pak Udin. Langsung akan dibantu mulai dari urusan packing sampai cari pembeli yang pas.
+#portrait: pak-kades/kades-smile
+Iya, Pak Udin itu distributor dari kota. Sekarang warga kalau panen langsung melapor saja ke beliau.
+#portrait: pak-kades/kades-laugh.
+Langsung akan dibantu mulai dari urusan packing sampai cari pembeli yang pas.
 Keuntungannya pun langsung jelas diberitahu dan dibagikan ke warga.
-Pak Udin juga buka toko kelontong. Kadang dia suka bagi-bagi sembako ke warga.
-Aduh, kemarin waktu banyak warga yang sakit, Bapak berterima kasih sekali karena beliau kebetulan punya stok obat-obatan.
-Kita kan jauh dari puskesmas, apalagi rumah sakit. Kalau enggak ada Pak Udin, wah, sudah kewalahan sekali Bapak.
+#portrait: pak-kades/kades-smile
+Baik sekali orangnya, ramah dan sopan.
+Beliau juga sepertinya paham sekali soal pasar dan jual beli panen. Mungkin kalau kamu ngobrol dengan Pak Udin, kamu bisa dapat ide baru.
+#portrait: pak-kades/kades-relieved
+Bapak enggak paham soal ini, jadi enggak bisa banyak bantu, Nak...
 
 #speaker: Abdul
-Wahh, beliau orang baik, ya, Pak. Padahal masih baru disini, tapi sudah rajin sekali membantu warga.
+#portrait: main-character/mc-smile
+Bapak udah cukup membantu kok, Pak.
+Nanti Abdul coba mampir ke rumah beliau untuk ngobrol.
 
 #speaker: Pak Kepala Desa
-Memang orangnya ramah sekali, Nak. Bapak kagum. Coba nanti kamu mampir ke rumah beliau.
-Kamu kan lebih paham juga soal masalah pasar, mungkin kalau kamu ngobrol dengan Pak Udin, kamu bisa dapat ide untuk membantu desa.
-
-#speaker: Abdul
-Oke, Pak.
-Kalau gitu Abdul mampir sekarang aja kesana, mumpung masih siang.
-
-#speaker: Pak Kepala Desa
-Ya sudah. Jangan lupa menyapa warga lain ya, kalau ketemu.
+#portrait: pak-kades/kades-smile
+Iya, Nak.
+Mampir sekarang juga boleh, mumpung masih siang begini.
 
 #event: chapter-1-p5-udin
-#quest: quest-1-1
+#quest: quest-1-4
 
 #speaker: Abdul
-Siap, Pak.
-
-
-
-
-
+#portrait: main-character/mc-smile
+Oh iya. Kalau begitu Abdul pamit sebentar ya, Pak.

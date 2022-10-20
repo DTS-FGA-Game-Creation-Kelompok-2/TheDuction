@@ -1,4 +1,5 @@
 #speaker: Abdul
-Loh? Apa ini? Kok, sumurnya agak bau?
-Apa airnya kotor ya?
-Aduh, padahal kan banyak warga yang mengambil air dari sini.
+#portrait: main-character/mc-serious2
+Loh? Kok, sumurnya agak bau?
+Apa airnya kotor?
+Hmm... Padahal kan banyak warga yang mengambil air dari sini.
