@@ -58,6 +58,14 @@ namespace TheDuction.Dialogue.Tags{
                         _dialogueManager.ShowOrHideDialogueBox(tagValue);
                         break;
 
+                    case DialogueTags.EFFECT_TAG:
+                        switch(tagValue){
+                            case DialogueTags.BLUR_EFFECT:
+                                _dialogueIllustrationManager.BlurBackground();
+                                break;
+                        }
+                        break;
+
                     case DialogueTags.END_CHAPTER_TAG:
                         HandleEndChapterTag(tagValue);
                         break;

@@ -1,3 +1,4 @@
+using TheDuction.Dialogue;
 using TheDuction.Inputs;
 using UnityEngine;
 
@@ -34,15 +35,14 @@ namespace TheDuction.Player
 
         private void Update()
         {
-            // Debug.Log(_rb.velocity);
-            // Debug.Log("X = " + Mathf.Approximately(_rb.velocity.x, 0.0f));
-            // Debug.Log("Z = " + (_rb.velocity.z == 0.0f));
             if(_animator)
                 _animator.SetBool(IS_WALKING_PARAMETER, _isWalking);
         }
 
         private void Move(Vector3 dir)
         {
+            if(DialogueManager.Instance.CurrentDialogueState == DialogueState.Running) return;
+
             if(dir == Vector3.zero)
             {
                 _isWalking = false;
