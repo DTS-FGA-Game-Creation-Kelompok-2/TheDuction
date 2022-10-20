@@ -22,6 +22,7 @@ namespace TheDuction.UI
         [SerializeField] private Button _closeInventoryButton;
         [SerializeField] private RectTransform _inventoryHolderTransform;
         [SerializeField] private Image _blurInventoryBackground;
+        [SerializeField] private CanvasGroup _itemDisplay;
         private bool _isInventoryOpen;
 
         [Header("Pause")]
@@ -38,6 +39,7 @@ namespace TheDuction.UI
         {
             // Inventory
             _inventoryButton.onClick.AddListener(OpenInventory);
+            _closeInventoryButton.onClick.AddListener(CloseInventory);
 
             // Pause
             _pauseButton.onClick.AddListener(OpenPausePanel);
@@ -135,6 +137,10 @@ namespace TheDuction.UI
             );
 
             _blurInventoryBackground.enabled = _isInventoryOpen;
+        }
+
+        public void CloseInventory(){
+            StartCoroutine(AlphaFadingEffect.FadeOut(_itemDisplay));
         }
 
         #endregion
