@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 894e1157df8179c49ad52ac2f72b823e, type: 3}
+  m_Name: chapter-1-p7-kades
+  m_EditorClassIdentifier: 
+  _eventId: chapter-1-p7-kades
+  _eventDescription: 
+  _relatedQuest: {fileID: 11400000, guid: 9e063196cfa3ea04a98d536d7811e33d, type: 2}
+  _finishCondition: 0
+  _keepObjectAfterFinish: 0
+  _dialogueAffectedItems:
+  - _name: chapter-1-p8-b1-sumur
+    _affectedInteractable: {fileID: 11400000, guid: 83c7f59a4f7fce74aaf594984819e4d7, type: 2}
+    _dialogueAsset:
+      _waitDialogueAsset: {fileID: 0}
+      _finishDialogueAsset: {fileID: 4900000, guid: 5af1a122d5603cf4b9b2fe8ad78ac049, type: 3}
+      _nextEventDialogueAsset: {fileID: 0}
+      _defaultDialogueAsset: {fileID: 0}
+  - _name: chapter-1-p8-b2-kebunwarga
+    _affectedInteractable: {fileID: 11400000, guid: 3938e2534e4bbe84cac4d69b325b78b7, type: 2}
+    _dialogueAsset:
+      _waitDialogueAsset: {fileID: 0}
+      _finishDialogueAsset: {fileID: 4900000, guid: 141491ffc86e55945b1f9ecdd6391dd0, type: 3}
+      _nextEventDialogueAsset: {fileID: 0}
+      _defaultDialogueAsset: {fileID: 0}
+  - _name: chapter-1-p8-b3-kebunnanan
+    _affectedInteractable: {fileID: 11400000, guid: 4e1b2095c66974740aec0dec6d41f511, type: 2}
+    _dialogueAsset:
+      _waitDialogueAsset: {fileID: 0}
+      _finishDialogueAsset: {fileID: 4900000, guid: 2b6bd821773b78846b3918726e3b65c1, type: 3}
+      _nextEventDialogueAsset: {fileID: 0}
+      _defaultDialogueAsset: {fileID: 0}
+  _interactable: {fileID: 11400000, guid: 8273c2e62ebb43346bf1fe4601b98d61, type: 2}
+  _useBranchEvent: 0
+  _branchID: 
+  _useReward: 0
+  _clueReward: {fileID: 0}

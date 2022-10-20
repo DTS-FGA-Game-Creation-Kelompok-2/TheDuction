@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 894e1157df8179c49ad52ac2f72b823e, type: 3}
-  m_Name: chapter-1-p2-kades
+  m_Name: chapter-1-p3-buku
   m_EditorClassIdentifier: 
-  _eventId: chapter-1-p2-kades
+  _eventId: chapter-1-p3-buku
   _eventDescription: 
-  _relatedQuest: {fileID: 11400000, guid: f42b05b4a4b331c4fbf098ca1c71dd8e, type: 2}
+  _relatedQuest: {fileID: 11400000, guid: 97a7037f897a1ed429eb23302cc5dc74, type: 2}
   _finishCondition: 0
   _keepObjectAfterFinish: 0
   _dialogueAffectedItems:
@@ -29,10 +29,10 @@ MonoBehaviour:
     _affectedInteractable: {fileID: 11400000, guid: 8273c2e62ebb43346bf1fe4601b98d61, type: 2}
     _dialogueAsset:
       _waitDialogueAsset: {fileID: 4900000, guid: f67883a9deb8f354aa95dc5a10cd707b, type: 3}
-      _finishDialogueAsset: {fileID: 0}
+      _finishDialogueAsset: {fileID: 4900000, guid: 00734048159a7f94d8bec59aa9f9c732, type: 3}
       _nextEventDialogueAsset: {fileID: 0}
       _defaultDialogueAsset: {fileID: 0}
-  _interactable: {fileID: 11400000, guid: 8273c2e62ebb43346bf1fe4601b98d61, type: 2}
+  _interactable: {fileID: 11400000, guid: 1ecae88026196864cbe922c66954c399, type: 2}
   _useBranchEvent: 0
   _branchID: 
   _useReward: 0
