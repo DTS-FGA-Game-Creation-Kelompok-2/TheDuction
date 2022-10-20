@@ -1,8 +1,8 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using TheDuction.Global;
+using TheDuction.Event;
+using TheDuction.Event.BranchEvent;
 using TheDuction.Interaction;
+using TheDuction.Quest;
 using UnityEngine;
 
 
@@ -12,7 +12,8 @@ namespace TheDuction.Global.SaveLoad
     {
         private const string SAVE_KEY = "save";
         [SerializeField] private List<ClueData> _inventory = new List<ClueData>();
-        [SerializeField] private string _currentEvent;
+        [SerializeField] private List<string> _currentEvents;
+        [SerializeField] private string _currentBranch;
         [SerializeField] private string _currentQuest;
         
         public List<ClueData> Inventory => _inventory;
@@ -38,15 +39,23 @@ namespace TheDuction.Global.SaveLoad
             Save();
         }
 
-        private void SaveEvent(string eventID)
-        {
-            _currentEvent = eventID;
+        public void SaveQuest(QuestModel quest){
+            _currentQuest = quest.QuestId;
             Save();
         }
-        
-        private void SaveQuest(string questID)
-        {
-            _currentQuest = questID;
+
+        public void SaveEvent(EventData eventData){
+            _currentEvents.Add(eventData.EventId);
+            Save();
+        }
+
+        public void ResetEvent(){
+            _currentEvents.RemoveRange(0, _currentEvents.Count - 1);
+            Save();
+        }
+
+        public void SaveBranch(BranchEventData branch){
+            _currentBranch = branch.ID;
             Save();
         }
         

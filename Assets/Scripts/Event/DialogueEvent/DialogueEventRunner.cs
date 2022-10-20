@@ -1,6 +1,7 @@
 using TheDuction.Dialogue;
 using TheDuction.Event.BranchEvent;
 using TheDuction.Event.FinishConditionScripts;
+using TheDuction.Global.SaveLoad;
 using TheDuction.Interaction;
 using TheDuction.Inventory;
 using TheDuction.Quest;
@@ -126,6 +127,7 @@ namespace TheDuction.Event.DialogueEvent{
             // Set branch state
             if(_dialogueEventData.UseBranchEvent){
                 _eventController.BranchRunner.UpdateBranchEventState(_dialogueEventData, BranchState.Active);
+                SaveLoadData.Instance.SaveBranch(_eventController.BranchRunner.BranchEventData);
             }
         }
 

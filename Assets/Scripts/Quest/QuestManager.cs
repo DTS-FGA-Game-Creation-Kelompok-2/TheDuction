@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using TheDuction.Global;
+using TheDuction.Global.SaveLoad;
 using UnityEngine;
 
 namespace TheDuction.Quest{
@@ -31,6 +32,7 @@ namespace TheDuction.Quest{
             if(questModel == null) return;
 
             QuestController questController = GetOrCreateQuestController();
+            SaveLoadData.Instance.SaveQuest(questModel);
             questController.QuestObject = questModel;
             questController.gameObject.SetActive(true);
 
