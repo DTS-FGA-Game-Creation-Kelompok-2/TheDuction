@@ -9,7 +9,6 @@ namespace TheDuction.Inventory
         [SerializeField] private List<ClueData> _items = new List<ClueData>();
         [SerializeField] private InventoryData _itemsPrefab;
         [SerializeField] private Transform _itemsParent;
-        [SerializeField] private GameObject _itemDescPanel;
 
         private void OnEnable()
         {
@@ -25,7 +24,7 @@ namespace TheDuction.Inventory
         {
             _items.Add(item);
             InventoryData itemObject = Instantiate(_itemsPrefab, _itemsParent);
-            itemObject.SetItemDetails(item, _itemDescPanel);
+            itemObject.SetItemDetails(item);
         }
     }
 }

@@ -1,17 +1,19 @@
 using System.Collections;
+using TheDuction.Cameras;
 using TheDuction.Dialogue;
 using TheDuction.Event.FinishConditionScripts;
 using UnityEngine;
 
 namespace TheDuction.Event.CameraEvent{
     public class CameraFinishedCondition: FinishConditionManager{
-        // private CameraMovement _cameraMovement;
-        private CameraEventData _cameraEventData;
+        private CameraPriority _cameraPriority;
+        private CameraEventController _cameraEventController;
 
         private void Awake() {
-            // _cameraMovement = CameraMovement.Instance;
-            eventData = GetComponent<CameraEventData>();
-            _cameraEventData = eventData as CameraEventData;
+            _cameraPriority = CameraPriority.Instance;
+            eventController = GetComponent<CameraEventController>();
+
+            _cameraEventController = eventController as CameraEventController;
         }
 
         public override void SetEndingCondition()
@@ -26,27 +28,27 @@ namespace TheDuction.Event.CameraEvent{
         private IEnumerator WaitForCamera(){
             Debug.Log("Wait for camera finished");
             // Wait until player don't move
-            // yield return new WaitUntil(() => !cameraEventData.TargetCharacter.IsWalking);
+            yield return new WaitUntil(() => !_cameraEventController.TargetCharacter.IsWalking);
 
             // Run the camera
             // Move the camera to target object
-            // _cameraMovement.SetVirtualCameraPriority(cameraEventData.TargetVirtualCamera,
-            //     _cameraMovement.CAMERA_HIGHER_PRIORITY);
-            _cameraEventData.CutsceneTimeline.Play();
+            _cameraPriority.SetVirtualCameraPriority(_cameraEventController.TargetVirtualCamera,
+                _cameraPriority.CAMERA_HIGHER_PRIORITY);
+            _cameraEventController.CutsceneTimeline.Play();
 
             // Move the character
-            if(_cameraEventData.UseTarget){
-                // cameraEventData.TargetCharacter.Move(cameraEventData.TargetPosition.position);
+            if(_cameraEventController.UseTarget){
+                _cameraEventController.TargetCharacter.Move(_cameraEventController.TargetPosition.position);
             }
 
             // Wait for camera duration
-            yield return new WaitForSeconds((float) _cameraEventData.CutsceneTimeline.duration + 2f);
+            yield return new WaitForSeconds((float) _cameraEventController.CutsceneTimeline.duration + 2f);
 
             // Camera finish
             Debug.Log("Camera finished");
-            // cameraEventData.TargetCharacter.transform.LookAt(cameraEventData.LookAtTarget);
-            // _cameraMovement.SetVirtualCameraPriority(cameraEventData.TargetVirtualCamera,
-            //     _cameraMovement.LOWER_PRIORITY);
+            _cameraEventController.TargetCharacter.transform.LookAt(_cameraEventController.LookAtTarget);
+            _cameraPriority.SetVirtualCameraPriority(_cameraEventController.TargetVirtualCamera,
+                _cameraPriority.LOWER_PRIORITY);
             DialogueManager.Instance.ResumeStoryForEvent();
             OnEndingCondition();
         }

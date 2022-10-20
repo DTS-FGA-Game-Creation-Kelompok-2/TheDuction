@@ -6,7 +6,12 @@ using UnityEngine;
 
 namespace TheDuction.Event.CameraEvent{
     public class CameraEventManager: SingletonBaseClass<CameraEventManager>, IEventManager{
+        [Header("Event Controller")]
+        [SerializeField] private List<CameraEventController> _eventControllers;
+
+        [Header("Event Runner")]
         [SerializeField] private CameraEventRunner _eventRunnerPrefab;
+        [SerializeField] private Transform _eventRunnerParent;
 
         private List<CameraEventRunner> _eventRunnerPool;
 
@@ -20,8 +25,9 @@ namespace TheDuction.Event.CameraEvent{
         /// <param name="eventData">Event data</param>
         public void SetEventData(EventData eventData)
         {
+            CameraEventController eventController = GetEventController(eventData);
             CameraEventRunner eventRunner = GetOrCreateEventRunner();
-            eventRunner.eventData = eventData as CameraEventData;
+            eventRunner.EventController = eventController;
             StartCoroutine(StartEvent(eventRunner));
         }
         
@@ -34,7 +40,7 @@ namespace TheDuction.Event.CameraEvent{
         {
             yield return new WaitUntil(() => !DialogueManager.Instance.DialogueIsPlaying);
             yield return new WaitForSeconds(1f);
-            eventRunner.canStartEvent = true;
+            eventRunner.CanStartEvent = true;
         }
         
         /// <summary>
@@ -44,18 +50,34 @@ namespace TheDuction.Event.CameraEvent{
         private CameraEventRunner GetOrCreateEventRunner()
         {
             CameraEventRunner eventRunner = _eventRunnerPool.Find(runner =>
-                runner.eventData.eventState == EventState.Finish &&
+                runner.EventController.EventState == EventState.Finish &&
                 !runner.gameObject.activeInHierarchy);
 
             if (eventRunner == null)
             {
-                eventRunner = Instantiate(_eventRunnerPrefab, transform).GetComponent<CameraEventRunner>();
+                eventRunner = Instantiate(_eventRunnerPrefab, _eventRunnerParent).GetComponent<CameraEventRunner>();
                 
                 _eventRunnerPool.Add(eventRunner);
             }
             
             eventRunner.gameObject.SetActive(true);
             return eventRunner;
+        }
+
+        /// <summary>
+        /// Event controller object pooling
+        /// </summary>
+        /// <returns>Return inactive or new event controller</returns>
+        private CameraEventController GetEventController(EventData eventData)
+        {
+            foreach(CameraEventController eventController in _eventControllers){
+                if(eventController.EventData == eventData){
+                    return eventController;
+                }
+            }
+
+            Debug.LogError($"Camera event controller with ID: {eventData.EventId} not found");
+            return null;
         }
     }
 }

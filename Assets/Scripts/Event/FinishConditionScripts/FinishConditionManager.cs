@@ -2,12 +2,12 @@ using UnityEngine;
 
 namespace TheDuction.Event.FinishConditionScripts{
     public class FinishConditionManager : MonoBehaviour {
-        protected EventData eventData;
+        protected EventController eventController;
 
         public virtual void SetEndingCondition(){}
 
         public virtual void OnEndingCondition(){
-            eventData.isFinished = true;
+            eventController.IsFinished = true;
         }
     }
 }
