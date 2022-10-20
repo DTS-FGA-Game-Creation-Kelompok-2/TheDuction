@@ -58,6 +58,11 @@ namespace TheDuction.Global.SaveLoad
             _currentBranch = branch.ID;
             Save();
         }
+
+        public void ResetBranch(){
+            _currentBranch = "";
+            Save();
+        }
         
         private void Save()
         {
