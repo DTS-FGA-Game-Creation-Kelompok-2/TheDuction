@@ -23,6 +23,16 @@ namespace TheDuction.Quest{
             _questViewPool = new List<QuestView>();
         }
 
+        private void Start() {
+            LoadQuest();
+        }
+
+        private void LoadQuest(){
+            string savedQuestID = SaveLoadData.Instance.CurrentQuest;
+            if(string.IsNullOrWhiteSpace(savedQuestID)) return;
+            HandleQuestTag(savedQuestID);
+        }
+
         /// <summary>
         /// Handle quest tag
         /// </summary>

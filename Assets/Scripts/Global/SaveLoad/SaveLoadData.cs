@@ -17,6 +17,9 @@ namespace TheDuction.Global.SaveLoad
         [SerializeField] private string _currentQuest;
         
         public List<ClueData> Inventory => _inventory;
+        public List<string> CurrentEvents => _currentEvents;
+        public string CurrentBranch => _currentBranch;
+        public string CurrentQuest => _currentQuest;
 
         private void OnEnable()
         {
