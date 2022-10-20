@@ -184,7 +184,7 @@ Ya sudah, Pak. Saya paham maksud Bapak.
 #portrait: main-character/mc-smile2
 Kalau begitu, saya pamit dulu. Saya masih mau menyapa warga lain.
 
-#event: chapter-1-p6-nanan
+#event: chapter-1-p7-nanan
 #quest: quest-1-5
 
 #speaker: Pak Udin

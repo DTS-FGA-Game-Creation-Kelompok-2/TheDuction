@@ -1,6 +1,6 @@
 #speaker: Pak Kepala Desa
 #portrait: pak-kades/kades-laugh
-#bgm: bgm-calm
+#bgm: prologBGM
 Abdul!
 
 #speaker: Abdul

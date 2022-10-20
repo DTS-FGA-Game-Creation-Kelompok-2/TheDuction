@@ -34,7 +34,7 @@ Ah, enggak usah. Bapak sendiri aja. Kamu jaga rumah aja. Makan dan istirahat.
 #portrait: pak-kades/kades-smile
 Kalau mau main dan lihat-lihat desa lagi juga boleh, tapi jangan pulang terlalu larut, ya.
 
-#event: chapter-1-p8-b1-sumur, chapter-1-p8-b2-kebunwarga, chapter-1-p8-b3-kebunnanan
+#event: chapter-1-p9-b1-sumur, chapter-1-p9-b2-kebunwarga, chapter-1-p9-b3-kebunnanan
 #quest: quest-1-7
 
 #speaker: Abdul

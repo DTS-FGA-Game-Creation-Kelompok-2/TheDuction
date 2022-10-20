@@ -7,7 +7,7 @@ Kamu sudah ambil mapnya?
 Yang ini, Pak?
 
 *[Tunjukkan Map Anggaran Desa]
-    #event: chapter-1-p4-kades
+    #event: chapter-1-p5-kades
     #quest: quest-1-3
     
     #speaker: Pak Kepala Desa
