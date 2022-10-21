@@ -1,15 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using TheDuction.Global;
-using TheDuction.Global.Effects;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace TheDuction.Interaction{
     public class InteractableManager: SingletonBaseClass<InteractableManager>{
         [SerializeField] private Text _interactableNameText;
-        [SerializeField] private CanvasGroup _interactionInstruction;
-        [SerializeField] private CanvasGroup _interactionName;
+        [SerializeField] private GameObject _interactionInstruction;
+        [SerializeField] private GameObject _interactionName;
         [SerializeField] private List<Interactable> _interactables;
 
         /// <summary>
@@ -30,23 +29,23 @@ namespace TheDuction.Interaction{
 
         public void HandleInteractionName(string interactableName){
             _interactableNameText.text = interactableName;
+            StopAllCoroutines();
             StartCoroutine(PlayInteractionView());
         }
-
+ 
         private IEnumerator PlayInteractionView() {
-            StartCoroutine(AlphaFadingEffect.FadeIn(_interactionName));
-
+            _interactionName.SetActive(true);
             yield return new WaitForSeconds(5.0f);
-            StartCoroutine(AlphaFadingEffect.FadeOut(_interactionName));
+            _interactionName.SetActive(false);
         }
 
         public void InstructionFadeIn(){
-            StartCoroutine(AlphaFadingEffect.FadeIn(_interactionInstruction));
+            _interactionInstruction.SetActive(true);
         }
 
         public void InstructionFadeOut(){
-            StartCoroutine(AlphaFadingEffect.FadeOut(_interactionInstruction));
-            StartCoroutine(AlphaFadingEffect.FadeOut(_interactionName));
+            _interactionInstruction.SetActive(false);
+            _interactionName.SetActive(false);
         }
     }
 }

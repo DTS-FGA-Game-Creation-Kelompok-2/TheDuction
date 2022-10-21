@@ -1,4 +1,5 @@
 using TheDuction.Dialogue;
+using TheDuction.Global;
 using TheDuction.Inputs;
 using UnityEngine;
 
@@ -8,11 +9,12 @@ namespace TheDuction.Player
     [RequireComponent(typeof(BoxCollider))]
     [RequireComponent(typeof(CapsuleCollider))]
     [RequireComponent(typeof(InputConfig))]
-    public class PlayerController : MonoBehaviour
+    public class PlayerController : SingletonBaseClass<PlayerController>
     {
         [SerializeField] private float _moveSpeed = 10f;
 
         [SerializeField] private Animator _animator;
+        private Transform _transform;
         private Rigidbody _rb;
         private bool _isWalking = false;
 
@@ -31,6 +33,7 @@ namespace TheDuction.Player
         private void Start()
         {
             _rb = GetComponent<Rigidbody>();
+            _transform = GetComponent<Transform>();
         }
 
         private void Update()

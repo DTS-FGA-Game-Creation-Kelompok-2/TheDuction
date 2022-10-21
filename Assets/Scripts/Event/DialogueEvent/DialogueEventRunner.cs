@@ -1,7 +1,6 @@
 using TheDuction.Dialogue;
 using TheDuction.Event.BranchEvent;
 using TheDuction.Event.FinishConditionScripts;
-using TheDuction.Global.SaveLoad;
 using TheDuction.Interaction;
 using TheDuction.Inventory;
 using TheDuction.Quest;
@@ -122,12 +121,12 @@ namespace TheDuction.Event.DialogueEvent{
             }
             _eventController.EventState = EventState.Active;
             _eventController.CanBeInteracted = true;
+            Debug.Log(_eventController.EventData.EventId + _eventController.InteractableObject.Data.InteractableName);
             _eventController.InteractableObject.Mode = InteractableMode.DialogueMode;
             
             // Set branch state
             if(_dialogueEventData.UseBranchEvent){
                 _eventController.BranchRunner.UpdateBranchEventState(_dialogueEventData, BranchState.Active);
-                SaveLoadData.Instance.SaveBranch(_eventController.BranchRunner.BranchEventData);
             }
         }
 
@@ -143,6 +142,14 @@ namespace TheDuction.Event.DialogueEvent{
                         Interactable interactable = _interactableManager.GetInteractable(dialogueAffectedItem.AffectedInteractable);
 
                         interactable.CurrentDialogue = finishDialogueAsset;
+
+                        // Play particle system
+                        switch(interactable){
+                            case BuildingInteractable _:
+                            case ClueInteractable _:
+                                interactable.Particle.Play();
+                                break;
+                        }
                     }
                 }
             }
@@ -184,7 +191,8 @@ namespace TheDuction.Event.DialogueEvent{
             }
             
             // Deactivate game object
-            _eventController.gameObject.SetActive(_eventController.EventData.KeepObjectAfterFinish);
+            if(!_eventController.EventData.KeepObjectAfterFinish)
+                Destroy(_eventController.gameObject);
             gameObject.SetActive(false);
         }
     }

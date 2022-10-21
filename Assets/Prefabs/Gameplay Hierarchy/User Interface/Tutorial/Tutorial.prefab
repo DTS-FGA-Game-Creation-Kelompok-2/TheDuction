@@ -209,6 +209,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4497483393212393069}
   - component: {fileID: 4497483393212393070}
+  - component: {fileID: 2802858133942819503}
   m_Layer: 5
   m_Name: Tutorial
   m_TagString: Untagged
@@ -251,6 +252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0140ac6568dd91e4080b37cb62088f0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _tutorialCanvas: {fileID: 0}
   _tutorialState: 0
   _nextButton: {fileID: 4497483392942297446}
   _closeSprite: {fileID: 21300000, guid: 8fab26c615ec37c4bb4a6bc4315eef9c, type: 3}
@@ -260,6 +262,18 @@ MonoBehaviour:
   _movementTutorialImage: {fileID: 21300000, guid: c9882b96718460547a4dc8182be38d82, type: 3}
   _inventoryTutorialTitle: Tutorial Inventory
   _inventoryTutorialImage: {fileID: 21300000, guid: 262da8a72bf78414fb793bcdaf492066, type: 3}
+--- !u!225 &2802858133942819503
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4497483393212393068}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &4497483393212822653
 GameObject:
   m_ObjectHideFlags: 0

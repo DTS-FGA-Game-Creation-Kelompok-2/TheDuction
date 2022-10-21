@@ -1,3 +1,4 @@
+using TheDuction.Dialogue;
 using TheDuction.Interaction;
 using UnityEngine;
 
@@ -46,7 +47,6 @@ namespace TheDuction.Inputs
                     InteractableManager.Instance.HandleInteractionName(interactable.Data.InteractableName);
                     InteractableManager.Instance.InstructionFadeIn();
                     break;
-                case InteractableMode.InformationOnly:
                 case InteractableMode.NormalMode:
                     InteractableManager.Instance.HandleInteractionName(interactable.Data.InteractableName);
                     break;
@@ -61,7 +61,8 @@ namespace TheDuction.Inputs
             if(interactable == null) return;
             if(interactable.Mode != InteractableMode.DialogueMode) return;
             
-            if (Input.GetKeyDown(_inputManager.InteractKey))
+            if (Input.GetKeyDown(_inputManager.InteractKey) && 
+                DialogueManager.Instance.CurrentDialogueState == DialogueState.Stop)
             {
                 interactable.Interact();
                 InteractableManager.Instance.InstructionFadeOut();

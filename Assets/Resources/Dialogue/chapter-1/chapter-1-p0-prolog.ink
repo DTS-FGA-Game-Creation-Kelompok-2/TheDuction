@@ -1,12 +1,12 @@
 #bgm: prologBGM
 #speaker: Abdul
-#potrait: main-character/mc-smile
+#portrait: main-character/mc-smile
 Wah, akhirnya sampai juga.
-#potrait: main-character/mc-smile2
+#portrait: main-character/mc-smile2
 Sudah lama sekali sejak terakhir kali aku kesini.
 
 #event: camera-prolog1-player-kucing
-
+#portrait: hewan/kucing
 #speaker: Meng
 Miauw!
 
@@ -17,6 +17,7 @@ Meng!! Lama enggak jumpa!
 Kamu masih ingat aku?
 
 #speaker: Meng
+#portrait: hewan/kucing
 Masih!!
 Abdul! Lama enggak pulang!
 
@@ -25,6 +26,7 @@ Abdul! Lama enggak pulang!
 Aduh, kok, kamu jadi kurus begini, sih...
 
 #speaker: Meng
+#portrait: hewan/kucing
 Miauw... Gapapa, kok!
 
 #speaker: Abdul
@@ -34,6 +36,7 @@ Dulu padahal kamu gendut sekali, hahah.
 Nanti aku kasih makan yang banyak, deh.
 
 #speaker: Meng
+#portrait: hewan/kucing
 Yey!!
 
 #speaker: Abdul
@@ -43,6 +46,7 @@ Desa kita apa kabar, Meng?
 #event: camera-prolog2-desa
 #speaker: Meng
 Mmmm, itu...
+#tutorial:true
 #event: chapter-1-p1-kades
 #quest:quest-1-1
 

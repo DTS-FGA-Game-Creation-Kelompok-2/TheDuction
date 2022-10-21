@@ -47,13 +47,13 @@ namespace TheDuction.Dialogue.Logs{
         /// </summary>
         public void ResetDialogueLog(){
             // Remove all logs 
-            for (int i = _dialogueLogPool.Count; i >= MAX_POOL; i--)
-            {
-                DialogueLogPrefab dialogueLog = _dialogueLogPool[i];
+            // for (int i = _dialogueLogPool.Count; i >= MAX_POOL; i--)
+            // {
+            //     DialogueLogPrefab dialogueLog = _dialogueLogPool[i];
 
-                _dialogueLogPool.Remove(dialogueLog);
-                Destroy(dialogueLog.gameObject);
-            }
+            //     _dialogueLogPool.Remove(dialogueLog);
+            //     Destroy(dialogueLog.gameObject);
+            // }
 
             foreach(DialogueLogPrefab dialogueLog in _dialogueLogPool){
                 if(!dialogueLog.gameObject.activeInHierarchy) continue;

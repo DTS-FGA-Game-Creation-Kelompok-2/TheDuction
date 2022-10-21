@@ -2,13 +2,20 @@ using TheDuction.Dialogue;
 using UnityEngine;
 
 namespace TheDuction.Interaction{
-    public enum InteractableMode{ DialogueMode, NormalMode, InformationOnly }
+    public enum InteractableMode{ DialogueMode, NormalMode }
 
     public class Interactable : MonoBehaviour, IInteractable
     {
         [SerializeField] private InteractableData _data;
         [SerializeField] private InteractableMode _mode = InteractableMode.NormalMode;
         [SerializeField] private TextAsset _currentDialogue;
+
+        private ParticleSystem _particle;
+
+        public ParticleSystem Particle {
+            set { _particle = value; }
+            get { return _particle; }
+        }
 
         public InteractableData Data => _data;
 
@@ -29,8 +36,6 @@ namespace TheDuction.Interaction{
                     HandleDialogue();
                     break;
                 case InteractableMode.NormalMode:
-                    break;
-                case InteractableMode.InformationOnly:
                     break;
                 default:
                     Debug.LogError("Item mode belum dimasukkan ke dalam switch case");

@@ -1,4 +1,4 @@
-#illust: item-anggaran-desa
+#illust: items/anggaran-desa
 ...
 #event: chapter-1-p4-kades
 #quest: quest-1-4

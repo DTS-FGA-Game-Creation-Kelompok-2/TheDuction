@@ -17,6 +17,7 @@ namespace TheDuction.Dialogue.Illustrations{
         public void PrefabSetup()
         {
             _illustrationImage.sprite = _illustrationSprite;
+            _illustrationImage.SetNativeSize();
         }
     }
 }

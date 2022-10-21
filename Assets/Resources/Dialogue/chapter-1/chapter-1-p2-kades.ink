@@ -41,8 +41,7 @@ Haduh...
 
 #speaker: Abdul
 #portrait: main-character/mc-serious
-(Pantesan daritadi aku belum melihat 
- warga lain di desa. Banyak yang sedang sakit rupanya.)
+(Pantesan daritadi aku belum melihat warga lain di desa. Banyak yang sedang sakit rupanya.)
 #portrait: main-character/mc-serious2
 Apa ada masalah dengan hasil panen kita, Pak?
 

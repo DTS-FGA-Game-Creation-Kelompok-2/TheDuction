@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +11,7 @@ using TheDuction.Event.DialogueEvent;
 using TheDuction.Event.MovementEvent;
 using TheDuction.Global;
 using TheDuction.Global.Effects;
+using TheDuction.Player;
 using TheDuction.Quest;
 using TMPro;
 using UnityEngine;
@@ -24,6 +24,7 @@ namespace TheDuction.Dialogue.Tags{
         [SerializeField] private TextMeshProUGUI _dayText;
         [SerializeField] private Image _blackScreen;
 
+        private PlayerController _playerController;
         private DialogueManager _dialogueManager;
         private DialogueIllustrationManager _dialogueIllustrationManager;
         private DialoguePortraitManager _dialoguePortraitManager;
@@ -32,6 +33,7 @@ namespace TheDuction.Dialogue.Tags{
             _dialogueManager = DialogueManager.Instance;
             _dialogueIllustrationManager = DialogueIllustrationManager.Instance;
             _dialoguePortraitManager = DialoguePortraitManager.Instance;
+            _playerController = PlayerController.Instance;
         }
 
         public void HandleTags(List<string> dialogueTags){
@@ -42,7 +44,7 @@ namespace TheDuction.Dialogue.Tags{
 
                 if (splitTag.Length != 2)
                 {
-                    Debug.LogError("Tag could not be parsed: " + tag);
+                    Debug.LogError("Tag could not be parsed: " + splitTag);
                 }
 
                 string tagKey = splitTag[0].Trim();
@@ -104,9 +106,14 @@ namespace TheDuction.Dialogue.Tags{
                     case DialogueTags.SPEAKER_TAG:
                         _dialogueManager.HandleSpeakerTag(tagValue);
                         break;
-                    
+
+                    case DialogueTags.TUTORIAL:
+                        if(tagValue == DialogueTags.CONFIRM)
+                            StartCoroutine(TutorialManager.Instance.TriggerTutorial());
+                        break;
+
                     default:
-                        Debug.LogError("Tag is not in the list: " + tag);
+                        Debug.LogError("Tag is not in the list: " + tagKey);
                         break;
                 }
             }
@@ -126,7 +133,7 @@ namespace TheDuction.Dialogue.Tags{
         /// <param name="tagValue"></param>
         private void HandleEndingTag(string tagValue){
             // Handle ending tag
-            if (tagValue != DialogueTags.CONFIRM_ENDING) return;
+            if (tagValue != DialogueTags.CONFIRM) return;
 
             StartCoroutine(AlphaFadingEffect.FadeIn(_blackScreen,
                 fadingSpeed: 0.02f,

@@ -25,13 +25,6 @@ MonoBehaviour:
       _finishDialogueAsset: {fileID: 4900000, guid: 05db73b4aca168549be0a7a1f1fc26ab, type: 3}
       _nextEventDialogueAsset: {fileID: 0}
       _defaultDialogueAsset: {fileID: 0}
-  - _name: chapter-1-p3-kades-wait
-    _affectedInteractable: {fileID: 11400000, guid: 8273c2e62ebb43346bf1fe4601b98d61, type: 2}
-    _dialogueAsset:
-      _waitDialogueAsset: {fileID: 4900000, guid: f67883a9deb8f354aa95dc5a10cd707b, type: 3}
-      _finishDialogueAsset: {fileID: 0}
-      _nextEventDialogueAsset: {fileID: 0}
-      _defaultDialogueAsset: {fileID: 0}
   _interactable: {fileID: 11400000, guid: 8273c2e62ebb43346bf1fe4601b98d61, type: 2}
   _useBranchEvent: 0
   _branchID: 

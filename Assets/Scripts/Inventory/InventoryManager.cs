@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using TheDuction.Global;
-using TheDuction.Global.SaveLoad;
 using TheDuction.Interaction;
 using UnityEngine;
 
@@ -24,21 +23,6 @@ namespace TheDuction.Inventory
         private void OnDisable()
         {
             ClueInteractable.OnItemInteracted -= AddItem;
-        }
-
-        private void Start()
-        {
-            LoadItem();
-        }
-
-        private void LoadItem()
-        {
-            _items = SaveLoadData.Instance.Inventory;
-            for (int i = 0; i < _items.Count; i++)
-            {
-                InventoryData itemObject = Instantiate(_itemsPrefab, _itemsParent);
-                itemObject.SetItemDetails(_items[i]);
-            }
         }
 
         public void AddItem(ClueData item)

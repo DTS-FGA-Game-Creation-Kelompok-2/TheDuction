@@ -1,4 +1,3 @@
-using TheDuction.Global.SaveLoad;
 using UnityEngine;
 
 namespace TheDuction.Event.FinishConditionScripts{
@@ -9,7 +8,6 @@ namespace TheDuction.Event.FinishConditionScripts{
 
         public virtual void OnEndingCondition(){
             eventController.IsFinished = true;
-            SaveLoadData.Instance.ResetEvent();
         }
     }
 }

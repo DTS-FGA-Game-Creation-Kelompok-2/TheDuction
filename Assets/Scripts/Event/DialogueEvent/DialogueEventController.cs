@@ -13,9 +13,14 @@ namespace TheDuction.Event.DialogueEvent{
         // Properties
         public BranchEventRunner BranchRunner => _branchRunner;
         public Interactable InteractableObject { get; private set; }
+
+        private void OnEnable() {
+            Debug.Log("OnEnable");
+        }
         
         private void Start()
         {
+            Debug.Log("Start");
             SetFinishCondition();
             _dialogueEventData = EventData as DialogueEventData;
             InteractableObject = InteractableManager.Instance.GetInteractable(_dialogueEventData.InteractableObject);

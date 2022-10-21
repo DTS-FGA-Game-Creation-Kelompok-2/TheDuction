@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using TheDuction.Dialogue;
 using TheDuction.Global;
-using TheDuction.Global.SaveLoad;
 using UnityEngine;
 
 namespace TheDuction.Event.DialogueEvent{
@@ -30,9 +29,9 @@ namespace TheDuction.Event.DialogueEvent{
         /// <param name="eventData">Event data</param>
         public void SetEventData(EventData eventData)
         {
-            DialogueEventController eventController = GetOrCreateEventController();
+            DialogueEventController eventController = Instantiate(_eventControllerPrefab, _eventControllerParent).GetComponent<DialogueEventController>();;
             eventController.EventData = eventData as DialogueEventData;
-            SaveLoadData.Instance.SaveEvent(eventData);
+            Debug.Log("Set event data");
 
             DialogueEventRunner eventRunner = GetOrCreateEventRunner();
             eventRunner.EventController = eventController;
@@ -86,7 +85,7 @@ namespace TheDuction.Event.DialogueEvent{
             if (eventController == null)
             {
                 eventController = Instantiate(_eventControllerPrefab, _eventControllerParent).GetComponent<DialogueEventController>();
-                
+                Debug.Log("Instantiate");
                 _eventControllerPool.Add(eventController);
             }
             
