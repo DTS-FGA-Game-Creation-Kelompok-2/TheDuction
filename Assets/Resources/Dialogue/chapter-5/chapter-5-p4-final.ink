@@ -12,11 +12,12 @@ Bapak Ibu sekalian, tolong tenang dan dengarkan dulu. Ini penting.
 Pertama-tama, saya tegaskan dulu kalau kabar yang beredar belakangan ini, yang menuduh Pak Kades mengkorupsi anggaran desa, itu tidak benar.
 
 #speaker: Warga
+#portrait: npc-cowok/cowo-flat
 Halah, enggak usah sok ngebela Bapakmu.
+#portrait: npc-cowok/cowo-talk
 Mana buktinya?
 
 -> option_1
-
 
 === option_1 ===
 
@@ -41,7 +42,6 @@ Ini, saya punya buktinya.
 + [Kunci Cadangan Gudang Pak Udin]
     -> item_salah_1
     
-
 === item_salah_1 ===
 #speaker: Abdul
 #portrait: main-character/mc-serious
@@ -49,9 +49,9 @@ Ini, saya punya buktinya.
 (Ada bukti lain yang lebih cocok.)
 -> option_1
 
-
 === bukti_1 ===
 #illust: items/anggaran-desa
+…
 #dialogue-box: show
 
 #speaker: Abdul
@@ -67,6 +67,7 @@ Selama ini, semua biaya sudah diarahkan untuk membeli peralatan baru untuk warga
 Pupuk, tanah, bibit, cangkul, bahkan sarung tangan dan sepatu bot.
 
 #speaker: Warga
+#portrait: npc-cowok/cowo-flat
 Ah, mana mungkin! Nipu itu anggarannya.
 
 #speaker: Abdul
@@ -76,6 +77,7 @@ Coba ingat kembali kondisi kebun dan ladang Bapak Ibu sekalian.
 Apa ada peralatan yang rusak atau kurang? Apa Bapak dan Ibu pernah kekurangan pupuk atau bibit?
 
 #speaker: Warga 
+#portrait: npc-cewek/cewe-smile
 Eh, kalau diingat-ingat...
 Iya juga, ya. Udah lama sekali aku gak ke toko bangunan untuk beli peralatan.
 
@@ -85,6 +87,7 @@ Pak, Bu. Pak Kades sudah mengalokasikan anggaran khusus untuk memastikan Bapak d
 Bapak dan Ibu mungkin enggak menyadarinya karena sudah terbiasa, padahal selama ini Pak Kades selalu berusaha mengurus semuanya di balik layar demi kebaikan Bapak dan Ibu sekalian.
 
 #speaker: Warga
+#portrait: npc-cowok/cowo-flat
 Ah, tapi tetap saja! Sekarang banyak warga yang sakit, tapi Pak Kades enggak pernah bantu, tuh!
 
 #speaker: Abdul
@@ -164,8 +167,10 @@ Aduh, udah deh, Pak, ngebahas soal saya terus. Saya jadi malu, haha.
 Coba bahas itu aja, apa tadi? Penyebab penyakit warga.
 
 #speaker: Warga
+#portrait: npc-cowok/cowo-talk
 Iya, iya!
 Apa sih, dari tadi basa-basi mulu.
+#portrait: npc-cowok/cowo-flat
 Semuanya juga udah tau, kok, kalau Pak Udin itu baik!
 
 #speaker: Pak Kepala Desa
@@ -175,7 +180,6 @@ Oke.
 Abdul. Bisa kamu tunjukkan apa yang jadi sumber penyakit warga?
 
 -> option_2
-
 
 === option_2 ===
 
@@ -200,7 +204,6 @@ Ini.
 + [Kunci Cadangan Gudang Pak Udin]
     -> item_salah_2
     
-
 === item_salah_2 ===
 #speaker: Abdul
 #portrait: main-character/mc-serious
@@ -208,9 +211,9 @@ Ini.
 (Ada bukti lain yang lebih cocok.)
 -> option_2
 
-
 === bukti_2 ===
 #illust: items/air-sumur
+…
 #dialogue-box: show
 
 #speaker: Abdul
@@ -220,7 +223,9 @@ Air sumur ini tercemar. Makanya itu, warga yang bergantung pada sumur desa banya
 Lihat, seminggu ini setelah sumur ditutup, tidak ada lagi, kan, warga yang tiba-tiba sakit?
 
 #speaker: Warga
+#portrait: npc-cowok/cowo-flat
 Ya terus kalau sumurnya tercemar, dibersihkan aja, dong!
+#portrait: npc-cewek/cewe-smile
 Ngapain sih, ditutup. Jadi nyusahin, kan.
 
 #speaker: Pak Kepala Desa
@@ -229,6 +234,7 @@ Tidak. Justru sumurnya harus ditutup.
 Karena di desa ini ada seseorang yang sengaja mencemari sumur kita.
 
 #speaker: Warga
+#portrait: npc-cewek/cewe-smile
 Hah?! Siapa?
 
 #speaker: Pak Udin
@@ -239,9 +245,7 @@ Hah?! Siapa?
 #portrait: pak-kades/kades-relieved
 Abdul, tolong tunjukkan sumber pencemaran sumur, Nak.
 
-
 -> option_3
-
 
 === option_3 ===
 
@@ -266,7 +270,6 @@ Iya, Pak.
 + [Kunci Cadangan Gudang Pak Udin]
     -> item_salah_3
     
-
 === item_salah_3 ===
 #speaker: Abdul
 #portrait: main-character/mc-serious
@@ -274,9 +277,9 @@ Iya, Pak.
 (Ada bukti lain yang lebih cocok.)
 -> option_3
 
-
 === bukti_3 ===
 #illust: items/pestisida-x
+…
 #dialogue-box: show
 
 #speaker: Abdul
@@ -313,8 +316,11 @@ Saya akan membiarkan warga menilai sendiri.
 Silahkan, coba cium bau air sumur ini dan bandingkan dengan bau pestisida pada botol ini.
 
 #speaker: Warga
+#portrait: npc-cewek/cewe-smile
 Wah, mirip, sih, ini.
 Pantesan kayaknya air sumur kemarin baunya familiar.
+
+#portrait: npc-cowok/cowo-talk
 Eh, tapi masa sih, Pak Udin...?
 Aduh, gak mungkin, gak sih?
 
@@ -364,9 +370,13 @@ Gejala keracunan pestisida dan obat untuk mengobatinya itu spesifik sekali. Mana
 Kecuali kalau pestisida dan obat penawar racunnya itu udah disiapkan sekaligus.
 
 #speaker: Warga
+#portrait: npc-cowok/cowo-talk
 Eh? Serius, nih?
-Beneran Pak Udin???
+#portrait: npc-cewek/cewe-smile
+Beneran Pak Udin??
+#portrait: npc-cowok/cowo-talk
 Ah enggak, aku enggak percaya.
+#portrait: npc-cewek/cewe-smile
 Tapi masuk akal loh!
 
 #speaker: Ibu Nanan
@@ -378,8 +388,8 @@ Gak ada yang curiga waktu Pak Udin kebetulan punya obat?!
 Ketipu kalian sama muka baiknya, iya?!
 
 #speaker: Warga
-Sebenarnya aku sempat curiga, sih...
-Eh, tapi kan...
+#portrait: npc-cewek/cewe-smile
+Sebenarnya sempat curiga, sih....
 
 #speaker: Pak Udin
 #portrait: pedagang/pedagang-sad2
@@ -426,6 +436,7 @@ Dengar ya, semuanya! Udah jelas-jelas kalian mulai rugi sejak ngasih hak jual pa
 Kok, masih ngeyel mau percaya saya dia?!
 
 #speaker: Warga
+#portrait: npc-cowok/cowo-talk
 Bu Nanan! Lancang sekali-
 
 #speaker: Ibu Nanan
@@ -442,7 +453,6 @@ Kalian mau bukti? Ada!
 Abdul, cepat tunjukkan ke mereka!
 
 -> option_4
-
 
 === option_4 ===
 
@@ -467,7 +477,6 @@ Ini buktinya.
 + [Kunci Cadangan Gudang Pak Udin]
     -> item_salah_4
     
-
 === item_salah_4 ===
 #speaker: Abdul
 #portrait: main-character/mc-serious
@@ -475,9 +484,9 @@ Ini buktinya.
 (Ada bukti lain yang lebih cocok.)
 -> option_4
 
-
 === bukti_4 ===
 #illust: items/buku-kas
+…
 #dialogue-box: show
 
 #speaker: Abdul
@@ -566,9 +575,7 @@ Semua warga setiap hari selalu bebas keluar masuk rumah saya, kan?! Mau dimana s
 Tenang saja. Akan kami cari sendiri.
 Abdul, keluarkan bukti terakhirnya.
 
-
 -> option_5
-
 
 === option_5 ===
 
@@ -593,7 +600,6 @@ Ini buktinya.
 + [Kunci Cadangan Gudang Pak Udin]
     -> bukti_5
     
-
 === item_salah_5 ===
 #speaker: Abdul
 #portrait: main-character/mc-serious
@@ -601,9 +607,9 @@ Ini buktinya.
 (Ada bukti lain yang lebih cocok.)
 -> option_5
 
-
 === bukti_5 ===
 #illust: items/kunci
+…
 #dialogue-box: show
 
 #speaker: Abdul
@@ -625,9 +631,10 @@ Hah! Silahkan! Coba cek saja! Tidak ada apa-apa disitu!
 #speaker: Abdul
 #portrait: main-character/mc-serious2
 Tunggu, Pak, Bu!
-Tidak perlu mencari ke seluruh rumah. Cukup di gudang ini saja.
+Tidak perlu mencari ke seluruh rumah. Cukup di gudang saja.
 
 #speaker: Warga
+#portrait: npc-cowok/cowo-talk
 Hah? Ini cuma gudang barang! Mana ada uang disini!
 
 #speaker: Pak Udin
