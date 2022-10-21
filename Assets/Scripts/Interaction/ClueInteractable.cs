@@ -6,15 +6,12 @@ namespace TheDuction.Interaction{
     public class ClueInteractable : Interactable {
         private BoxCollider _collider;
         private ClueData _clueData;
-        private ParticleSystem _particle;
-
-        public ParticleSystem Particle => _particle;
 
         public delegate void ItemAction(ClueData clueData);
         public static event ItemAction OnItemInteracted;
 
         private void Awake() {
-            _particle = GetComponent<ParticleSystem>();
+            Particle = GetComponent<ParticleSystem>();
             _collider = GetComponentInParent<BoxCollider>();
         }
 

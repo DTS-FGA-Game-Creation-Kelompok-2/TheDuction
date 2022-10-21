@@ -145,8 +145,9 @@ namespace TheDuction.Event.DialogueEvent{
 
                         // Play particle system
                         switch(interactable){
-                            case ClueInteractable clue:
-                                clue.Particle.Play();
+                            case BuildingInteractable _:
+                            case ClueInteractable _:
+                                interactable.Particle.Play();
                                 break;
                         }
                     }

@@ -10,6 +10,13 @@ namespace TheDuction.Interaction{
         [SerializeField] private InteractableMode _mode = InteractableMode.NormalMode;
         [SerializeField] private TextAsset _currentDialogue;
 
+        private ParticleSystem _particle;
+
+        public ParticleSystem Particle {
+            set { _particle = value; }
+            get { return _particle; }
+        }
+
         public InteractableData Data => _data;
 
         public InteractableMode Mode{
