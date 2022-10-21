@@ -12,6 +12,8 @@ using TheDuction.Dialogue.Portraits;
 using TheDuction.Dialogue.Illustrations;
 using TheDuction.Dialogue.Tags;
 using TheDuction.Quest;
+using TheDuction.Cameras;
+using Cinemachine;
 
 namespace TheDuction.Dialogue{
     public class DialogueManager: SingletonBaseClass<DialogueManager>{
@@ -34,6 +36,9 @@ namespace TheDuction.Dialogue{
         [SerializeField] private TextMeshProUGUI _dialogueText;
         [SerializeField] private Text _speakerName;
 
+        [Header("Camera Manager")] 
+        [SerializeField] private CinemachineVirtualCamera _dialogueVcam;
+
         [Header("Others")]
         [SerializeField] private TextAsset _currentDialogueAsset;
         private Story _currentStory;
@@ -41,6 +46,7 @@ namespace TheDuction.Dialogue{
         private Coroutine _autoModeCoroutine;
 
         [Header("Singleton")]
+        private CameraPriority _cameraPriority;
         private DialogueChoiceManager _dialogueChoiceManager;
         private DialogueIllustrationManager _dialogueIllustrationManager;
         private DialogueLogManager _dialogueLogManager;
@@ -59,6 +65,7 @@ namespace TheDuction.Dialogue{
         
         private void Awake(){
             // Singleton
+            _cameraPriority = CameraPriority.Instance;
             _dialogueChoiceManager = DialogueChoiceManager.Instance;
             _dialogueIllustrationManager = DialogueIllustrationManager.Instance;
             _dialogueLogManager = DialogueLogManager.Instance;
@@ -157,10 +164,8 @@ namespace TheDuction.Dialogue{
             StartCoroutine(AlphaFadingEffect.FadeIn(_dialogueCanvasGroup,
                 beforeEffect: () =>
                 {
-                    // Make player don't move because of obstacle
-                    // playerMovement.Movement.ChangeNavMeshQuality(
-                    //     UnityEngine.AI.ObstacleAvoidanceType.NoObstacleAvoidance);
-                    
+                    _cameraPriority.SetVirtualCameraPriority(_dialogueVcam, _cameraPriority.DIALOGUE_HIGHER_PRIORITY);
+
                     ContinueStory();
                 }, 
                 afterEffect: () => DialogueIsPlaying = true)
@@ -253,6 +258,9 @@ namespace TheDuction.Dialogue{
         {
             _currentDialogueState = DialogueState.Stop;
             StartCoroutine(AlphaFadingEffect.FadeOut(_dialogueCanvasGroup,
+                beforeEffect: () =>{
+                    _cameraPriority.SetVirtualCameraPriority(_dialogueVcam, _cameraPriority.LOWER_PRIORITY);
+                },
                 afterEffect: () =>
                 {
                     // Auto mode
