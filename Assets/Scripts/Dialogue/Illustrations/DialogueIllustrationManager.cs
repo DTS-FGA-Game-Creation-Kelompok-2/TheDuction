@@ -28,12 +28,16 @@ namespace TheDuction.Dialogue.Illustrations{
                 return;
             }
             
-            Hide(); // Hide previous illustration
+            // Hide(); // Hide previous illustration
             Sprite illustration = Resources.Load<Sprite>($"Illustrations/{_fileName}");
 
-            _illustrationObject.gameObject.SetActive(true);
-            _illustrationObject.IllustrationSprite = illustration;
-            _illustrationObject.PrefabSetup();
+            StartCoroutine(AlphaFadingEffect.FadeIn(_illustrationObject.IllustrationImage, 
+                beforeEffect: () => {
+                    _illustrationObject.gameObject.SetActive(true);
+                    _illustrationObject.IllustrationSprite = illustration;
+                    _illustrationObject.PrefabSetup();
+                }
+            ));
         }
 
         public void BlurBackground(){
@@ -47,9 +51,10 @@ namespace TheDuction.Dialogue.Illustrations{
         public void Hide()
         {
             StartCoroutine(AlphaFadingEffect.FadeOut(_illustrationObject.IllustrationImage,
-                afterEffect: () => _illustrationObject.gameObject.SetActive(false))
-            );
-            ResetBlurEffect();
+                afterEffect: () => {
+                    _illustrationObject.gameObject.SetActive(false);
+                }
+            ));
         }
     }
 }

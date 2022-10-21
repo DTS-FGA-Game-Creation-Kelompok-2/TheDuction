@@ -121,6 +121,7 @@ namespace TheDuction.Event.DialogueEvent{
             }
             _eventController.EventState = EventState.Active;
             _eventController.CanBeInteracted = true;
+            Debug.Log(_eventController.EventData.EventId + _eventController.InteractableObject.Data.InteractableName);
             _eventController.InteractableObject.Mode = InteractableMode.DialogueMode;
             
             // Set branch state
@@ -189,7 +190,8 @@ namespace TheDuction.Event.DialogueEvent{
             }
             
             // Deactivate game object
-            _eventController.gameObject.SetActive(_eventController.EventData.KeepObjectAfterFinish);
+            if(!_eventController.EventData.KeepObjectAfterFinish)
+                Destroy(_eventController.gameObject);
             gameObject.SetActive(false);
         }
     }

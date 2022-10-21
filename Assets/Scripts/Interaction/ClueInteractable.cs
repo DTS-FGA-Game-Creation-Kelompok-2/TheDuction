@@ -1,8 +1,11 @@
+using System.Collections;
+using TheDuction.Dialogue;
 using UnityEngine;
 
 namespace TheDuction.Interaction{
     public class ClueInteractable : Interactable {
         private BoxCollider _collider;
+        private ClueData _clueData;
         private ParticleSystem _particle;
 
         public ParticleSystem Particle => _particle;
@@ -18,10 +21,16 @@ namespace TheDuction.Interaction{
         public override void Interact()
         {
             base.Interact();
-            ClueData data = Data as ClueData;
-            OnItemInteracted?.Invoke(data);
+            _clueData = Data as ClueData;
+            OnItemInteracted?.Invoke(_clueData);
             // Set active false after dialogue
-            _collider.gameObject.SetActive(data.KeepObjectAfterInteracting);
+            StartCoroutine(DeactivateObject());
         }
+
+        private IEnumerator DeactivateObject(){
+            yield return new WaitUntil(() => DialogueManager.Instance.CurrentDialogueState == DialogueState.Stop);
+
+            _collider.gameObject.SetActive(_clueData.KeepObjectAfterInteracting);
+        } 
     }
 }
