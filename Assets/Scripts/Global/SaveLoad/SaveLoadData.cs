@@ -33,7 +33,7 @@ namespace TheDuction.Global.SaveLoad
 
         private void Awake()
         {
-            Load();
+            // Load();
         }
 
         private void SaveInventory(ClueData clueData)

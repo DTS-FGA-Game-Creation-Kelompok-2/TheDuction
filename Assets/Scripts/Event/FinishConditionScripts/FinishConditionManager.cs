@@ -9,7 +9,8 @@ namespace TheDuction.Event.FinishConditionScripts{
 
         public virtual void OnEndingCondition(){
             eventController.IsFinished = true;
-            SaveLoadData.Instance.ResetEvent();
+            if(SaveLoadData.Instance)
+                SaveLoadData.Instance.ResetEvent();
         }
     }
 }

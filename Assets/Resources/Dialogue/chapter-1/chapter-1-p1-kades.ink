@@ -39,7 +39,7 @@ Bapak akui, lagi ada banyak masalah di desa yang membuat bapak kewalahan sekaran
 Haduh... Sudahlah, kita ngobrol sambil ngopi aja di rumah, yuk. 
 Ayo, pulang.
 #event: move-1-1
-#portrait: main-character/smile2
+#portrait: main-character/mc-smile2
 #speaker: Abdul
 Iya, pak.
 #event: chapter-1-p2-kades

@@ -117,8 +117,9 @@ namespace TheDuction.Event.BranchEvent{
 
             yield return new WaitForSeconds(0.5f);
             yield return new WaitUntil(() => !DialogueManager.Instance.DialogueIsPlaying);
-
-            SaveLoadData.Instance.ResetBranch();
+            
+            if(SaveLoadData.Instance)
+                SaveLoadData.Instance.ResetBranch();
 
             _activeBranchPart.BranchEvents.ForEach(branchEvent =>{
                 DialogueEventController eventController = DialogueEventManager.Instance.GetDialogueEventController(branchEvent.DialogueEventData);

@@ -32,7 +32,8 @@ namespace TheDuction.Event.DialogueEvent{
         {
             DialogueEventController eventController = GetOrCreateEventController();
             eventController.EventData = eventData as DialogueEventData;
-            SaveLoadData.Instance.SaveEvent(eventData);
+            if(SaveLoadData.Instance)
+                SaveLoadData.Instance.SaveEvent(eventData);
 
             DialogueEventRunner eventRunner = GetOrCreateEventRunner();
             eventRunner.EventController = eventController;

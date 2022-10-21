@@ -29,7 +29,8 @@ namespace TheDuction.Event.MovementEvent{
         {
             MovementEventController eventController = GetEventController(eventData);
             eventController.BlackScreen = _blackScreen;
-            SaveLoadData.Instance.SaveEvent(eventData);
+            if(SaveLoadData.Instance)
+                SaveLoadData.Instance.SaveEvent(eventData);
             
             MovementEventRunner eventRunner = GetOrCreateEventRunner();
             eventRunner.EventController = eventController;

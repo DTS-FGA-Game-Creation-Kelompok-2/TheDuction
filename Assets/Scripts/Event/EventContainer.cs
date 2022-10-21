@@ -20,6 +20,8 @@ namespace TheDuction.Event{
 
         private void LoadEvents()
         {
+            if(!SaveLoadData.Instance) return;
+            
             List<string> eventIds = SaveLoadData.Instance.CurrentEvents;
             if(eventIds.Count == 0) return;
             Debug.Log(eventIds);

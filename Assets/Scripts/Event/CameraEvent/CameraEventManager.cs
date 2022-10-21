@@ -27,7 +27,8 @@ namespace TheDuction.Event.CameraEvent{
         public void SetEventData(EventData eventData)
         {
             CameraEventController eventController = GetEventController(eventData);
-            SaveLoadData.Instance.SaveEvent(eventData);
+            if(SaveLoadData.Instance)
+                SaveLoadData.Instance.SaveEvent(eventData);
             CameraEventRunner eventRunner = GetOrCreateEventRunner();
             eventRunner.EventController = eventController;
             StartCoroutine(StartEvent(eventRunner));

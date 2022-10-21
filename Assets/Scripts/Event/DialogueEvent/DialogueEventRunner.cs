@@ -127,7 +127,8 @@ namespace TheDuction.Event.DialogueEvent{
             // Set branch state
             if(_dialogueEventData.UseBranchEvent){
                 _eventController.BranchRunner.UpdateBranchEventState(_dialogueEventData, BranchState.Active);
-                SaveLoadData.Instance.SaveBranch(_eventController.BranchRunner.BranchEventData);
+                if(SaveLoadData.Instance)
+                    SaveLoadData.Instance.SaveBranch(_eventController.BranchRunner.BranchEventData);
             }
         }
 

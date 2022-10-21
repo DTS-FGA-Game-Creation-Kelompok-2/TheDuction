@@ -28,6 +28,8 @@ namespace TheDuction.Quest{
         }
 
         private void LoadQuest(){
+            if(!SaveLoadData.Instance) return;
+            
             string savedQuestID = SaveLoadData.Instance.CurrentQuest;
             if(string.IsNullOrWhiteSpace(savedQuestID)) return;
             HandleQuestTag(savedQuestID);

@@ -33,6 +33,8 @@ namespace TheDuction.Inventory
 
         private void LoadItem()
         {
+            if(!SaveLoadData.Instance) return;
+            
             _items = SaveLoadData.Instance.Inventory;
             for (int i = 0; i < _items.Count; i++)
             {
