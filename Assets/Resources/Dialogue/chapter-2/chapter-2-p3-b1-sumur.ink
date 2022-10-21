@@ -1,7 +1,9 @@
+chapter-2-p3-b1-sumur
 #speaker: Abdul
-#portrait Abdul
-Wah, baunya masih ada, ya.
-Tapi dinding sumurnya kelihatan bersih, kok. Ini kerekan airnya juga masih bagus, enggak berkarat.
-Jadi, apa memang sumber airnya yang bermasalah?
-Coba aku simpan airnya dulu, deh.
+#portrait: main-character/mc-serious
+Wah, baunya masih ada ternyata.
+Dinding bagian dalam sumurnya kelihatan bersih. 
+Ini kerekan airnya juga masih bagus, enggak berkarat.
+Apa memang sumber airnya ya yang bermasalah?
+Coba aku ambil contoh airnya dulu, deh.
 #illust: item-air-sumur

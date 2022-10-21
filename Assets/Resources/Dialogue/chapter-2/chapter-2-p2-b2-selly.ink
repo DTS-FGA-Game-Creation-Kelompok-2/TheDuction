@@ -1,133 +1,161 @@
 #speaker: Abdul
-#portrait: Abdul
+#portrait: main-character/mc-smile4
 Pagi, Bu Selly!
 
 #speaker: Ibu Selly
+#portrait: npc-cewe/cewe-talk
 Eh, Abdul! Pagi!
-Sebentar ya, Ibu masih ngurus kebun.
+Sebentar ya, Ibu masih harus ngurus kebun.
 Padahal tadi Ibu sudah dengar dari Pak Kades kalau kamu mau mampir. Rencananya mau Ibu siapkan cemilan dulu untuk kamu.
 
 #speaker: Abdul
+#portrait: main-character/cewe-smile2
 Ah, enggak usah repot-repot, Bu.
 Mau saya bantu ngurus kebunnya?
 
 #speaker: Ibu Selly
-Eh, jangan. Kamu kan tamu. Enggak perlu ngotorin tangan buat bantu Ibu ngurus kebun, haha.
-Ini juga sudah mau selesai, kok.
+#portrait: npc-cewe/cewe-smile
+Eh, jangan Dul. Kamu kan tamu. Ibu nggak mau tangan dan bajumu kotor kalau bantuin Ibu ngurus kebun. 
+Tunggu sebentar ya Dul, Ibu sudah mau selesai, kok.
 
 #speaker: Abdul
+#portrait: main-character/mc-smile
 Tapi tanamannya sedikit layu ya, Bu? Apa sedang ada hama?
 
 #speaker: Ibu Selly
-Enggak sih, Dul. Ibu juga kurang paham. Kayaknya sih, karena air.
-Rumah Ibu kan belum punya sumur, ya. Jadi harus ngambil air ke sumur desa. Tapi airnya itu aduh, belakangan ini bau sekali.
+#portrait: npc-cewe/cewe-smile
+Bukan hama, Dul. Kayaknya sih, gara-gara airnya.
+Rumah Ibu kan belum punya sumur, ya. Jadi harus ngambil air ke sumur desa. Tapi airnya itu loh, belakangan kok bau sekali.
 Minggu lalu Ibu pakai air itu untuk masak dan minum, wah, besoknya langsung mulas, muntah-muntah, Dul.
-
+ 
 #speaker: Abdul
-Waduh, bahaya sekali. Ibu sudah enggak pakai air sumur lagi, kan, sekarang?
+#portrait: main-character/mc-serious
+Waduh, bahaya sekali. Ibu sudah enggak pakai air sumur itu lagi kan, sekarang?
 
 #speaker: Ibu Selly
-Aduh, enggak lagi deh. Kapok.
-Untuk sekarang Ibu ambil air ke rumah Bu Nanan dulu.
-Padahal sumurnya sudah pernah dikuras Pak Kades karena khawatir soal baunya itu. Eh, tapi 2-3 hari kemudian baunya tetap balik lagi.
-Mungkin memang sumber airnya yang jelek, atau ada yang kotor di sumurnya, aduh, enggak paham deh.
-Pokoknya sih ya, menurut Ibu, sekarang banyak warga yang sakit yaa, mungkin karena masih konsumsi air sumur itu, Dul.
-Ini kebun Ibu pun tanamannya pada layu mungkin karena pengaruh air juga.
+#portrait: npc-cewe/cewe-smile
+Enggak lagi deh. Kapok.
+Sekarang sih, Ibu minta air ke sumur rumah Bu Nanan dulu.
+Sumur itu tuh sebelumnya sudah pernah dikuras sama Pak Kades karena baunya meresahkan. Eh, tapi 2-3 hari kemudian balik lagi baunya.
+Emang sumber airnya aja kali yang jelek, atau ada yang ngotorin sumurnya.
+Kayanya sih ya, menurut Ibu sih, sekarang banyak warga yang sakit yaa…. mungkin karena masih pake air sumur itu, Dul!
+Ini kebun Ibu pun tanamannya pada layu bisa jadi gara-gara air itu juga.
 
 #speaker: Abdul
-Hmm. Nanti coba saya bicarakan lagi ke Bapak ya, Bu. Kalau memang ada masalah di sumurnya, harus segera diatasi, nih.
+#portrait: main-character/mc-smile
+Hmm. Nanti coba saya sampaikan lagi ke Bapak ya, Bu. Kalau memang ada masalah di sumurnya, akan kami coba selesain.
 
 #speaker: Ibu Selly
-Iya, tolong ya, Dul.
-Kayaknya disini yang rumahnya sudah punya sumur sendiri, tuh, cuma Bapak kamu, Bu Nanan, sama Pak Udin.
-Pak Udin kasihan tuh, hahah. Setiap hari banyak warga yang keluar masuk rumahnya untuk minta air. Kadang bahkan sampai numpang mandi atau numpang masak.
+#portrait: npc-cewe/cewe-talk
+Iya, tolong ya, Dul. 
+Ibu perlu banget airnya. Soalnya disini tuh yang rumahnya sudah punya sumur sendiri, cuma Bapak kamu, Bu Nanan, sama Pak Udin.
+Pak Udin kasihan tuh! Setiap hari banyak warga yang keluar masuk rumahnya buat minta air. Kadang bahkan sampai numpang mandi atau numpang masak.
 
 #speaker: Abdul
-Loh, iyakah? Rumah saya juga ada sumur. Tapi kok, saya enggak lihat ada warga yang minta air ke rumah, ya?
+#portrait: main-character/mc-serious
+Loh? Rumah saya kan juga ada sumur. Tapi kok, saya lihat enggak ada warga yang minta air ke rumah, ya?
 
 #speaker: Ibu Selly
-Yahhh, karena rumor itu sih, Dul. Rumor yang bilang kalau Bapak kamu korupsi anggaran. Jadi banyak warga yang curiga. Nyapa Pak Kades aja, enggak mau.
-Ke Bu Nanan juga gitu. Aduh, banyak yang salah paham sama beliau.
+#portrait: npc-cewe/cewe-smile
+Yahhh, karena rumor itu sih, Dul. Rumor yang bilang kalau Bapak kamu korupsi anggaran. 
+Jadinya banyak warga yang curiga. Nyapa Pak Kades aja, mereka enggak mau!
+Ke Bu Nanan juga gitu. Haduh, banyak banget yang salah paham sama beliau.
 Cuma karena ngomongnya sedikit kasar dan blak-blakan, eh, langsung dicap orang jahat.
 
 #speaker: Abdul
-Kemarin saya juga ketemu Bu Nanan. Saya agak kaget karena Bu Nanan kok ketus sekali bicaranya.
+#portrait: main-character/mc-serious2
+Kemarin saya sempet ketemu Bu Nanan, Bu. Saya agak kaget juga karena Bu Nanan ketus sekali bicaranya.
 Padahal dulu kan beliau ramah sekali.
 Pak Udin juga kayaknya kesal sekali waktu cerita soal Bu Nanan.
 
 #speaker: Ibu Selly
-Wah, itu ada alasannya, Dul. Kamu tahu, enggak? Dulu waktu awal-awal desa mulai krisis, Bu Nanan dan Pak Udin itu kerjasama buat bantu warga.
+#portrait: npc-cewe/cewe-smile
+Wah, itu ada alasannya, Dul.
+Kamu tahu, enggak? Dulu waktu awal-awal desa mulai krisis, Bu Nanan dan Pak Udin itu kerjasama buat bantu warga.
 Bu Nanan kan kebunnya subur, tuh. Hartanya juga lumayan. Nah, jadi hasil kebun Bu Nanan dibagikan ke warga lewat Pak Udin.
 Tapi makin lama yaa, Bu Nanan juga makin kewalahan, dong. Kan hasil kebunnya terbatas. Beliau juga harus tetap ngurus keluarganya.
 Jadi Bu Nanan mulai enggak sanggup buat terus-terusan ngebantu warga.
 
 #speaker: Abdul
+#portrait: main-character/mc-serious
 Ohh... Kalau gitu, wajar sih, Bu...
 
 #speaker: Ibu Selly
-Iya, kan? Nah, habis ini Ibu enggak tahu cerita pastinya gimana, soalnya waktu itu Ibu lagi enggak di desa.
-Tapi Ibu dengar kalau akhirnya warga banyak yang marah ke Bu Nanan. Bu Nanan dibilang pelit, egois, macem-macem deh.
+#portrait: npc-cewe/cewe-talk
+Nah, habis itu… Ibu enggak tahu sih cerita pastinya gimana. Tapi Ibu dengar kalau akhirnya warga banyak yang marah ke Bu Nanan.
+Bu Nanan dibilang pelit, egois, macem-macem deh.
 Terus yang lebih parahnya lagi, sampai ada warga yang nyolong hasil kebun Bu Nanan!
 
 #speaker: Abdul
-Loh, sampai segitunya?
+#portrait: main-character/mc-serious2
+Nggak tau diri banget, sudah ditolongin tapi kenapa sampai segitunya?
 
 #speaker: Ibu Selly
-Iyaa, pokoknya heboh, deh. Waktu itu akhirnya udah dilerai sama Bapak kamu, sih.
-Tapi sejak itu Bu Nanan makin menutup diri, enggak mau lagi bergaul sama warga.
-Warga pun banyak yang jaga jarak dari Bu Nanan.
-Aduhh, padahal Bu Nanan itu baik sekali loh, Dul.
-Waktu Ibu kesusahan ngurus kebun, cuma Bu Nanan yang nawarin untuk ngebantu Ibu.
-Sekarang pun Ibu hampir setiap hari mampir ke rumahnya untuk ngobrol soal cara ngurus kebun, sambil minta air bersih juga.
+#portrait: npc-cewe/cewe-smile
+Betul! Heboh sekali beritanya waktu itu. Akhirnya masalahnya berhasil dilerai sama Bapak kamu, sih.
+Tapi sejak kejadian itu, Bu Nanan makin menutup diri, enggak mau lagi bergaul sama warga. Warga pun banyak yang jaga jarak dari Bu Nanan.
+Aduhh, padahal kalo kamu tahu ya… Bu Nanan itu baik sekali loh, Dul.
+Waktu Ibu kesusahan ngurus kebun, cuma Ibu Nanan yang nawarin untuk ngebantu Ibu.
+Sekarang pun Ibu hampir setiap hari mampir ke rumahnya untuk ngobrol soal cara-cara ngurusin kebun, sambil sekalian minta air juga.
 
 #speaker: Abdul
-Hmm... Jadi itu alasan kenapa Bu Nanan sekarang jadi begitu.
+#portrait: main-character/mc-serious
+(Hmm... Jadi itu alasan kenapa Bu Nanan sekarang jadi begitu.)
 Wah, saya pun jadi hampir salah paham kemarin.
 
 #speaker: Ibu Selly
-Hahah, gapapa, Dul. Yang penting sekarang kamu udah tahu.
+#portrait: npc-cewe/cewe-talk
+Hahaha, wajar sih itu, Dul. Tapi yang paling penting, sekarang kamu udah tahu.
 
 #speaker: Abdul
+#portrait: main-character/mc-smile2
 Oh iya, Bu. Saya mau nanya juga soal hasil panen. Penjualan panen Ibu bagaimana? Apa tetap menurun juga setahun belakangan ini?
 
 #speaker: Ibu Selly
-Wah, jelas iya, Dul.
-Ini juga menurut Ibu aneh sekali. Baru pertama kali ini Ibu merugi sebesar ini.
-Kalau menurut Ibu sih, ya. Mungkin ada yang salah dengan cara Pak Udin menjual panen kita.
-Soalnya selama ini warga sini memang repot sih, bolak-balik ke kota untuk jualan. Tapi kita enggak pernah rugi besar.
-Terus nih ya, Ibu kan sering ngobrol sama Bu Nanan, tuh. Nah, Bu Nanan sampai sekarang masih enggak mau pakai jasa distribusi Pak Udin.
-Jadi beliau setiap hari masih pergi ke kota bawa jualannya naik sepeda. Tapi lihat, rumahnya malah makin bagus, uangnya juga makin banyak.
+#portrait: npc-cewe/cewe-smile
+Itu sih jelas iya, Dul. Ini juga baru pertama kali Ibu merugi sebesar ini.
+Kalo sebelumnya ya… memang repot sih, bolak-balik ke kota untuk jualan. Tapi kalaupun rugi kayaknya gak parah-parah amat deh.
+Terus nih ya, Ibu kan sering ngobrol sama Bu Nanan.
+Nah, Bu Nanan tuh sampai sekarang enggak pernah mau pakai jasa distribusi Pak Udin.
+Jadi beliau setiap hari pergi ke kota bawa jualannya naik sepeda. Tapi lihat, rumahnya malah makin bagus, uangnya juga makin banyak.
 
 #speaker: Abdul
-Tapi kata Pak Udin, hasil panen desa kita kayaknya kalah saing di pasar, Bu.
+#portrait: main-character/mc-serious
+Tapi kata Pak Udin, hasil panen kita rugi gara-gara kalah saing di pasar, Bu?
 
 #speaker: Ibu Selly
-Nah, kan aneh, tuh! Yang dijual Bu Nanan enggak beda jauh, kok, sama yang dijual warga lain.
-Bedanya cuma di cara jualnya aja. Bu Nanan enggak pakai jasa Pak Udin, tapi dia tetap untung, tuh.
-Kalau gitu, berarti mungkin yang salah ada di cara Pak Udin jualan.
+#portrait: npc-cewe/cewe-smile
+Perasaan… hasil panen yang dijual Bu Nanan enggak beda jauh deh, sama yang dijual warga lain.
+Bedanya cuma di cara jualnya aja. Warga yang lain pake jasanya Pak Udin, Bu Nanan enggak.
 
 #speaker: Abdul
-Hmm... Yah, masuk akal, sih
+#portrait: main-character/mc-serious2
+Kalau gitu berarti mungkin yang salah sama cara Pak Udin jualan kali ya?
 
 #speaker: Ibu Selly
-Dari dulu Ibu kepikiran begini. Tapi enggak punya bukti sih, Dul.
-Ini cuma asal tebak saja, hehe.
+#portrait: npc-cewe/cewe-smile
+Sebenernya dari dulu Ibu sering kepikiran begitu. Tapi Ibu enggak punya bukti, Dul.
+Ibu cuma asal nebak saja.
 
 #speaker: Abdul
-Tapi pendapat Ibu lumayan masuk akal sih, Bu.
-Nanti coba saya cari tahu lebih dalam lagi, deh. 
+#portrait: main-character/mc-smile
+Tapi pendapat Ibu lumayan masuk akal sih.
+Nanti coba saya cari tahu lebih dalam lagi, deh.
 
 #speaker: Ibu Selly
-Kamu jangan main asal tuduh, ya. Harus ada buktinya dulu baru bisa menuduh orang.
-Jangan sampai kayak Bu Nanan dulu, dihakimi sepihak sama warga. Haduh, kasihan sekali.
+#portrait: npc-cewe/cewe-smile
+Kamu jangan main asal tuduh ya, Dul. Harus ada buktinya dulu baru bisa menuduh orang.
+Jangan sampai jadi kayak Bu Nanan dulu, dituduh dihakimi sepihak sama warga. Saya kasian tiap kali ngingetnya.
 
 #speaker: Abdul
-Siap, Bu. Pasti akan saya cari buktinya dulu.
-Kalau gitu saya pamit dulu ya, Bu. Makasih banyak buat ceritanya, hehe.
+#portrait: main-character/mc-smile2
+Siap, Bu. Saya akan pastikan cari buktinya dulu.
+Kalau gitu saya pamit dulu ya, Bu. Terima kasih banyak buat ceritanya.
 
-#speaker: Ibu Selly
-Iya, sama-sama.
-Lain kali kalau kamu datang bakal Ibu siapin ubi bakar buat kamu.
+#speaker: Ibu Selly.
+#portrait: npc-cewe/cewe-talk
+Sering-sering mampir ya, Dul. Nanti Ibu siapin ubi bakar buat kamu.
 
 #speaker: Abdul
-Yeyy, makasih Bu!
+#portrait: main-character/mc-smile3
+Makasih Bu!
