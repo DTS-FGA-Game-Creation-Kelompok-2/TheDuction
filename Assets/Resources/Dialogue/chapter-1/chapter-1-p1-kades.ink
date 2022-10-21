@@ -37,7 +37,10 @@ Makasih ya, Nak...
 Bapak akui, lagi ada banyak masalah di desa yang membuat bapak kewalahan sekarang.
 #portrait: pak-kades/kades-relieved
 Haduh... Sudahlah, kita ngobrol sambil ngopi aja di rumah, yuk. 
-
-#event: chapter-1-p2-kades
-#quest: quest-1-1
 Ayo, pulang.
+#event: move-1-1
+#speaker: Abdul
+Iya, pak.
+#event: chapter-1-p2-kades
+#quest: quest-1-2
+Tungguin, pak.

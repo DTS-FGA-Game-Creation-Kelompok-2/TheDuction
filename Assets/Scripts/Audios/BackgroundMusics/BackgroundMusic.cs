@@ -3,6 +3,8 @@ using TheDuction.Audios;
 
 namespace TheDuction.BackgroundMusics{
     public enum ListBackgroundMusic{
+        DefaultBGM,
+        PrologBGM,
         MainMenuBGM,
     }
     

@@ -5,7 +5,9 @@ namespace TheDuction.Dialogue.Tags{
         [Header("Tags")]
         public const string BGM_TAG = "bgm";
         public const string DIALOGUE_BOX_TAG = "dialogue-box";
+        public const string EFFECT_TAG = "effect";
         public const string ENDING_TAG = "end";
+        public const string END_CHAPTER_TAG = "end-chapter";
         public const string EVENT_TAG = "event";
         public const string ILLUST_TAG = "illust";
         public const string PORTRAIT_TAG = "portrait";
@@ -15,6 +17,9 @@ namespace TheDuction.Dialogue.Tags{
 
         [Header("Tag Value")]
         public const string BLANK_VALUE = "none";
+        [Header("Tag: effect")]
+        public const string BLUR_EFFECT = "illust-blur";
+        public const string FADE_IN_OUT = "fade-in-out";
         [Header("Tag: dialogue-box")]
         public const string SHOW_DIALOGUE_BOX = "show";
         [Header("Tag: ending")]

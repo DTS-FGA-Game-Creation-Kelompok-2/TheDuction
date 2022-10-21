@@ -9,6 +9,7 @@ namespace TheDuction.Dialogue.Illustrations{
     {
         [Header("Dialogue Illustration")]
         [SerializeField] private DialogueIllustrationPrefab _illustrationObject;
+        [SerializeField] private Material blurMaterial;
 
         private string _fileName;
 
@@ -35,11 +36,20 @@ namespace TheDuction.Dialogue.Illustrations{
             _illustrationObject.PrefabSetup();
         }
 
+        public void BlurBackground(){
+            _illustrationObject.IllustrationImage.material = blurMaterial;
+        }
+
+        private void ResetBlurEffect(){
+            _illustrationObject.IllustrationImage.material = null;
+        }
+
         public void Hide()
         {
             StartCoroutine(AlphaFadingEffect.FadeOut(_illustrationObject.IllustrationImage,
                 afterEffect: () => _illustrationObject.gameObject.SetActive(false))
             );
+            ResetBlurEffect();
         }
     }
 }

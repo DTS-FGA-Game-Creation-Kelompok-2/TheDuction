@@ -1,7 +1,9 @@
 using TheDuction.Dialogue;
 using TheDuction.Event.BranchEvent;
 using TheDuction.Event.FinishConditionScripts;
+using TheDuction.Global.SaveLoad;
 using TheDuction.Interaction;
+using TheDuction.Inventory;
 using TheDuction.Quest;
 using UnityEngine;
 
@@ -125,6 +127,7 @@ namespace TheDuction.Event.DialogueEvent{
             // Set branch state
             if(_dialogueEventData.UseBranchEvent){
                 _eventController.BranchRunner.UpdateBranchEventState(_dialogueEventData, BranchState.Active);
+                SaveLoadData.Instance.SaveBranch(_eventController.BranchRunner.BranchEventData);
             }
         }
 
@@ -153,6 +156,10 @@ namespace TheDuction.Event.DialogueEvent{
             // Set branch state
             if(_dialogueEventData.UseBranchEvent){
                 _eventController.BranchRunner.UpdateBranchEventState(_dialogueEventData, BranchState.Finish);
+            }
+
+            if(_dialogueEventData.UseReward){
+                InventoryManager.Instance.AddItem(_dialogueEventData.ClueReward);
             }
             // Deactivate event data renderer
             _eventController.OnEventFinish();

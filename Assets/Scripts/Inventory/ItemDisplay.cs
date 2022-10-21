@@ -41,9 +41,5 @@ namespace TheDuction.Inventory{
             _itemDescriptionText.text = _itemDescription;
             _itemImage.sprite = _itemSprite;
         }
-
-        public void ClosePanel(){
-            StartCoroutine(AlphaFadingEffect.FadeOut(_itemDisplay));
-        }
     }
 }

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Kepala Desa
   m_EditorClassIdentifier: 
   InteractableID: kepala-desa
-  InteractableName: Kepala Desa
+  InteractableName: Pak Kepala Desa
   InteractableDescription: 
