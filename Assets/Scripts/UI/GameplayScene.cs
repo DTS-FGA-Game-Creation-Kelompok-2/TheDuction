@@ -1,6 +1,7 @@
 using TheDuction.Dialogue;
 using TheDuction.Global.Effects;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
@@ -28,6 +29,7 @@ namespace TheDuction.UI
         [Header("Pause")]
         [SerializeField] private Button _pauseButton;
         [SerializeField] private Button _resumeButton;
+        [SerializeField] private Button _returnToMenuButton;
         [SerializeField] private CanvasGroup _pausePanel;
         private bool _openPausePanel;
 
@@ -44,6 +46,7 @@ namespace TheDuction.UI
             // Pause
             _pauseButton.onClick.AddListener(OpenPausePanel);
             _resumeButton.onClick.AddListener(OpenPausePanel);
+            _returnToMenuButton.onClick.AddListener(ReturnToMenu);
 
             // Dialogue
             _viewButton.onClick.AddListener(HideDialogue);
@@ -155,7 +158,12 @@ namespace TheDuction.UI
             else
                 StartCoroutine(AlphaFadingEffect.FadeOut(_pausePanel));
         }
-        
+
+        private void ReturnToMenu()
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
+
         #endregion
     }
 }
