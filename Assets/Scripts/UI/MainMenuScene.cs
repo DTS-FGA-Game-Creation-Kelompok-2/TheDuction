@@ -9,6 +9,7 @@ namespace TheDuction.UI
 {
     public class MainMenuScene : MonoBehaviour
     {
+        [SerializeField] private Button _exitButton;
         [SerializeField] private Button _startButton;
         [SerializeField] private Button _settingButton;
         [SerializeField] private Button _credittButton;
@@ -24,6 +25,7 @@ namespace TheDuction.UI
 
         private void SetupButton()
         {
+            _exitButton.onClick.AddListener(ExitGame);
             _startButton.onClick.AddListener(StartGame);
             _credittButton.onClick.AddListener(CreditGame);
             _settingButton.onClick.AddListener(SettingGame);
@@ -51,6 +53,11 @@ namespace TheDuction.UI
         private void CreditGame()
         {
             SceneManager.LoadScene("Credits");
+        }
+
+        private void ExitGame()
+        {
+            Application.Quit();
         }
     }
 }
