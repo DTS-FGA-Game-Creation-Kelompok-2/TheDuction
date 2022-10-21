@@ -42,7 +42,7 @@ namespace TheDuction.Dialogue.Tags{
 
                 if (splitTag.Length != 2)
                 {
-                    Debug.LogError("Tag could not be parsed: " + tag);
+                    Debug.LogError("Tag could not be parsed: " + splitTag);
                 }
 
                 string tagKey = splitTag[0].Trim();
@@ -106,7 +106,7 @@ namespace TheDuction.Dialogue.Tags{
                         break;
                     
                     default:
-                        Debug.LogError("Tag is not in the list: " + tag);
+                        Debug.LogError("Tag is not in the list: " + tagKey);
                         break;
                 }
             }

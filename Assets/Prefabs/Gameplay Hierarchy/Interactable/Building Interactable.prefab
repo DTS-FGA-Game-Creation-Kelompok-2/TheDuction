@@ -58,5 +58,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data: {fileID: 0}
-  _mode: 2
+  _mode: 1
   _currentDialogue: {fileID: 0}

@@ -1,8 +1,8 @@
 #bgm: prologBGM
 #speaker: Abdul
-#potrait: main-character/mc-smile
+#portrait: main-character/mc-smile
 Wah, akhirnya sampai juga.
-#potrait: main-character/mc-smile2
+#portrait: main-character/mc-smile2
 Sudah lama sekali sejak terakhir kali aku kesini.
 
 #event: camera-prolog1-player-kucing

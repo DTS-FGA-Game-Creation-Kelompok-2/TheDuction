@@ -89,11 +89,15 @@ namespace TheDuction.UI
         }
 
         private void ShowDialogueLog(){
-            StartCoroutine(AlphaFadingEffect.FadeIn(_dialogueLogCanvasGroup));
+            StartCoroutine(AlphaFadingEffect.FadeIn(_dialogueLogCanvasGroup, beforeEffect: () => {
+                DialogueManager.Instance.PushDialogueMode(DialogueMode.Pause);
+            }));
         }
 
         private void HideDialogueLog(){
-            StartCoroutine(AlphaFadingEffect.FadeOut(_dialogueLogCanvasGroup));
+            StartCoroutine(AlphaFadingEffect.FadeOut(_dialogueLogCanvasGroup, afterEffect: () => {
+                DialogueManager.Instance.PopDialogueMode(DialogueMode.Pause);
+            }));
         }
 
         /// <summary>
@@ -153,10 +157,16 @@ namespace TheDuction.UI
         private void OpenPausePanel(){
             _openPausePanel = !_openPausePanel;
             
-            if(_openPausePanel)
-                StartCoroutine(AlphaFadingEffect.FadeIn(_pausePanel));
-            else
-                StartCoroutine(AlphaFadingEffect.FadeOut(_pausePanel));
+            if(_openPausePanel){
+                StartCoroutine(AlphaFadingEffect.FadeIn(_pausePanel, beforeEffect: () => {
+                    DialogueManager.Instance.PushDialogueMode(DialogueMode.Pause);
+                }));
+            }
+            else{
+                StartCoroutine(AlphaFadingEffect.FadeOut(_pausePanel, afterEffect: () => {
+                    DialogueManager.Instance.PopDialogueMode(DialogueMode.Pause);
+                }));
+            }
         }
 
         private void ReturnToMenu()

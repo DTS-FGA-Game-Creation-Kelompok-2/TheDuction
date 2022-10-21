@@ -22,6 +22,7 @@ namespace TheDuction.Event{
         {
             List<string> eventIds = SaveLoadData.Instance.CurrentEvents;
             if(eventIds.Count == 0) return;
+            Debug.Log(eventIds);
 
             foreach(string eventId in eventIds){
                 string eventIdTrim = eventId.Trim();

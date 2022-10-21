@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: pestisida-x
   m_EditorClassIdentifier: 
   InteractableID: pestisida-x
-  InteractableName: Pestisida-X
+  InteractableName: Pestisida X
   InteractableDescription: 
+  KeepObjectAfterInteracting: 0
   ClueImageSmall: {fileID: 21300000, guid: 2400a9c2d7e48a24bb809fd40fbebfe5, type: 3}
   ClueImageLarge: {fileID: 21300000, guid: 5b0dfad373e5e904fbb4b5c19d3685e8, type: 3}

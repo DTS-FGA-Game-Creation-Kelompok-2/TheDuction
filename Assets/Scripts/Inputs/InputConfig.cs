@@ -46,7 +46,6 @@ namespace TheDuction.Inputs
                     InteractableManager.Instance.HandleInteractionName(interactable.Data.InteractableName);
                     InteractableManager.Instance.InstructionFadeIn();
                     break;
-                case InteractableMode.InformationOnly:
                 case InteractableMode.NormalMode:
                     InteractableManager.Instance.HandleInteractionName(interactable.Data.InteractableName);
                     break;
