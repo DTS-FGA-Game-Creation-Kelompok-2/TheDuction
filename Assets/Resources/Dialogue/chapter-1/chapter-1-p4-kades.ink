@@ -35,7 +35,7 @@ Yang ini, Pak?
     Sejauh ini enggak ada yang aneh menurut Abdul.
     #portrait: main-character/mc-smile2
     Alokasi dana yang bapak buat sudah bagus sekali. Semuanya Bapak arahkan untuk beli peralatan baru buat warga. Beli pupuk, tanah, bibit, cangkul.. 
-    #portrait: main-character/mc-smile1
+    #portrait: main-character/mc-smile
     (Sampai sarung tangan dan sepatu bot aja Bapak belikan dari anggaran desa.)
 
     #speaker: Pak Kepala Desa
@@ -66,7 +66,7 @@ Yang ini, Pak?
     #speaker: Pak Kepala Desa
     #portrait: pak-kades/kades-smile
     Iya, Pak Udin itu distributor dari kota. Sekarang warga kalau panen langsung melapor saja ke beliau.
-    #portrait: pak-kades/kades-laugh.
+    #portrait: pak-kades/kades-laugh
     Langsung akan dibantu mulai dari urusan packing sampai cari pembeli yang pas.
     Keuntungannya pun langsung jelas diberitahu dan dibagikan ke warga.
     #portrait: pak-kades/kades-smile
