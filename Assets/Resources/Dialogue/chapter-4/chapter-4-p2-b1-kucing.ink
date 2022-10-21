@@ -26,7 +26,7 @@ Jangan bilang kamu lupa sama percakapan kita kemarin.
 
 #speaker: Abdul
 #portrait: main-character/mc-smile
-Kalo begitu aku tidak akan memberimu Whiskis lagi.
+Kalo begitu aku tidak akan memberimu Whaskis lagi.
 
 #speaker: Meng
 #portrait: hewan/kucing
