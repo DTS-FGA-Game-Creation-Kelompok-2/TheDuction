@@ -1,9 +1,13 @@
-using System;
+using System.Collections;
+using TheDuction.Dialogue;
+using TheDuction.Global;
+using TheDuction.Global.Effects;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TutorialManager : MonoBehaviour
+public class TutorialManager : SingletonBaseClass<TutorialManager>
 {
+    [SerializeField] private CanvasGroup _tutorialCanvas;
     [SerializeField] private TutorialState _tutorialState;
     [SerializeField] private Button _nextButton;
     [SerializeField] private Sprite _closeSprite;
@@ -33,9 +37,11 @@ public class TutorialManager : MonoBehaviour
         _nextButton.onClick.AddListener(NextPage);
     }
 
-    private void Update()
-    {
+    public IEnumerator TriggerTutorial(){
+        yield return new WaitUntil(() => DialogueManager.Instance.CurrentDialogueState == DialogueState.Stop);
         TutorialStateChange(_tutorialState);
+        Debug.Log("trigger");
+        StartCoroutine(AlphaFadingEffect.FadeIn(_tutorialCanvas));
     }
 
     private void TutorialStateChange(TutorialState newState)
@@ -54,14 +60,9 @@ public class TutorialManager : MonoBehaviour
             case TutorialState.End:
                 _tutorialTitleText.text = "";
                 _tutorialImage.sprite = null;
-                this.gameObject.SetActive(false);
+                gameObject.SetActive(false);
                 break;
         }
-    }
-
-    private void InitEndTutorial()
-    {
-        _tutorialState = TutorialState.End;
     }
 
     private void NextPage()
@@ -71,9 +72,11 @@ public class TutorialManager : MonoBehaviour
             case 0:
                 _currentPage++;
                 _tutorialState = TutorialState.Inventory;
+                TutorialStateChange(_tutorialState);
                 break;
             case 1:
-                InitEndTutorial();
+                _tutorialState = TutorialState.End;
+                TutorialStateChange(_tutorialState);
                 break;
         }
     }

@@ -104,7 +104,12 @@ namespace TheDuction.Dialogue.Tags{
                     case DialogueTags.SPEAKER_TAG:
                         _dialogueManager.HandleSpeakerTag(tagValue);
                         break;
-                    
+
+                    case DialogueTags.TUTORIAL:
+                        if(tagValue == DialogueTags.CONFIRM)
+                            StartCoroutine(TutorialManager.Instance.TriggerTutorial());
+                        break;
+
                     default:
                         Debug.LogError("Tag is not in the list: " + tagKey);
                         break;
@@ -126,7 +131,7 @@ namespace TheDuction.Dialogue.Tags{
         /// <param name="tagValue"></param>
         private void HandleEndingTag(string tagValue){
             // Handle ending tag
-            if (tagValue != DialogueTags.CONFIRM_ENDING) return;
+            if (tagValue != DialogueTags.CONFIRM) return;
 
             StartCoroutine(AlphaFadingEffect.FadeIn(_blackScreen,
                 fadingSpeed: 0.02f,

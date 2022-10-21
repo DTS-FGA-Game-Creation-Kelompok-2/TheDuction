@@ -14,6 +14,7 @@ namespace TheDuction.Dialogue.Tags{
         public const string QUEST_TAG = "quest";
         public const string SFX_TAG = "sfx";
         public const string SPEAKER_TAG = "speaker";
+        public const string TUTORIAL = "tutorial";
 
         [Header("Tag Value")]
         public const string BLANK_VALUE = "none";
@@ -23,6 +24,6 @@ namespace TheDuction.Dialogue.Tags{
         [Header("Tag: dialogue-box")]
         public const string SHOW_DIALOGUE_BOX = "show";
         [Header("Tag: ending")]
-        public const string CONFIRM_ENDING = "true";
+        public const string CONFIRM = "true";
     }
 }
