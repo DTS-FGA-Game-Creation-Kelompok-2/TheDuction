@@ -19,7 +19,7 @@ Oke, tunggu sebentar.
 #portrait: main-character/mc-serious
 Oh, ini?!
 
-#illust: item-pestisida-x
+#illust: items/pestisida-x
 …
 #dialogue-box: show
 

@@ -22,7 +22,7 @@ MonoBehaviour:
     _affectedInteractable: {fileID: 0}
     _dialogueAsset:
       _waitDialogueAsset: {fileID: 0}
-      _finishDialogueAsset: {fileID: 0}
+      _finishDialogueAsset: {fileID: 4900000, guid: b754c8070a2bafd4eb9dcaee6e7cd025, type: 3}
       _nextEventDialogueAsset: {fileID: 0}
       _defaultDialogueAsset: {fileID: 0}
   _interactable: {fileID: 0}
