@@ -143,6 +143,13 @@ namespace TheDuction.Event.DialogueEvent{
                         Interactable interactable = _interactableManager.GetInteractable(dialogueAffectedItem.AffectedInteractable);
 
                         interactable.CurrentDialogue = finishDialogueAsset;
+
+                        // Play particle system
+                        switch(interactable){
+                            case ClueInteractable clue:
+                                clue.Particle.Play();
+                                break;
+                        }
                     }
                 }
             }
