@@ -6,7 +6,7 @@ Wah, akhirnya sampai juga.
 Sudah lama sekali sejak terakhir kali aku kesini.
 
 #event: camera-prolog1-player-kucing
-
+#portrait: hewan/kucing
 #speaker: Meng
 Miauw!
 
@@ -17,6 +17,7 @@ Meng!! Lama enggak jumpa!
 Kamu masih ingat aku?
 
 #speaker: Meng
+#portrait: hewan/kucing
 Masih!!
 Abdul! Lama enggak pulang!
 
@@ -25,6 +26,7 @@ Abdul! Lama enggak pulang!
 Aduh, kok, kamu jadi kurus begini, sih...
 
 #speaker: Meng
+#portrait: hewan/kucing
 Miauw... Gapapa, kok!
 
 #speaker: Abdul
@@ -34,6 +36,7 @@ Dulu padahal kamu gendut sekali, hahah.
 Nanti aku kasih makan yang banyak, deh.
 
 #speaker: Meng
+#portrait: hewan/kucing
 Yey!!
 
 #speaker: Abdul
