@@ -10,21 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 894e1157df8179c49ad52ac2f72b823e, type: 3}
-  m_Name: chapter-4-p5-endmonolog
+  m_Name: chapter-5-p2-final
   m_EditorClassIdentifier: 
-  _eventId: chapter-4-p5-endmonolog
+  _eventId: chapter-5-p2-final
   _eventDescription: 
-  _relatedQuest: {fileID: 11400000, guid: e2a1812c1a0207746ba9812e8c20f9b2, type: 2}
+  _relatedQuest: {fileID: 11400000, guid: e4f77dd6e8b78da408af9f7e7b23563f, type: 2}
   _finishCondition: 0
   _keepObjectAfterFinish: 0
-  _dialogueAffectedItems:
-  - _name: chapter-5-p1-startmonolog
-    _affectedInteractable: {fileID: 0}
-    _dialogueAsset:
-      _waitDialogueAsset: {fileID: 0}
-      _finishDialogueAsset: {fileID: 4900000, guid: 7897b2ac3ef05ed41b94ed84d5220043, type: 3}
-      _nextEventDialogueAsset: {fileID: 0}
-      _defaultDialogueAsset: {fileID: 0}
+  _dialogueAffectedItems: []
   _interactable: {fileID: 0}
   _useBranchEvent: 0
   _branchID: 
