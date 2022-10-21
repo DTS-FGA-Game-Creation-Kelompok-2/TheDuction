@@ -1,3 +1,4 @@
+using TheDuction.Dialogue;
 using TheDuction.Interaction;
 using UnityEngine;
 
@@ -60,7 +61,8 @@ namespace TheDuction.Inputs
             if(interactable == null) return;
             if(interactable.Mode != InteractableMode.DialogueMode) return;
             
-            if (Input.GetKeyDown(_inputManager.InteractKey))
+            if (Input.GetKeyDown(_inputManager.InteractKey) && 
+                DialogueManager.Instance.CurrentDialogueState == DialogueState.Stop)
             {
                 interactable.Interact();
                 InteractableManager.Instance.InstructionFadeOut();

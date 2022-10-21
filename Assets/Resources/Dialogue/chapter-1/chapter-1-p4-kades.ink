@@ -30,7 +30,7 @@ Yang ini, Pak?
     Ah, kamu ini berlebihan. Ayo, jujur saja kalau memang ada yang salah.
 
     #speaker: Abdul
-    #portrait: main-character/mc-smile1
+    #portrait: main-character/mc-smile
     Loh, serius, Pak.
     Sejauh ini enggak ada yang aneh menurut Abdul.
     #portrait: main-character/mc-smile2
