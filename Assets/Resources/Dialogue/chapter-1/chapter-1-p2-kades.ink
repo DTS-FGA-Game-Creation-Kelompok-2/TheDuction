@@ -32,12 +32,8 @@ Tapi sekitar satu tahun belakangan ini, hasil penjualan panen kita menurun.
 #portrait: pak-kades/kades-sad2
 Keuntungan dari hasil jual panen itu sedikit sekali, hampir enggak cukup untuk biaya sehari-hari warga.
 #portrait: pak-kades/kades-relieved
-Bahkan sekarang, saat ini banyak warga yang sedang sakit.
-Mereka tidak mau berobat karena tidak ada biaya.
-#portrait: pak-kades/kades-sad
-Sudah sempat Bapak sarankan ke rumah sakit, biar Bapak temani dan biayanya Bapak bantu juga. Tapi mereka semua enggak mau... 
-Sayang duitnya, katanya.
-Haduh...
+Mana belakangan ini, banyak warga yang sedang sakit. 
+Kasihan mereka jadi enggak bisa berobat karena enggak punya biaya.
 
 #speaker: Abdul
 #portrait: main-character/mc-serious

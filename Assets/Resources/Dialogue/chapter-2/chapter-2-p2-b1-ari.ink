@@ -1,5 +1,5 @@
 #speaker: Abdul
-#portrait: Abdul
+#portrait: main-character/mc-smile2
 Halo Pak Ari, selamat pagi!
 
 #speaker: Pak Ari

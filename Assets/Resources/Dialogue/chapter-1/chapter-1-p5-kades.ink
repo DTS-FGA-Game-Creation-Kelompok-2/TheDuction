@@ -26,7 +26,7 @@ Alokasi dana yang bapak buat sudah bagus sekali. Semuanya Bapak arahkan untuk be
 
 #speaker: Pak Kepala Desa
 #portrait: pak-kades/kades-relieved
-Yahh, tapi coba dilihat lagi, Nak. Kalau memang anggaran yang Bapak susun sudah benar, jadi masalahnya dimana?
+Yahh, tapi coba pikirkan lagi, Nak. Kalau memang anggaran yang Bapak susun sudah benar, jadi masalahnya dimana?
 
 #speaker: Abdul
 #portrait: main-character/mc-serious
@@ -37,17 +37,19 @@ Kalau dari yang tertulis disini, masalahnya ada di hasil penjualan panen yang ma
 Tapi rasanya aneh. Jumlah panennya enggak beda jauh dengan musim lalu, tapi kenapa keuntungannya malah menurun?
 
 #speaker: Pak Kepala Desa
-#portrait: pak-kades/kades-dissapointed
-Hmm... Bapak juga enggak paham...
 #portrait: pak-kades/kades-relieved
-Tadi waktu kamu baru sampai, kamu lihat ada rumah hijau di dekat gapura, enggak?
+Hmm...
+#portrait: pak-kades/kades-serious
+Oh...!
+#portrait: pak-kades/kades-relieved
+Tadi waktu kamu baru sampai, kamu lihat ada rumah hijau di dekat gapura?
 #portrait: pak-kades/kades-smile
 Itu rumah Pak Udin. Pedagang sekaligus distributor desa. 
-Beliau pendatang baru. Kalau enggak salah baru dua atau hampir tiga tahun disini.
+Beliau pendatang baru. Kalau enggak salah, baru dua atau hampir tiga tahun disini.
 
 #speaker: Abdul
 #portrait: main-character/mc-smile2
-Wah, tapi rumahnya bagus, ya. Hebat juga bisa langsung buka toko disini.
+Wah, rumahnya kelihatan bagus ya. Hebat juga bisa langsung buka toko disini.
 
 #speaker: Pak Kepala Desa
 #portrait: pak-kades/kades-smile

@@ -63,6 +63,7 @@ Kalau begitu, Bapak pamit dulu. Harus segera mencari bantuan untuk mengurus dan 
 Tapi kalau sumurnya ditutup, bagaimana dengan warga, Pak?
 
 #event: chapter-3-p5-b1-ayam, chapter-3-p5-b2-kucing
+#quest: quest-3-
 
 #speaker: Pak Kades
 Tidak masalah. Bapak akan mengijinkan warga untuk mampir dan mengambil air dari rumah kita.

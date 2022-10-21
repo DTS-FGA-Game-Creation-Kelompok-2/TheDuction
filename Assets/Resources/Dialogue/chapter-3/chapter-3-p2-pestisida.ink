@@ -41,5 +41,8 @@ Hmm, pokoknya botol ini harus kubawa dan aku tunjukkan ke Bu Nanan nanti.
 Meng, kamu hebat! Pintar sekali!
 Nanti aku belikan Whaskis yang paling enak buat kamu. Sering-sering cari petunjuk kayak gini, ya!
 
+#event: chapter-3-p3-nanan
+#quest: quest-3-
+
 #speaker: Meng
 Miauw! Siap!

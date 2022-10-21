@@ -16,5 +16,8 @@ Miauw! Cepat ikuti aku sekarang!
 #speaker: Abdul 
 Eh, loh? Kenapa? Mau kemana?
 
+#event: chapter-3-p2-pestisida
+#quest: quest-3-
+
 #speaker: Meng
 Bau air sumur. Ketemu yang mirip! Ayo!

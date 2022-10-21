@@ -153,5 +153,9 @@ Kalau benar dia korupsi penjualan hasil panen, besar kemungkinan itu juga tercat
  
  #speaker: Ibu Nanan
  Oh, tapi sebelum itu. Cepat kabari Bapakmu dulu.
+ 
+#event: chapter-3-p4-kades
+#quest: quest-3-
+
  Sumur desa itu harus segera dikuras dan ditutup sebelum lebih banyak warga jatuh sakit.
  
