@@ -6,4 +6,6 @@ Dinding bagian dalam sumurnya kelihatan bersih.
 Ini kerekan airnya juga masih bagus, enggak berkarat.
 Apa memang sumber airnya ya yang bermasalah?
 #illust: items/air-sumur
+...
+#dialogue-box:show
 Coba aku ambil contoh airnya dulu, deh.

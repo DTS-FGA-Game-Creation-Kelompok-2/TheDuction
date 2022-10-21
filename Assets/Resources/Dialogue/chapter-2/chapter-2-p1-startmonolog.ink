@@ -29,7 +29,7 @@ Tadi Bapak sempat lihat Pak Ari dan Ibu Selly di depan rumah mereka. Coba kamu s
 Kalau begitu, Bapak pergi dulu.
 
 #event: chapter-2-p2-b1-ari, chapter-2-p2-b2-selly
-#quest: quest-2-1
+#quest: quest-2-2
 
 #speaker: Abdul
 #portrait: main-character/mc-smile2

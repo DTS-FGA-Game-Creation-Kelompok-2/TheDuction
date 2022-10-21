@@ -177,7 +177,7 @@ Saat ini saya sedang mencari tahu penyebab penyakit warga dan penurunan penjuala
 Coba Ibu lihat ini. Ini air sumur yang barusan saya ambil tadi.
 
 #illust: item-air-sumur
-
+...
 #dialogue-box: show 
 
 #speaker: Abdul
