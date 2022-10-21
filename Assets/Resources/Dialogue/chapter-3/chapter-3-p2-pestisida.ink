@@ -1,45 +1,72 @@
 #speaker: Meng
-Ini! Sini!
+#portrait: hewan/kucing
+Ini! Disini!
 
 #speaker: Abdul
-Aduh, sebentar...
-Ada apa, sih? Kamu ketemu sesuatu yang baunya mirip bau air sumur? Disini?
+#portrait: main-character/mc-serious2
+Tunggu, sebentar...
+Ada apa, Meng? Kamu ketemu sesuatu yang baunya mirip bau air sumur?
 
 #speaker: Meng
-Iya! Di semak-semak itu. Coba lihat.
+#portrait: hewan/kucing
+Iya! Di semak-semak itu! Coba lihat.
 
 #speaker: Abdul
-Hmm, oke, tunggu sebentar.
+#portrait: main-character/mc-serious2
+Oke, tunggu sebentar.
 
 #speaker: Abdul
+#portrait: main-character/mc-serious
 Oh, ini?!
 
 #illust: item-pestisida-x
-
+…
 #dialogue-box: show
 
 #speaker: Abdul
-Botol biru apa ini? Di labelnya tertulis...
-Loh? Pestisida?
-Hmm, botolnya sudah kosong. Tapi kalau tutupnya dibuka, hmm...
-Wah! Benar, baunya mirip bau air sumur!
-
-#speaker: Meng
-Miauw! Iya, kan!
+#portrait: main-character/mc-serious
+Botol biru apa ini?
+Di labelnya tertulis… hmm… Pestisida?
+Wah baunya menyengat sekali. Tapi aku harus tetap memastikan.
 
 #speaker: Abdul
+#portrait: none
+Abdul membuka tutup botol kosong itu dan mencium isinya.
+
+#speaker: Abdul
+#portrait: main-character/mc-serious2
+….! 
+Mirip sekali dengan bau air sumur!
+
+#speaker: Meng
+#portrait: hewan/kucing
+Miauww!
+
+#speaker: Abdul
+#portrait: main-character/mc-serious2
 Meng, darimana kamu tahu ada botol ini disini?
 
 #speaker: Meng
-Tadi subuh. Lihat Pak Udin buang sampah disitu.
-Kirain makanan, ternyata botol kosong.
-Ingat baunya mirip bau sumur. Jadi panggil Abdul untuk lihat!
+#portrait: hewan/kucing
+Tadi subuh. Meng lihat Pak Udin buang sesuatu disitu.
+Kirain makanan, ternyata botol kosong!
+Baunya menyengat. Jadi Meng panggil Abdul untuk lihat!
 
 #speaker: Abdul
-Pak Udin...? Kenapa beliau...
-Hmm, pokoknya botol ini harus kubawa dan aku tunjukkan ke Bu Nanan nanti.
+#portrait: main-character/mc-serious2
+Pak Udin?
+#portrait: main-character/mc-serious
+(Pak Udin kan rumahnya nggak punya ladang. Buat apa punya pestisida?)
+(Apa untuk dijual? Tapi kalau begitu, kenapa dibuang kesini?)
+….Lebih baik botol ini aku simpan terlebih dahulu. Nanti akan kubawa dan aku tunjukkan ke Bu Nanan.
+
+#portrait: main-character/mc-smile4
 Meng, kamu hebat! Pintar sekali!
-Nanti aku belikan Whaskis yang paling enak buat kamu. Sering-sering cari petunjuk kayak gini, ya!
+Nanti aku belikan Whaskis paling enak buat kamu. Sering-sering bantu aku, ya!
+
+#event: chapter-3-p3-nanan
+#quest: quest-3-3
 
 #speaker: Meng
+#portrait: hewan/kucing
 Miauw! Siap!
