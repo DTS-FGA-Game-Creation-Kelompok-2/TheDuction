@@ -10,19 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 894e1157df8179c49ad52ac2f72b823e, type: 3}
-  m_Name: chapter-3-p6-endmonolog
+  m_Name: chapter-4-p3-kades
   m_EditorClassIdentifier: 
-  _eventId: chapter-3-p6-endmonolog
+  _eventId: chapter-4-p3-kades
   _eventDescription: 
-  _relatedQuest: {fileID: 11400000, guid: 3095ab7820ec83a439569f6e1699287c, type: 2}
+  _relatedQuest: {fileID: 11400000, guid: 6c3bc66b6d74ca94d97e9d16cead387c, type: 2}
   _finishCondition: 0
   _keepObjectAfterFinish: 0
   _dialogueAffectedItems:
-  - _name: chapter-4-p1-startmonolog
+  - _name: chapter-4-p4-b1-pohon
     _affectedInteractable: {fileID: 0}
     _dialogueAsset:
       _waitDialogueAsset: {fileID: 0}
-      _finishDialogueAsset: {fileID: 4900000, guid: 808aae38d775a034d8a32ae3a954330b, type: 3}
+      _finishDialogueAsset: {fileID: 4900000, guid: 64ab0a168791e334195e30d075e254a9, type: 3}
+      _nextEventDialogueAsset: {fileID: 0}
+      _defaultDialogueAsset: {fileID: 0}
+  - _name: chapter-4-p4-b2-nanan
+    _affectedInteractable: {fileID: 11400000, guid: 2d59c5d1be87b754ea7e894af66f82d9, type: 2}
+    _dialogueAsset:
+      _waitDialogueAsset: {fileID: 0}
+      _finishDialogueAsset: {fileID: 4900000, guid: 855aa36cc89308141a3b9ab7e9a7b55f, type: 3}
       _nextEventDialogueAsset: {fileID: 0}
       _defaultDialogueAsset: {fileID: 0}
   _interactable: {fileID: 0}

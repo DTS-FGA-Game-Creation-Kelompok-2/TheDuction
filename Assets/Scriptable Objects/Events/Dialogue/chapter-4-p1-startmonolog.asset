@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 894e1157df8179c49ad52ac2f72b823e, type: 3}
+  m_Name: chapter-4-p1-startmonolog
+  m_EditorClassIdentifier: 
+  _eventId: chapter-4-p1-startmonolog
+  _eventDescription: 
+  _relatedQuest: {fileID: 11400000, guid: ad3440b23bcb2184e9d861e7660bd5ce, type: 2}
+  _finishCondition: 0
+  _keepObjectAfterFinish: 0
+  _dialogueAffectedItems:
+  - _name: chapter-4-p2-b1-kucing
+    _affectedInteractable: {fileID: 11400000, guid: 6573e3b8b4ae1214a993d2a9e37a71cd, type: 2}
+    _dialogueAsset:
+      _waitDialogueAsset: {fileID: 0}
+      _finishDialogueAsset: {fileID: 4900000, guid: 2150d23e37aa8bd469fe4e88dd5b7334, type: 3}
+      _nextEventDialogueAsset: {fileID: 0}
+      _defaultDialogueAsset: {fileID: 0}
+  - _name: chapter-4-p2-b2-ayam
+    _affectedInteractable: {fileID: 11400000, guid: b6c69cdb260d98c419482ece0cadefbc, type: 2}
+    _dialogueAsset:
+      _waitDialogueAsset: {fileID: 0}
+      _finishDialogueAsset: {fileID: 4900000, guid: 0bdce76bf29c79e40921fc74263d50bb, type: 3}
+      _nextEventDialogueAsset: {fileID: 0}
+      _defaultDialogueAsset: {fileID: 0}
+  _interactable: {fileID: 0}
+  _useBranchEvent: 0
+  _branchID: 
+  _useReward: 0
+  _clueReward: {fileID: 0}
