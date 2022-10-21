@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +11,7 @@ using TheDuction.Event.DialogueEvent;
 using TheDuction.Event.MovementEvent;
 using TheDuction.Global;
 using TheDuction.Global.Effects;
+using TheDuction.Player;
 using TheDuction.Quest;
 using TMPro;
 using UnityEngine;
@@ -24,6 +24,7 @@ namespace TheDuction.Dialogue.Tags{
         [SerializeField] private TextMeshProUGUI _dayText;
         [SerializeField] private Image _blackScreen;
 
+        private PlayerController _playerController;
         private DialogueManager _dialogueManager;
         private DialogueIllustrationManager _dialogueIllustrationManager;
         private DialoguePortraitManager _dialoguePortraitManager;
@@ -32,6 +33,7 @@ namespace TheDuction.Dialogue.Tags{
             _dialogueManager = DialogueManager.Instance;
             _dialogueIllustrationManager = DialogueIllustrationManager.Instance;
             _dialoguePortraitManager = DialoguePortraitManager.Instance;
+            _playerController = PlayerController.Instance;
         }
 
         public void HandleTags(List<string> dialogueTags){

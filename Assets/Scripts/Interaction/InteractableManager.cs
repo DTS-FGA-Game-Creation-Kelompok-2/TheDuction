@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using TheDuction.Global;
-using TheDuction.Global.Effects;
 using UnityEngine;
 using UnityEngine.UI;
 

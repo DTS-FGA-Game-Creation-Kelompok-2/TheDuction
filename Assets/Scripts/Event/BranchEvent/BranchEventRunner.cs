@@ -4,7 +4,6 @@ using TheDuction.Event.DialogueEvent;
 using TheDuction.Interaction;
 using UnityEngine;
 using System.Linq;
-using TheDuction.Global.SaveLoad;
 
 namespace TheDuction.Event.BranchEvent{
     public class BranchEventRunner : MonoBehaviour {
@@ -117,9 +116,6 @@ namespace TheDuction.Event.BranchEvent{
 
             yield return new WaitForSeconds(0.5f);
             yield return new WaitUntil(() => !DialogueManager.Instance.DialogueIsPlaying);
-            
-            if(SaveLoadData.Instance)
-                SaveLoadData.Instance.ResetBranch();
 
             _activeBranchPart.BranchEvents.ForEach(branchEvent =>{
                 DialogueEventController eventController = DialogueEventManager.Instance.GetDialogueEventController(branchEvent.DialogueEventData);

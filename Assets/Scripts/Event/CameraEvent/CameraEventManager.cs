@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using TheDuction.Dialogue;
 using TheDuction.Global;
-using TheDuction.Global.SaveLoad;
 using UnityEngine;
 
 namespace TheDuction.Event.CameraEvent{
@@ -27,8 +26,6 @@ namespace TheDuction.Event.CameraEvent{
         public void SetEventData(EventData eventData)
         {
             CameraEventController eventController = GetEventController(eventData);
-            if(SaveLoadData.Instance)
-                SaveLoadData.Instance.SaveEvent(eventData);
             CameraEventRunner eventRunner = GetOrCreateEventRunner();
             eventRunner.EventController = eventController;
             StartCoroutine(StartEvent(eventRunner));

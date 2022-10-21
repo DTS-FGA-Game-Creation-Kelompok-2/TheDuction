@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using TheDuction.Dialogue;
 using TheDuction.Global;
-using TheDuction.Global.Effects;
-using TheDuction.Global.SaveLoad;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -29,8 +27,6 @@ namespace TheDuction.Event.MovementEvent{
         {
             MovementEventController eventController = GetEventController(eventData);
             eventController.BlackScreen = _blackScreen;
-            if(SaveLoadData.Instance)
-                SaveLoadData.Instance.SaveEvent(eventData);
             
             MovementEventRunner eventRunner = GetOrCreateEventRunner();
             eventRunner.EventController = eventController;
