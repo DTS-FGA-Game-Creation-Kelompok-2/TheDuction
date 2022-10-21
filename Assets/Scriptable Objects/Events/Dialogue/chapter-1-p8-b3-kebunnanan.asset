@@ -17,14 +17,7 @@ MonoBehaviour:
   _relatedQuest: {fileID: 11400000, guid: 6860ccae21b607949a70070f63e680b2, type: 2}
   _finishCondition: 0
   _keepObjectAfterFinish: 0
-  _dialogueAffectedItems:
-  - _name: chapter-1-p9-endmonolog
-    _affectedInteractable: {fileID: 0}
-    _dialogueAsset:
-      _waitDialogueAsset: {fileID: 0}
-      _finishDialogueAsset: {fileID: 0}
-      _nextEventDialogueAsset: {fileID: 0}
-      _defaultDialogueAsset: {fileID: 0}
+  _dialogueAffectedItems: []
   _interactable: {fileID: 11400000, guid: 4e1b2095c66974740aec0dec6d41f511, type: 2}
   _useBranchEvent: 1
   _branchID: branch-chapter-1-p-8
