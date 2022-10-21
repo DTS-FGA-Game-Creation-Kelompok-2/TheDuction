@@ -14,10 +14,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _eventId: chapter-2-p1-startmonolog
   _eventDescription: 
-  _relatedQuest: {fileID: 0}
+  _relatedQuest: {fileID: 11400000, guid: f66c997a75f37484db9f284f604310e7, type: 2}
   _finishCondition: 0
   _keepObjectAfterFinish: 0
-  _dialogueAffectedItems: []
+  _dialogueAffectedItems:
+  - _name: chapter-2-p2-b1-ari
+    _affectedInteractable: {fileID: 11400000, guid: 60b3f8cea4700d54481b1e3508c97cf3, type: 2}
+    _dialogueAsset:
+      _waitDialogueAsset: {fileID: 0}
+      _finishDialogueAsset: {fileID: 4900000, guid: 60b6a31f2021b6c4fbd5993fe82bcdd3, type: 3}
+      _nextEventDialogueAsset: {fileID: 0}
+      _defaultDialogueAsset: {fileID: 0}
+  - _name: chapter-2-p2-b2-selly
+    _affectedInteractable: {fileID: 11400000, guid: 40b018491a200f440b32033b3268a05b, type: 2}
+    _dialogueAsset:
+      _waitDialogueAsset: {fileID: 0}
+      _finishDialogueAsset: {fileID: 4900000, guid: 683c9d5159908dc44b4c457c3e50762a, type: 3}
+      _nextEventDialogueAsset: {fileID: 0}
+      _defaultDialogueAsset: {fileID: 0}
   _interactable: {fileID: 0}
   _useBranchEvent: 0
   _branchID: 
