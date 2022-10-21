@@ -137,6 +137,8 @@ namespace TheDuction.UI
 
         private void OpenInventory()
         {
+            if(DialogueManager.Instance.CurrentDialogueState == DialogueState.Running) return;
+            
             _isInventoryOpen = !_isInventoryOpen;
             Vector2 inventoryHolderPos = _inventoryHolderTransform.anchoredPosition;
             _inventoryHolderTransform.anchoredPosition = new Vector2(
