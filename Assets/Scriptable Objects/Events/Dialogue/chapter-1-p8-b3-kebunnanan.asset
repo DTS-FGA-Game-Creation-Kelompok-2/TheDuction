@@ -20,6 +20,6 @@ MonoBehaviour:
   _dialogueAffectedItems: []
   _interactable: {fileID: 11400000, guid: 4e1b2095c66974740aec0dec6d41f511, type: 2}
   _useBranchEvent: 1
-  _branchID: branch-chapter-1-p-8
+  _branchID: branch-chapter-1-p8
   _useReward: 0
   _clueReward: {fileID: 0}

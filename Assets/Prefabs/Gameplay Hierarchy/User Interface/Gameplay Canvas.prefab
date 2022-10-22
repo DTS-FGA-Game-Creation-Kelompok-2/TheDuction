@@ -984,6 +984,7 @@ MonoBehaviour:
   _itemDisplay: {fileID: 1261733159667345764}
   _pauseButton: {fileID: 1261733160993153753}
   _resumeButton: {fileID: 1261733159871226879}
+  _returnToMenuButton: {fileID: 1261733159364246163}
   _pausePanel: {fileID: 1261733159607396444}
 --- !u!1 &1261733159358499263
 GameObject:

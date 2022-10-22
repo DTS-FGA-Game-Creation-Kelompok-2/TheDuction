@@ -134,7 +134,7 @@ namespace TheDuction.Dialogue.Tags{
         private void HandleEndingTag(string tagValue){
             // Handle ending tag
             if (tagValue != DialogueTags.CONFIRM) return;
-
+            Debug.Log("End");
             StartCoroutine(AlphaFadingEffect.FadeIn(_blackScreen,
                 fadingSpeed: 0.02f,
                 afterEffect: () => SceneManager.LoadScene(_creditsSceneName)
