@@ -27,7 +27,6 @@ Abdul sudah pulang?
 #speaker: Abdul
 #portrait: main-character/mc-smile
 #end-chapter: Bagian 2
-#event: chapter-2-p1-startmonolog
-#quest: quest-2-1
+#end:true
 Iya pak. Baru sampai.
 

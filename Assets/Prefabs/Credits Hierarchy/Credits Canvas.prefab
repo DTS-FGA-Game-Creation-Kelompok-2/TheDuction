@@ -278,6 +278,7 @@ GameObject:
   - component: {fileID: 2120963207137911974}
   - component: {fileID: 2120963207137911969}
   - component: {fileID: 2120963207137911968}
+  - component: {fileID: 9098824918441334908}
   m_Layer: 5
   m_Name: Credits Canvas
   m_TagString: Untagged
@@ -369,6 +370,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &9098824918441334908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2120963207137911971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 089a24e5bf32ea7489f1a3c47c640343, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _backButton: {fileID: 2120963207838420265}
 --- !u!1 &2120963207294734080
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _eventId: chapter-1-p8-b4-kesimpulan
   _eventDescription: 
-  _relatedQuest: {fileID: 0}
+  _relatedQuest: {fileID: 11400000, guid: 5f62969b0cb4d404db38ab162aeffdfd, type: 2}
   _finishCondition: 0
   _keepObjectAfterFinish: 0
   _dialogueAffectedItems:
