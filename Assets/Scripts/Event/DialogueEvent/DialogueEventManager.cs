@@ -30,6 +30,7 @@ namespace TheDuction.Event.DialogueEvent{
         public void SetEventData(EventData eventData)
         {
             DialogueEventController eventController = Instantiate(_eventControllerPrefab, _eventControllerParent).GetComponent<DialogueEventController>();;
+            _eventControllerPool.Add(eventController);
             eventController.EventData = eventData as DialogueEventData;
             Debug.Log("Set event data");
 

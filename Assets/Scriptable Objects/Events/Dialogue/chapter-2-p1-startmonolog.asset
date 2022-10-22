@@ -32,7 +32,7 @@ MonoBehaviour:
       _finishDialogueAsset: {fileID: 4900000, guid: 683c9d5159908dc44b4c457c3e50762a, type: 3}
       _nextEventDialogueAsset: {fileID: 0}
       _defaultDialogueAsset: {fileID: 0}
-  _interactable: {fileID: 0}
+  _interactable: {fileID: 11400000, guid: 8273c2e62ebb43346bf1fe4601b98d61, type: 2}
   _useBranchEvent: 0
   _branchID: 
   _useReward: 0

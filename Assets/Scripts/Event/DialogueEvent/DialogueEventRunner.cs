@@ -191,8 +191,8 @@ namespace TheDuction.Event.DialogueEvent{
             }
             
             // Deactivate game object
-            if(!_eventController.EventData.KeepObjectAfterFinish)
-                Destroy(_eventController.gameObject);
+            // if(!_eventController.EventData.KeepObjectAfterFinish)
+            //     Destroy(_eventController.gameObject);
             gameObject.SetActive(false);
         }
     }
