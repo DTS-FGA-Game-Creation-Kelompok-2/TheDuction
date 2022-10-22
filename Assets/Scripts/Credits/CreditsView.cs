@@ -25,7 +25,6 @@ namespace TheDuction.Credits{
 
         private void SetCreditImage(){
             _creditBackgroundImage.sprite = CreditsManager.Instance.CreditBackgroundSprite;
-            _creditBackgroundImage.SetNativeSize();
         }
         
         /// <summary>

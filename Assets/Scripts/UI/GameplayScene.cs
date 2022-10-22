@@ -160,14 +160,20 @@ namespace TheDuction.UI
             _openPausePanel = !_openPausePanel;
             
             if(_openPausePanel){
-                StartCoroutine(AlphaFadingEffect.FadeIn(_pausePanel, beforeEffect: () => {
-                    DialogueManager.Instance.PushDialogueMode(DialogueMode.Pause);
-                }));
+                StartCoroutine(AlphaFadingEffect.FadeIn(_pausePanel, 
+                    beforeEffect: () => {
+                        DialogueManager.Instance.PushDialogueMode(DialogueMode.Pause);
+                    }, 
+                    afterEffect: () => Time.timeScale = 0.0f
+                ));
             }
             else{
-                StartCoroutine(AlphaFadingEffect.FadeOut(_pausePanel, afterEffect: () => {
-                    DialogueManager.Instance.PopDialogueMode(DialogueMode.Pause);
-                }));
+                StartCoroutine(AlphaFadingEffect.FadeOut(_pausePanel, 
+                    beforeEffect: () => Time.timeScale = 1.0f, 
+                    afterEffect: () => {
+                        DialogueManager.Instance.PopDialogueMode(DialogueMode.Pause);
+                    }
+                ));
             }
         }
 

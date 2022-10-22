@@ -45,6 +45,7 @@ Desa kita apa kabar, Meng?
 
 #event: camera-prolog2-desa
 #speaker: Meng
+#portrait: hewan/kucing
 Mmmm, itu...
 #tutorial:true
 #event: chapter-1-p1-kades

@@ -18,8 +18,8 @@ MonoBehaviour:
   _finishCondition: 0
   _keepObjectAfterFinish: 0
   _dialogueAffectedItems:
-  - _name: chapter-1-p9-pintu
-    _affectedInteractable: {fileID: 11400000, guid: 80fd0f42da2f5434fbb319e85eba7891, type: 2}
+  - _name: chapter-1-p9-endmonolog
+    _affectedInteractable: {fileID: 11400000, guid: 8ed8d6b8baeae0a46a668b16bbb1672a, type: 2}
     _dialogueAsset:
       _waitDialogueAsset: {fileID: 0}
       _finishDialogueAsset: {fileID: 4900000, guid: 31bcdf091c20b68429fcb15a9813bf24, type: 3}

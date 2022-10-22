@@ -19,7 +19,7 @@ MonoBehaviour:
   _keepObjectAfterFinish: 0
   _dialogueAffectedItems:
   - _name: chapter-3-p1-startmonolog
-    _affectedInteractable: {fileID: 0}
+    _affectedInteractable: {fileID: 11400000, guid: 8ed8d6b8baeae0a46a668b16bbb1672a, type: 2}
     _dialogueAsset:
       _waitDialogueAsset: {fileID: 0}
       _finishDialogueAsset: {fileID: 4900000, guid: b754c8070a2bafd4eb9dcaee6e7cd025, type: 3}

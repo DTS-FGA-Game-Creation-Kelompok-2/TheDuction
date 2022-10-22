@@ -75,6 +75,7 @@ namespace TheDuction.Event.MovementEvent{
         private MovementEventController GetEventController(EventData eventData)
         {
             foreach(MovementEventController eventController in _eventControllers){
+                Debug.Log(eventData.EventId);
                 if(eventController.EventData == eventData){
                     return eventController;
                 }

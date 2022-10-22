@@ -1711,6 +1711,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa2b4b476be570b428a89906303a3903, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _exitButton: {fileID: 6089119543629509347}
   _startButton: {fileID: 6089119544019477316}
   _settingButton: {fileID: 6089119544468413229}
   _credittButton: {fileID: 6089119543782857904}
@@ -1839,6 +1840,7 @@ GameObject:
   - component: {fileID: 6089119544763688270}
   - component: {fileID: 6089119544763688271}
   - component: {fileID: 6089119544763688269}
+  - component: {fileID: 2424232733077396185}
   m_Layer: 5
   m_Name: Settings
   m_TagString: Untagged
@@ -1917,6 +1919,21 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!114 &2424232733077396185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6089119544763688257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25e2fa9d31cd3de4eb5ce4dadf9ec78d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: 6fc19e81deab3db4dad795ee9b528abf, type: 2}
+  bgmSlider: {fileID: 6089119543290913674}
+  sfxSlider: {fileID: 6089119544434200067}
 --- !u!1 &6089119545105671959
 GameObject:
   m_ObjectHideFlags: 0

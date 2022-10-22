@@ -17,10 +17,16 @@ Tapi apa gejala diare, mual, dan pusing itu memang penyakit musiman?
 Duh, mau cari di internet tapi disini enggak ada sinyal.
 Bu Nanan tadi juga agak aneh. Kenapa ketus sekali, ya, bicaranya?
 Ah, bingung.
+#event: move-1-3
 
+#speaker: Bapak
+#portrait: pak-kades/kades-smile
+Bapak pulang.
+Abdul sudah pulang?
+
+#speaker: Abdul
+#portrait: main-character/mc-smile
 #end-chapter: Bagian 2
-#event: chapter-2-p1-startmonolog
-#quest: quest-2-1
+#end:true
+Iya pak. Baru sampai.
 
-#portrait: main-character/mc-smile4
-Sudah deh, lanjut dipikirkan besok saja.
